@@ -30,6 +30,7 @@
     "technical_requirements",
     "deliverables",
     "acceptance_criteria",
+    "readiness_status",
     "reviewers",
     "approver",
     "maintenance_trigger",
@@ -217,6 +218,56 @@
         "minLength": 1
       },
       "uniqueItems": true
+    },
+    "readiness_status": {
+      "enum": [
+        "build-ready",
+        "build-ready-with-documented-constraints",
+        "not-build-ready"
+      ]
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "readiness_status": {
+            "const": "build-ready"
+          }
+        },
+        "required": [
+          "readiness_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "unresolved_items": {
+            "maxItems": 0
+          },
+          "constraints": {
+            "maxItems": 0
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "readiness_status": {
+            "const": "build-ready-with-documented-constraints"
+          }
+        },
+        "required": [
+          "readiness_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "constraints": {
+            "minItems": 1
+          }
+        }
+      }
+    }
+  ]
 }

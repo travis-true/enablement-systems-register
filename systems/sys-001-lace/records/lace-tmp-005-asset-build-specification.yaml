@@ -4,8 +4,8 @@ record_id: RECORD-ID
 system_id: SYS-001
 status: draft
 owner: RECORD-OWNER
-created_date: 2026-09-02
-updated_date: 2026-09-02
+created_date: "2026-09-02"
+updated_date: "2026-09-02"
 asset_id: ASSET-ID
 title: Asset title
 family: performance-support-and-documentation

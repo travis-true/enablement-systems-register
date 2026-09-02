@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/travis-true/enablement-systems-register/systems/sys-001-lace/schemas/lifecycle-review-record.schema.json",
+  "title": "LACE Lifecycle Review Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "template_id",
+    "template_version",
+    "record_id",
+    "system_id",
+    "status",
+    "owner",
+    "created_date",
+    "updated_date",
+    "asset_id",
+    "current_asset_version",
+    "review_trigger",
+    "review_date",
+    "usage_summary",
+    "issues",
+    "source_changes",
+    "accessibility_status",
+    "disposition",
+    "required_changes",
+    "approved_by",
+    "next_review"
+  ],
+  "properties": {
+    "template_id": {
+      "const": "LACE-TMP-007"
+    },
+    "template_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "system_id": {
+      "const": "SYS-001"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "in_review",
+        "approved",
+        "superseded"
+      ]
+    },
+    "owner": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "updated_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "asset_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "current_asset_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "review_trigger": {
+      "enum": [
+        "scheduled",
+        "source-change",
+        "policy-change",
+        "platform-change",
+        "accessibility-change",
+        "performance-data",
+        "incident",
+        "owner-request"
+      ]
+    },
+    "review_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "usage_summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "source_changes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "accessibility_status": {
+      "enum": [
+        "pass",
+        "pass-with-documented-limitations",
+        "fail",
+        "not-assessed"
+      ]
+    },
+    "disposition": {
+      "enum": [
+        "retain",
+        "revise",
+        "replace",
+        "retire",
+        "escalate"
+      ]
+    },
+    "required_changes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "approved_by": {
+      "type": "string",
+      "minLength": 1
+    },
+    "next_review": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    }
+  }
+}

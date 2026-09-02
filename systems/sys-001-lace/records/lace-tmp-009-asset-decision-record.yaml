@@ -1,0 +1,27 @@
+template_id: LACE-TMP-009
+template_version: 1.0.0
+record_id: RECORD-ID
+system_id: SYS-001
+status: draft
+owner: RECORD-OWNER
+created_date: "2026-09-02"
+updated_date: "2026-09-02"
+request_id: REQUEST-ID
+decision_engine_id: LACE-DE-001
+decision_engine_version: 1.0.0
+decision_status: blocked
+route: further-analysis
+matched_rules:
+  - BLK-001
+primary_asset: null
+companions: []
+rationale: Complete the required decision inputs before generating a recommendation.
+rejected_alternatives: []
+warnings:
+  - Mandatory decision inputs remain incomplete.
+required_human_reviews:
+  - learning-strategist
+confidence: low
+decision_owner: DECISION-OWNER
+decision_date: "2026-09-02"
+override: null

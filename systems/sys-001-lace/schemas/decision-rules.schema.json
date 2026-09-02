@@ -15,8 +15,8 @@
     "companion_controls",
     "warnings",
     "tie_breakers",
-    "confidence",
-    "human_review_triggers",
+    "confidence_rules",
+    "human_review_rules",
     "reopen_triggers"
   ],
   "properties": {
@@ -476,10 +476,7 @@
         "minLength": 1
       }
     },
-    "confidence": {
-      "type": "object"
-    },
-    "human_review_triggers": {
+    "reopen_triggers": {
       "type": "array",
       "minItems": 1,
       "items": {
@@ -487,12 +484,134 @@
         "minLength": 1
       }
     },
-    "reopen_triggers": {
+    "confidence_rules": {
       "type": "array",
       "minItems": 1,
       "items": {
-        "type": "string",
-        "minLength": 1
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "priority",
+          "confidence",
+          "match",
+          "when"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^CNF-[0-9]{3}$"
+          },
+          "priority": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "confidence": {
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "match": {
+            "enum": [
+              "all",
+              "any"
+            ]
+          },
+          "when": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "field",
+                "operator",
+                "value"
+              ],
+              "properties": {
+                "field": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "operator": {
+                  "enum": [
+                    "equals",
+                    "in",
+                    "not-in",
+                    "greater-than",
+                    "greater-than-or-equal",
+                    "less-than",
+                    "less-than-or-equal",
+                    "contains"
+                  ]
+                },
+                "value": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "human_review_rules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "reviewer",
+          "match",
+          "when"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^HMR-[0-9]{3}$"
+          },
+          "reviewer": {
+            "type": "string",
+            "minLength": 1
+          },
+          "match": {
+            "enum": [
+              "all",
+              "any"
+            ]
+          },
+          "when": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "field",
+                "operator",
+                "value"
+              ],
+              "properties": {
+                "field": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "operator": {
+                  "enum": [
+                    "equals",
+                    "in",
+                    "not-in",
+                    "greater-than",
+                    "greater-than-or-equal",
+                    "less-than",
+                    "less-than-or-equal",
+                    "contains"
+                  ]
+                },
+                "value": {}
+              }
+            }
+          }
+        }
       }
     }
   }

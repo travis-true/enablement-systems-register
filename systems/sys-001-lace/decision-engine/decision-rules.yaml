@@ -265,7 +265,7 @@ primary_asset_rules:
     recommendation:
       family: performance-support-and-documentation
       asset_type: standard-operating-procedure
-      template_id: null
+      template_id: LACE-TMP-102
     rationale: A complex, high-risk procedure requires controlled procedural documentation.
 
   - id: AST-006
@@ -330,7 +330,7 @@ primary_asset_rules:
     recommendation:
       family: performance-support-and-documentation
       asset_type: knowledge-article
-      template_id: null
+      template_id: LACE-TMP-102
     rationale: Durable explanation or searchable reference is required.
 
   - id: AST-010
@@ -378,7 +378,7 @@ primary_asset_rules:
     recommendation:
       family: video-and-multimedia
       asset_type: demonstration-video
-      template_id: null
+      template_id: LACE-TMP-400
     rationale: Motion or visual sequence is essential to understanding performance.
 
   - id: AST-013

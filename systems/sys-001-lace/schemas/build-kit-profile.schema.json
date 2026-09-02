@@ -1,0 +1,218 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/travis-true/enablement-systems-register/systems/sys-001-lace/schemas/build-kit-profile.schema.json",
+  "title": "LACE Format Build Kit Profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "template_id",
+    "template_version",
+    "status",
+    "name",
+    "family",
+    "asset_type",
+    "purpose",
+    "use_when",
+    "avoid_when",
+    "variants",
+    "required_inputs",
+    "required_sections",
+    "design_rules",
+    "accessibility_requirements",
+    "media_rules",
+    "output_package",
+    "acceptance_criteria",
+    "qa_gate"
+  ],
+  "properties": {
+    "template_id": {
+      "type": "string",
+      "pattern": "^LACE-TMP-[0-9]{3}$"
+    },
+    "template_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "status": {
+      "const": "active"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "family": {
+      "enum": [
+        "performance-support-and-documentation",
+        "video-and-multimedia"
+      ]
+    },
+    "asset_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 1
+    },
+    "use_when": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "avoid_when": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "variants": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "name",
+          "selection_rule"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "selection_rule": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "required_inputs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "required_sections": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "name",
+          "required",
+          "purpose"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "purpose": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "design_rules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "accessibility_requirements": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "media_rules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "output_package": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "acceptance_criteria": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "qa_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "visual_score_minimum",
+        "critical_defects_maximum",
+        "major_defects_maximum",
+        "inspect_every_rendered_page_or_segment",
+        "master_package_gate_required"
+      ],
+      "properties": {
+        "visual_score_minimum": {
+          "type": "integer",
+          "minimum": 95,
+          "maximum": 100
+        },
+        "critical_defects_maximum": {
+          "const": 0
+        },
+        "major_defects_maximum": {
+          "const": 0
+        },
+        "inspect_every_rendered_page_or_segment": {
+          "const": true
+        },
+        "master_package_gate_required": {
+          "const": true
+        }
+      }
+    }
+  }
+}

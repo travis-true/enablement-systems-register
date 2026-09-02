@@ -1,0 +1,103 @@
+template_id: LACE-TMP-102
+template_version: 1.0.0
+status: active
+name: Detailed Procedural Guide
+family: performance-support-and-documentation
+asset_type: detailed-procedural-guide
+purpose: Provide complete, durable instruction for a multi-step process, including decisions, examples, recovery, governance, and maintenance.
+use_when:
+  - The audience needs more context and support than a compact job aid can safely provide.
+  - The process includes prerequisites, roles, decisions, exceptions, or troubleshooting.
+  - The asset must stand alone as an authoritative reference.
+avoid_when:
+  - A short point-of-work aid contains everything needed.
+  - The need is primarily coached practice, live interaction, or assessment.
+  - Source authority or required procedure details remain unresolved.
+variants:
+  - id: DPG-1A
+    name: Detailed employee reference
+    selection_rule: Use for comprehensive task guidance with examples and troubleshooting.
+  - id: DPG-2A
+    name: Controlled procedural guide
+    selection_rule: Use when scope, roles, warnings, records, and formal review controls are required.
+required_inputs:
+  - Approved LACE-TMP-009 asset decision
+  - Approved LACE-TMP-005 asset build specification
+  - Controlled evidence index with verified procedural sources
+  - Approved scope, roles, warnings, exceptions, and support ownership
+required_sections:
+  - id: purpose-scope
+    name: Purpose and scope
+    required: true
+    purpose: Define the outcome, audience, boundaries, and exclusions.
+  - id: roles
+    name: Roles and responsibilities
+    required: true
+    purpose: Identify who performs, approves, supports, or owns each governed responsibility.
+  - id: prerequisites
+    name: Prerequisites
+    required: true
+    purpose: Define access, setup, knowledge, and materials required.
+  - id: procedure
+    name: Procedure
+    required: true
+    purpose: Present complete numbered actions, decisions, warnings, and results.
+  - id: examples
+    name: Examples
+    required: false
+    purpose: Demonstrate safe application without introducing unsupported rules.
+  - id: troubleshooting
+    name: Troubleshooting and exceptions
+    required: true
+    purpose: Address known failures, variants, stop conditions, and recovery.
+  - id: records
+    name: Records and evidence
+    required: false
+    purpose: Identify documentation required by the governing process.
+  - id: support
+    name: Support and escalation
+    required: true
+    purpose: Define assistance, specialist review, and escalation ownership.
+  - id: sources-maintenance
+    name: Sources, changes, and maintenance
+    required: true
+    purpose: Preserve authority, version, review triggers, and ownership.
+design_rules:
+  - Place purpose, scope, and roles before procedural instructions.
+  - Use numbered steps with one observable action per step where practical.
+  - Keep decisions, warnings, consequences, and expected results adjacent to the affected action.
+  - Use progressive disclosure and meaningful headings to manage length.
+  - Use tables for comparisons, roles, troubleshooting, or records only when they improve comprehension.
+  - Do not impose arbitrary page limits that remove required content.
+  - Preserve editable source and verify every rendered page.
+accessibility_requirements:
+  - Use real heading levels, lists, table headers, bookmarks, and logical reading order.
+  - Use descriptive active links and alternatives for meaningful visuals.
+  - Do not place essential information only in headers, footers, color, position, or images.
+  - Verify contrast, zoom or reflow, keyboard access where applicable, and tagged export.
+  - Recheck accessibility after conversion to the distribution format.
+media_rules:
+  - Use task-focused screenshots with documented purpose, capture guidance, callouts, alt text, platform, and version.
+  - Limit callouts to the minimum needed and avoid covering interface controls.
+  - Use sanitized or approved data.
+  - Keep screenshots near the applicable instruction.
+  - Preserve clean source and annotated versions separately.
+output_package:
+  - Editable document source
+  - Accessible tagged distribution file
+  - Build specification and controlled evidence index
+  - Accessibility, visual, technical, and link-check evidence
+  - Screenshot or media source files when used
+  - Approval, change summary, and lifecycle record
+acceptance_criteria:
+  - Purpose, scope, roles, prerequisites, procedure, decisions, warnings, results, exceptions, troubleshooting, support, and maintenance are complete where applicable.
+  - Every required procedural claim is traceable to an approved source.
+  - A user can complete and verify the process and recognize when to stop or escalate.
+  - Every page renders without clipping, broken flow, orphaned content, or inaccessible structure.
+  - The asset passes accessibility, visual, technical, and package gates.
+qa_gate:
+  visual_score_minimum: 95
+  critical_defects_maximum: 0
+  major_defects_maximum: 0
+  inspect_every_rendered_page_or_segment: true
+  master_package_gate_required: true

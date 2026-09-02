@@ -47,9 +47,19 @@ systems:
       - systems/sys-001-lace/decision-engine/decision-rules.yaml
       - systems/sys-001-lace/decision-engine/operating-guide.md
       - systems/sys-001-lace/decision-engine/test-cases.yaml
+      - systems/sys-001-lace/schemas/build-kit-profile.schema.json
+      - systems/sys-001-lace/build-kits/README.md
+      - systems/sys-001-lace/build-kits/lace-tmp-100-task-based-job-aid/profile.yaml
+      - systems/sys-001-lace/build-kits/lace-tmp-100-task-based-job-aid/template.md
+      - systems/sys-001-lace/build-kits/lace-tmp-101-compact-qrg/profile.yaml
+      - systems/sys-001-lace/build-kits/lace-tmp-101-compact-qrg/template.md
+      - systems/sys-001-lace/build-kits/lace-tmp-102-detailed-procedural-guide/profile.yaml
+      - systems/sys-001-lace/build-kits/lace-tmp-102-detailed-procedural-guide/template.md
+      - systems/sys-001-lace/build-kits/lace-tmp-400-instructional-multimedia/profile.yaml
+      - systems/sys-001-lace/build-kits/lace-tmp-400-instructional-multimedia/template.md
     evidence:
       - evidence/sys-001-completion.md
-    next_action: Add the critical format-specific build kits governed by the encoded asset decisions.
+    next_action: Automate validation of LACE schemas, registers, decision rules, build kits, and controlled test cases.
     version: 1.0.0
     last_reviewed: 2026-09-02
     next_review: 2027-03-02

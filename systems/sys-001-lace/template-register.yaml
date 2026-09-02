@@ -41,7 +41,7 @@ templates:
   - id: LACE-TMP-001
     name: Applicability Assessment
     family: system-control-and-lifecycle
-    status: active
+    status: planned
     version: 1.0.0
     legacy_aliases:
       - source_system: L&D Operating System
@@ -51,7 +51,7 @@ templates:
   - id: LACE-TMP-002
     name: Entry Gate Record
     family: system-control-and-lifecycle
-    status: active
+    status: planned
     version: 1.0.0
     legacy_aliases:
       - source_system: L&D Operating System
@@ -61,7 +61,7 @@ templates:
   - id: LACE-TMP-003
     name: Request and Intake Record
     family: system-control-and-lifecycle
-    status: active
+    status: planned
     version: 1.0.0
     legacy_aliases:
       - source_system: L&D Operating System
@@ -71,7 +71,7 @@ templates:
   - id: LACE-TMP-004
     name: Controlled Evidence Index
     family: system-control-and-lifecycle
-    status: active
+    status: planned
     version: 1.0.0
     legacy_aliases:
       - source_system: L&D Operating System
@@ -81,7 +81,7 @@ templates:
   - id: LACE-TMP-005
     name: Asset Build Specification
     family: system-control-and-lifecycle
-    status: active
+    status: planned
     version: 1.0.0
     legacy_aliases:
       - source_system: L&D Operating System
@@ -91,7 +91,7 @@ templates:
   - id: LACE-TMP-006
     name: Workflow and Handoff Record
     family: system-control-and-lifecycle
-    status: active
+    status: planned
     version: 1.0.0
     legacy_aliases:
       - source_system: L&D Operating System
@@ -101,7 +101,7 @@ templates:
   - id: LACE-TMP-007
     name: Lifecycle Review Record
     family: system-control-and-lifecycle
-    status: active
+    status: planned
     version: 1.0.0
     legacy_aliases:
       - source_system: L&D Operating System
@@ -111,7 +111,7 @@ templates:
   - id: LACE-TMP-100
     name: Task-Based Job Aid
     family: performance-support-and-documentation
-    status: active
+    status: planned
     version: 1.0.0
     legacy_aliases:
       - source_system: LACE draft assets
@@ -121,7 +121,7 @@ templates:
   - id: LACE-TMP-101
     name: Compact Quick Reference Guide
     family: performance-support-and-documentation
-    status: active
+    status: planned
     version: 1.0.0
     legacy_aliases:
       - source_system: LACE draft assets

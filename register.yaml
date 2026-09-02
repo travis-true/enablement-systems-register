@@ -57,9 +57,12 @@ systems:
       - systems/sys-001-lace/build-kits/lace-tmp-102-detailed-procedural-guide/template.md
       - systems/sys-001-lace/build-kits/lace-tmp-400-instructional-multimedia/profile.yaml
       - systems/sys-001-lace/build-kits/lace-tmp-400-instructional-multimedia/template.md
+      - systems/sys-001-lace/validation.md
+      - scripts/validate_lace.py
+      - .github/workflows/validate-register.yml
     evidence:
       - evidence/sys-001-completion.md
-    next_action: Automate validation of LACE schemas, registers, decision rules, build kits, and controlled test cases.
+    next_action: Pilot LACE with one QRG, one detailed guide, and one multimedia asset.
     version: 1.0.0
     last_reviewed: 2026-09-02
     next_review: 2027-03-02

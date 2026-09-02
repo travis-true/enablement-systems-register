@@ -8,10 +8,11 @@ These eight records are the minimum control set for moving work through LACE. Ea
 | 2 | LACE-TMP-003 | Request and Intake Record | Capture the need, outcome, audience, task, risk, constraints, and sources |
 | 3 | LACE-TMP-002 | Entry Gate Record | Authorize work to enter production or stop it |
 | 4 | LACE-TMP-004 | Controlled Evidence Index | Establish source authority, permitted use, claims, and limitations |
-| 5 | LACE-TMP-005 | Asset Build Specification | Define the production contract and acceptance criteria |
-| 6 | LACE-TMP-006 | Workflow and Handoff Record | Transfer controlled work between stages and owners |
-| 7 | LACE-TMP-008 | Release Manifest | Prove package completeness and readiness for publication handoff |
-| 8 | LACE-TMP-007 | Lifecycle Review Record | Retain, revise, replace, retire, or escalate a released asset |
+| 5 | LACE-TMP-009 | Asset Decision Record | Preserve the governed route, primary asset, companions, warnings, confidence, and approval |
+| 6 | LACE-TMP-005 | Asset Build Specification | Define the production contract and acceptance criteria |
+| 7 | LACE-TMP-006 | Workflow and Handoff Record | Transfer controlled work between stages and owners |
+| 8 | LACE-TMP-008 | Release Manifest | Prove package completeness and readiness for publication handoff |
+| 9 | LACE-TMP-007 | Lifecycle Review Record | Retain, revise, replace, retire, or escalate a released asset |
 
 ## Use rules
 

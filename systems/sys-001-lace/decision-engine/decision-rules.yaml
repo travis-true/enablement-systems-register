@@ -495,32 +495,74 @@ tie_breakers:
   - strongest-accessibility-and-usability-fit
   - strongest-source-support
 
-confidence:
-  high:
-    requirements:
-      - mandatory_intake_complete is true
-      - source_status is verified
-      - no blockers apply
-      - one route rule and one non-fallback asset rule control the result
-  medium:
-    requirements:
-      - source_status is partial
-      - recommendation is limited to verified content
-      - human review is recorded
-  low:
-    requirements:
-      - fallback route or unresolved asset rule applies
-      - recommendation cannot be approved without further analysis
+confidence_rules:
+  - id: CNF-001
+    priority: 300
+    confidence: high
+    match: all
+    when:
+      - field: source_status
+        operator: equals
+        value: verified
+      - field: route
+        operator: not-in
+        value: [further-analysis]
+      - field: asset_type
+        operator: not-in
+        value: [unresolved]
+  - id: CNF-002
+    priority: 200
+    confidence: medium
+    match: all
+    when:
+      - field: source_status
+        operator: equals
+        value: partial
+      - field: asset_type
+        operator: not-in
+        value: [unresolved]
+  - id: CNF-999
+    priority: 1
+    confidence: low
+    match: all
+    when: []
 
-human_review_triggers:
-  - risk_level is high or critical
-  - source_status is partial
-  - route is operational-fix
-  - primary asset is unresolved
-  - requested override changes route, family, type, or companion count
-  - content volatility is high
-  - delivery or accessibility constraints conflict
-  - recommendation contains restricted or confidential sources
+human_review_rules:
+  - id: HMR-001
+    reviewer: specialist-reviewer
+    match: all
+    when:
+      - field: risk_level
+        operator: in
+        value: [high, critical]
+  - id: HMR-002
+    reviewer: source-owner
+    match: all
+    when:
+      - field: source_status
+        operator: equals
+        value: partial
+  - id: HMR-003
+    reviewer: process-or-system-owner
+    match: all
+    when:
+      - field: route
+        operator: equals
+        value: operational-fix
+  - id: HMR-004
+    reviewer: learning-strategist
+    match: all
+    when:
+      - field: asset_type
+        operator: equals
+        value: unresolved
+  - id: HMR-005
+    reviewer: maintenance-owner
+    match: all
+    when:
+      - field: content_volatility
+        operator: equals
+        value: high
 
 reopen_triggers:
   - material audience change

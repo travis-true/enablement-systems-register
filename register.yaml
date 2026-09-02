@@ -41,9 +41,15 @@ systems:
       - systems/sys-001-lace/records/lace-tmp-006-workflow-handoff-record.yaml
       - systems/sys-001-lace/records/lace-tmp-007-lifecycle-review-record.yaml
       - systems/sys-001-lace/records/lace-tmp-008-release-manifest.yaml
+      - systems/sys-001-lace/schemas/asset-decision-record.schema.json
+      - systems/sys-001-lace/schemas/decision-rules.schema.json
+      - systems/sys-001-lace/records/lace-tmp-009-asset-decision-record.yaml
+      - systems/sys-001-lace/decision-engine/decision-rules.yaml
+      - systems/sys-001-lace/decision-engine/operating-guide.md
+      - systems/sys-001-lace/decision-engine/test-cases.yaml
     evidence:
       - evidence/sys-001-completion.md
-    next_action: Encode the governed asset decision rules using the validated control-record contracts.
+    next_action: Add the critical format-specific build kits governed by the encoded asset decisions.
     version: 1.0.0
     last_reviewed: 2026-09-02
     next_review: 2027-03-02

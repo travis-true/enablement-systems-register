@@ -21,6 +21,7 @@ LACE is the governed production system that converts approved source material an
 - [Decision-engine operating guide](decision-engine/operating-guide.md)
 - [Decision-engine test cases](decision-engine/test-cases.yaml)
 - [Format-specific build kits](build-kits/)
+- [Automated validation](validation.md)
 - [Completion evidence](../../evidence/sys-001-completion.md)
 
 ## System boundary

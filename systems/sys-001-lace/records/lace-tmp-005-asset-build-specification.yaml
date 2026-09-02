@@ -1,0 +1,41 @@
+template_id: LACE-TMP-005
+template_version: 1.0.0
+record_id: RECORD-ID
+system_id: SYS-001
+status: draft
+owner: RECORD-OWNER
+created_date: 2026-09-02
+updated_date: 2026-09-02
+asset_id: ASSET-ID
+title: Asset title
+family: performance-support-and-documentation
+asset_type: Define the asset type.
+purpose: Define why this asset is needed.
+performance_outcome: Describe the observable outcome.
+audience: Define the intended audience.
+use_context: Describe the use environment.
+moment_of_need: Describe when the audience needs the asset.
+source_refs:
+  - SOURCE-ID
+in_scope:
+  - Define included content.
+out_of_scope:
+  - Define excluded content.
+content_requirements:
+  - Define required content and structure.
+accessibility_requirements:
+  - Define applicable accessibility requirements.
+technical_requirements:
+  - Define format, platform, and export requirements.
+deliverables:
+  - Define editable, distribution, and evidence files.
+acceptance_criteria:
+  - Define objective release criteria.
+reviewers:
+  - REVIEWER
+approver: APPROVER
+maintenance_trigger: Define the event or date that triggers review.
+constraints: []
+assumptions: []
+unresolved_items:
+  - Resolve before build-ready status.

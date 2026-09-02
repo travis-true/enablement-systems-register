@@ -174,5 +174,80 @@
       ],
       "format": "date"
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "readiness_status": {
+            "const": "release-ready"
+          }
+        },
+        "required": [
+          "readiness_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "editable_files": {
+            "minItems": 1
+          },
+          "distribution_files": {
+            "minItems": 1
+          },
+          "evidence_files": {
+            "minItems": 1
+          },
+          "approval_files": {
+            "minItems": 1
+          },
+          "accessibility_result": {
+            "const": "pass"
+          },
+          "quality_result": {
+            "const": "pass"
+          },
+          "critical_defects": {
+            "const": 0
+          },
+          "major_defects": {
+            "const": 0
+          },
+          "approval_date": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "readiness_status": {
+            "const": "release-ready-with-approved-constraints"
+          }
+        },
+        "required": [
+          "readiness_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "critical_defects": {
+            "const": 0
+          },
+          "major_defects": {
+            "const": 0
+          },
+          "approved_constraints": {
+            "minItems": 1
+          },
+          "approval_date": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      }
+    }
+  ]
 }

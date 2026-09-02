@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/travis-true/enablement-systems-register/schema/register.schema.json",
+  "title": "Enablement Systems Register",
+  "type": "object",
+  "required": ["register", "systems"],
+  "properties": {
+    "register": {
+      "type": "object",
+      "required": ["name", "schema_version", "owner", "authoritative_location", "visibility", "last_updated"]
+    },
+    "systems": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/system" }
+    }
+  },
+  "$defs": {
+    "system": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "category", "status", "owner", "purpose", "audience", "scope", "completion_score", "related_systems", "artifacts", "evidence", "next_action", "version", "last_reviewed", "next_review", "labels"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^(FW|WF|PB)-[0-9]{3}$" },
+        "name": { "type": "string", "minLength": 3 },
+        "category": { "enum": ["framework", "workflow", "playbook"] },
+        "status": { "enum": ["candidate", "incomplete", "in_progress", "complete", "maintenance", "retired"] },
+        "owner": { "type": "string", "minLength": 1 },
+        "purpose": { "type": "string", "minLength": 10 },
+        "audience": { "type": "string", "minLength": 3 },
+        "scope": { "type": "string", "minLength": 10 },
+        "completion_score": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "related_systems": { "type": "array", "items": { "type": "string", "pattern": "^(FW|WF|PB)-[0-9]{3}$" }, "uniqueItems": true },
+        "artifacts": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1, "uniqueItems": true },
+        "evidence": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+        "next_action": { "type": "string", "minLength": 5 },
+        "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+        "last_reviewed": { "type": "string", "format": "date" },
+        "next_review": { "type": "string", "format": "date" },
+        "labels": { "type": "array", "items": { "type": "string", "pattern": "^[a-z0-9-]+$" }, "uniqueItems": true }
+      }
+    }
+  }
+}

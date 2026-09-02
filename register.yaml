@@ -24,9 +24,26 @@ systems:
       - systems/sys-001-lace/source-crosswalk.md
       - systems/sys-001-lace/template-namespace.md
       - systems/sys-001-lace/template-register.yaml
+      - systems/sys-001-lace/control-records.md
+      - systems/sys-001-lace/schemas/applicability-assessment.schema.json
+      - systems/sys-001-lace/schemas/entry-gate-record.schema.json
+      - systems/sys-001-lace/schemas/request-intake-record.schema.json
+      - systems/sys-001-lace/schemas/controlled-evidence-index.schema.json
+      - systems/sys-001-lace/schemas/asset-build-specification.schema.json
+      - systems/sys-001-lace/schemas/workflow-handoff-record.schema.json
+      - systems/sys-001-lace/schemas/lifecycle-review-record.schema.json
+      - systems/sys-001-lace/schemas/release-manifest.schema.json
+      - systems/sys-001-lace/records/lace-tmp-001-applicability-assessment.yaml
+      - systems/sys-001-lace/records/lace-tmp-002-entry-gate-record.yaml
+      - systems/sys-001-lace/records/lace-tmp-003-request-intake-record.yaml
+      - systems/sys-001-lace/records/lace-tmp-004-controlled-evidence-index.yaml
+      - systems/sys-001-lace/records/lace-tmp-005-asset-build-specification.yaml
+      - systems/sys-001-lace/records/lace-tmp-006-workflow-handoff-record.yaml
+      - systems/sys-001-lace/records/lace-tmp-007-lifecycle-review-record.yaml
+      - systems/sys-001-lace/records/lace-tmp-008-release-manifest.yaml
     evidence:
       - evidence/sys-001-completion.md
-    next_action: Build the canonical schemas and reusable records using the resolved LACE-TMP namespace.
+    next_action: Encode the governed asset decision rules using the validated control-record contracts.
     version: 1.0.0
     last_reviewed: 2026-09-02
     next_review: 2027-03-02

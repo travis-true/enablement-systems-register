@@ -31,6 +31,7 @@ deliverables:
   - Define editable, distribution, and evidence files.
 acceptance_criteria:
   - Define objective release criteria.
+readiness_status: not-build-ready
 reviewers:
   - REVIEWER
 approver: APPROVER

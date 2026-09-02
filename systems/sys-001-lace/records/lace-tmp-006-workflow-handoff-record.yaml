@@ -1,0 +1,21 @@
+template_id: LACE-TMP-006
+template_version: 1.0.0
+record_id: RECORD-ID
+system_id: SYS-001
+status: draft
+owner: RECORD-OWNER
+created_date: 2026-09-02
+updated_date: 2026-09-02
+asset_id: ASSET-ID
+from_stage: 1
+to_stage: 2
+handoff_status: pending
+deliverables:
+  - Identify each transferred deliverable.
+open_items:
+  - Identify unresolved work.
+documented_constraints: []
+transferring_owner: TRANSFERRING-OWNER
+receiving_owner: RECEIVING-OWNER
+acknowledgment: Pending receiver acknowledgment.
+handoff_date: 2026-09-02

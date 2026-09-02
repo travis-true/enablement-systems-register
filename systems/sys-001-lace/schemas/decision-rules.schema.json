@@ -1,0 +1,499 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/travis-true/enablement-systems-register/systems/sys-001-lace/schemas/decision-rules.schema.json",
+  "title": "LACE Asset Decision Rules",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "engine",
+    "input_contract",
+    "precedence",
+    "blockers",
+    "route_rules",
+    "primary_asset_rules",
+    "companion_rules",
+    "companion_controls",
+    "warnings",
+    "tie_breakers",
+    "confidence",
+    "human_review_triggers",
+    "reopen_triggers"
+  ],
+  "properties": {
+    "engine": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "version",
+        "status",
+        "system_id",
+        "output_template_id",
+        "evaluation_model",
+        "numeric_score_role",
+        "maximum_companions"
+      ],
+      "properties": {
+        "id": {
+          "const": "LACE-DE-001"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+        },
+        "status": {
+          "enum": [
+            "draft",
+            "approved",
+            "retired"
+          ]
+        },
+        "system_id": {
+          "const": "SYS-001"
+        },
+        "output_template_id": {
+          "const": "LACE-TMP-009"
+        },
+        "evaluation_model": {
+          "const": "ordered-first-match"
+        },
+        "numeric_score_role": {
+          "const": "advisory-only"
+        },
+        "maximum_companions": {
+          "const": 3
+        }
+      }
+    },
+    "input_contract": {
+      "type": "object",
+      "required": [
+        "required",
+        "vocabulary"
+      ],
+      "properties": {
+        "required": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "vocabulary": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
+    },
+    "precedence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "rule"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^PRE-[0-9]{3}$"
+          },
+          "rule": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "blockers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "priority",
+          "match",
+          "when",
+          "outcome",
+          "reason"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}-[0-9]{3}$"
+          },
+          "priority": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "match": {
+            "enum": [
+              "all",
+              "any"
+            ]
+          },
+          "when": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "field",
+                "operator",
+                "value"
+              ],
+              "properties": {
+                "field": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "operator": {
+                  "enum": [
+                    "equals",
+                    "in",
+                    "not-in",
+                    "greater-than",
+                    "greater-than-or-equal",
+                    "less-than",
+                    "less-than-or-equal",
+                    "contains"
+                  ]
+                },
+                "value": {}
+              }
+            }
+          },
+          "outcome": {
+            "const": "blocked"
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "route_rules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "priority",
+          "match",
+          "when",
+          "route",
+          "rationale",
+          "human_review"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}-[0-9]{3}$"
+          },
+          "priority": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "match": {
+            "enum": [
+              "all",
+              "any"
+            ]
+          },
+          "when": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "field",
+                "operator",
+                "value"
+              ],
+              "properties": {
+                "field": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "operator": {
+                  "enum": [
+                    "equals",
+                    "in",
+                    "not-in",
+                    "greater-than",
+                    "greater-than-or-equal",
+                    "less-than",
+                    "less-than-or-equal",
+                    "contains"
+                  ]
+                },
+                "value": {}
+              }
+            }
+          },
+          "route": {
+            "type": "string",
+            "minLength": 1
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1
+          },
+          "human_review": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "primary_asset_rules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "priority",
+          "match",
+          "when",
+          "compatible_routes",
+          "recommendation",
+          "rationale"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}-[0-9]{3}$"
+          },
+          "priority": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "match": {
+            "enum": [
+              "all",
+              "any"
+            ]
+          },
+          "when": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "field",
+                "operator",
+                "value"
+              ],
+              "properties": {
+                "field": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "operator": {
+                  "enum": [
+                    "equals",
+                    "in",
+                    "not-in",
+                    "greater-than",
+                    "greater-than-or-equal",
+                    "less-than",
+                    "less-than-or-equal",
+                    "contains"
+                  ]
+                },
+                "value": {}
+              }
+            }
+          },
+          "compatible_routes": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "recommendation": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "family",
+              "asset_type",
+              "template_id"
+            ],
+            "properties": {
+              "family": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "asset_type": {
+                "type": "string",
+                "minLength": 1
+              },
+              "template_id": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "pattern": "^LACE-TMP-[0-9]{3}$"
+              }
+            }
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "companion_rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "purpose",
+          "match",
+          "when",
+          "recommendation"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^CMP-[0-9]{3}$"
+          },
+          "purpose": {
+            "type": "string",
+            "minLength": 1
+          },
+          "match": {
+            "enum": [
+              "all",
+              "any"
+            ]
+          },
+          "when": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "field",
+                "operator",
+                "value"
+              ],
+              "properties": {
+                "field": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "operator": {
+                  "enum": [
+                    "equals",
+                    "in",
+                    "not-in",
+                    "greater-than",
+                    "greater-than-or-equal",
+                    "less-than",
+                    "less-than-or-equal",
+                    "contains"
+                  ]
+                },
+                "value": {}
+              }
+            }
+          },
+          "recommendation": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "family",
+              "asset_type",
+              "template_id"
+            ],
+            "properties": {
+              "family": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "asset_type": {
+                "type": "string",
+                "minLength": 1
+              },
+              "template_id": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "pattern": "^LACE-TMP-[0-9]{3}$"
+              }
+            }
+          }
+        }
+      }
+    },
+    "companion_controls": {
+      "type": "object"
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "tie_breakers": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "confidence": {
+      "type": "object"
+    },
+    "human_review_triggers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "reopen_triggers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

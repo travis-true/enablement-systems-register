@@ -1,0 +1,17 @@
+id: XX-000
+name: System name
+category: framework
+status: candidate
+owner: Travis True
+purpose: Describe the outcome this system enables.
+audience: Identify the intended users.
+scope: State what is included and excluded.
+completion_score: 0
+related_systems: []
+artifacts: []
+evidence: []
+next_action: Define the next concrete completion step.
+version: 0.1.0
+last_reviewed: 2026-09-02
+next_review: 2026-10-02
+labels: []

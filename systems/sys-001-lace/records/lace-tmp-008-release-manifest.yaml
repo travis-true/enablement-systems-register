@@ -1,0 +1,30 @@
+template_id: LACE-TMP-008
+template_version: 1.0.0
+record_id: RECORD-ID
+system_id: SYS-001
+status: draft
+owner: RECORD-OWNER
+created_date: "2026-09-02"
+updated_date: "2026-09-02"
+asset_id: ASSET-ID
+release_id: RELEASE-ID
+release_version: 1.0.0
+readiness_status: not-release-ready
+editable_files:
+  - Identify required editable files.
+distribution_files:
+  - Identify required distribution files.
+evidence_files:
+  - Identify evidence and validation files.
+approval_files:
+  - Identify approval records.
+accessibility_result: fail
+quality_result: fail
+critical_defects: 0
+major_defects: 0
+approved_constraints: []
+approver: APPROVER
+approval_date: null
+publication_handoff: Identify the downstream publication owner and destination.
+maintenance_owner: MAINTENANCE-OWNER
+next_review: null

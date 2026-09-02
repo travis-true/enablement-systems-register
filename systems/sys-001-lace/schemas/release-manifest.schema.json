@@ -1,0 +1,253 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/travis-true/enablement-systems-register/systems/sys-001-lace/schemas/release-manifest.schema.json",
+  "title": "LACE Release Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "template_id",
+    "template_version",
+    "record_id",
+    "system_id",
+    "status",
+    "owner",
+    "created_date",
+    "updated_date",
+    "asset_id",
+    "release_id",
+    "release_version",
+    "readiness_status",
+    "editable_files",
+    "distribution_files",
+    "evidence_files",
+    "approval_files",
+    "accessibility_result",
+    "quality_result",
+    "critical_defects",
+    "major_defects",
+    "approved_constraints",
+    "approver",
+    "approval_date",
+    "publication_handoff",
+    "maintenance_owner",
+    "next_review"
+  ],
+  "properties": {
+    "template_id": {
+      "const": "LACE-TMP-008"
+    },
+    "template_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "system_id": {
+      "const": "SYS-001"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "in_review",
+        "approved",
+        "superseded"
+      ]
+    },
+    "owner": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "updated_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "asset_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "release_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "release_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "readiness_status": {
+      "enum": [
+        "release-ready",
+        "release-ready-with-approved-constraints",
+        "not-release-ready"
+      ]
+    },
+    "editable_files": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "distribution_files": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "evidence_files": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "approval_files": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "accessibility_result": {
+      "enum": [
+        "pass",
+        "pass-with-approved-constraints",
+        "fail"
+      ]
+    },
+    "quality_result": {
+      "enum": [
+        "pass",
+        "pass-with-approved-constraints",
+        "fail"
+      ]
+    },
+    "critical_defects": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "major_defects": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "approved_constraints": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "approver": {
+      "type": "string",
+      "minLength": 1
+    },
+    "approval_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    },
+    "publication_handoff": {
+      "type": "string",
+      "minLength": 1
+    },
+    "maintenance_owner": {
+      "type": "string",
+      "minLength": 1
+    },
+    "next_review": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "readiness_status": {
+            "const": "release-ready"
+          }
+        },
+        "required": [
+          "readiness_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "editable_files": {
+            "minItems": 1
+          },
+          "distribution_files": {
+            "minItems": 1
+          },
+          "evidence_files": {
+            "minItems": 1
+          },
+          "approval_files": {
+            "minItems": 1
+          },
+          "accessibility_result": {
+            "const": "pass"
+          },
+          "quality_result": {
+            "const": "pass"
+          },
+          "critical_defects": {
+            "const": 0
+          },
+          "major_defects": {
+            "const": 0
+          },
+          "approval_date": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "readiness_status": {
+            "const": "release-ready-with-approved-constraints"
+          }
+        },
+        "required": [
+          "readiness_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "critical_defects": {
+            "const": 0
+          },
+          "major_defects": {
+            "const": 0
+          },
+          "approved_constraints": {
+            "minItems": 1
+          },
+          "approval_date": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      }
+    }
+  ]
+}

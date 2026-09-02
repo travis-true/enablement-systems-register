@@ -1,0 +1,21 @@
+template_id: LACE-TMP-007
+template_version: 1.0.0
+record_id: RECORD-ID
+system_id: SYS-001
+status: draft
+owner: RECORD-OWNER
+created_date: "2026-09-02"
+updated_date: "2026-09-02"
+asset_id: ASSET-ID
+current_asset_version: 1.0.0
+review_trigger: scheduled
+review_date: "2026-09-02"
+usage_summary: Record available use and performance evidence.
+issues: []
+source_changes: []
+accessibility_status: not-assessed
+disposition: escalate
+required_changes:
+  - Complete the lifecycle review.
+approved_by: REVIEW-OWNER
+next_review: null

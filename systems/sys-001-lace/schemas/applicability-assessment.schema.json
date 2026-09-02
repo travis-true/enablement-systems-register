@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/travis-true/enablement-systems-register/systems/sys-001-lace/schemas/applicability-assessment.schema.json",
+  "title": "LACE Applicability Assessment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "template_id",
+    "template_version",
+    "record_id",
+    "system_id",
+    "status",
+    "owner",
+    "created_date",
+    "updated_date",
+    "request_id",
+    "desired_outcome",
+    "need_type",
+    "training_appropriate",
+    "rationale",
+    "selected_route",
+    "decision_owner",
+    "decision_date"
+  ],
+  "properties": {
+    "template_id": {
+      "const": "LACE-TMP-001"
+    },
+    "template_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "system_id": {
+      "const": "SYS-001"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "in_review",
+        "approved",
+        "superseded"
+      ]
+    },
+    "owner": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "updated_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "request_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "desired_outcome": {
+      "type": "string",
+      "minLength": 1
+    },
+    "need_type": {
+      "enum": [
+        "knowledge",
+        "skill",
+        "behavior",
+        "performance-support",
+        "communication",
+        "process",
+        "technology",
+        "mixed",
+        "other"
+      ]
+    },
+    "training_appropriate": {
+      "type": "boolean"
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selected_route": {
+      "enum": [
+        "learning-asset",
+        "performance-support",
+        "communication",
+        "process-change",
+        "technology-change",
+        "no-intervention",
+        "further-analysis"
+      ]
+    },
+    "decision_owner": {
+      "type": "string",
+      "minLength": 1
+    },
+    "decision_date": {
+      "type": "string",
+      "format": "date"
+    }
+  }
+}

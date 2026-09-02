@@ -41,8 +41,10 @@ templates:
   - id: LACE-TMP-001
     name: Applicability Assessment
     family: system-control-and-lifecycle
-    status: planned
+    status: active
     version: 1.0.0
+    schema_path: schemas/applicability-assessment.schema.json
+    template_path: records/lace-tmp-001-applicability-assessment.yaml
     legacy_aliases:
       - source_system: L&D Operating System
         id: TMP-001
@@ -51,8 +53,10 @@ templates:
   - id: LACE-TMP-002
     name: Entry Gate Record
     family: system-control-and-lifecycle
-    status: planned
+    status: active
     version: 1.0.0
+    schema_path: schemas/entry-gate-record.schema.json
+    template_path: records/lace-tmp-002-entry-gate-record.yaml
     legacy_aliases:
       - source_system: L&D Operating System
         id: TMP-002
@@ -61,8 +65,10 @@ templates:
   - id: LACE-TMP-003
     name: Request and Intake Record
     family: system-control-and-lifecycle
-    status: planned
+    status: active
     version: 1.0.0
+    schema_path: schemas/request-intake-record.schema.json
+    template_path: records/lace-tmp-003-request-intake-record.yaml
     legacy_aliases:
       - source_system: L&D Operating System
         id: TMP-003
@@ -71,8 +77,10 @@ templates:
   - id: LACE-TMP-004
     name: Controlled Evidence Index
     family: system-control-and-lifecycle
-    status: planned
+    status: active
     version: 1.0.0
+    schema_path: schemas/controlled-evidence-index.schema.json
+    template_path: records/lace-tmp-004-controlled-evidence-index.yaml
     legacy_aliases:
       - source_system: L&D Operating System
         id: PIL-003
@@ -81,8 +89,10 @@ templates:
   - id: LACE-TMP-005
     name: Asset Build Specification
     family: system-control-and-lifecycle
-    status: planned
+    status: active
     version: 1.0.0
+    schema_path: schemas/asset-build-specification.schema.json
+    template_path: records/lace-tmp-005-asset-build-specification.yaml
     legacy_aliases:
       - source_system: L&D Operating System
         id: TMP-007
@@ -91,8 +101,10 @@ templates:
   - id: LACE-TMP-006
     name: Workflow and Handoff Record
     family: system-control-and-lifecycle
-    status: planned
+    status: active
     version: 1.0.0
+    schema_path: schemas/workflow-handoff-record.schema.json
+    template_path: records/lace-tmp-006-workflow-handoff-record.yaml
     legacy_aliases:
       - source_system: L&D Operating System
         id: TMP-009
@@ -101,12 +113,23 @@ templates:
   - id: LACE-TMP-007
     name: Lifecycle Review Record
     family: system-control-and-lifecycle
-    status: planned
+    status: active
     version: 1.0.0
+    schema_path: schemas/lifecycle-review-record.schema.json
+    template_path: records/lace-tmp-007-lifecycle-review-record.yaml
     legacy_aliases:
       - source_system: L&D Operating System
         id: TMP-012
         name: Lifecycle Review Record
+
+  - id: LACE-TMP-008
+    name: Release Manifest
+    family: system-control-and-lifecycle
+    status: active
+    version: 1.0.0
+    schema_path: schemas/release-manifest.schema.json
+    template_path: records/lace-tmp-008-release-manifest.yaml
+    legacy_aliases: []
 
   - id: LACE-TMP-100
     name: Task-Based Job Aid

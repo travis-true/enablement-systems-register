@@ -46,10 +46,24 @@ The notes governed asset selection, screenshots, accessibility, interface and li
 - TAB authority decisions governing source, asset families, screenshots, icons, release, package QA, and regression
 - Approved July 2026 consolidation direction placing LDCS production detail into TAB Studio and the visual-production phase
 
+## Canonical control-layer evidence
+
+LACE now includes eight paired, standalone JSON Schemas and reusable YAML records:
+
+- applicability assessment;
+- request and intake;
+- entry gate;
+- controlled evidence index;
+- asset build specification;
+- workflow and handoff;
+- release manifest;
+- lifecycle review.
+
+All eight template/schema pairs passed structural, required-field, type, enum, pattern, date, uniqueness, and state-gate checks before activation. `LACE-TMP-001` through `LACE-TMP-008` are active. Format-specific templates `LACE-TMP-100` and `LACE-TMP-101` remain planned.
+
 ## Residual improvements
 
 - Run and record a pilot using only the canonical LACE v1.0 package.
-- Maintain the approved `LACE-TMP-###` namespace and test its mappings during the v1.1 pilot.
 - Add automated schema, rendering, accessibility, and visual-regression checks.
 - Build governed editable master families and a component library.
 

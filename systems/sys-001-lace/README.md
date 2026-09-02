@@ -14,6 +14,9 @@ LACE is the governed production system that converts approved source material an
 - [Source consolidation crosswalk](source-crosswalk.md)
 - [Template-ID namespace](template-namespace.md)
 - [Canonical template register](template-register.yaml)
+- [Control-record operating sequence](control-records.md)
+- [JSON Schemas](schemas/)
+- [Reusable YAML records](records/)
 - [Completion evidence](../../evidence/sys-001-completion.md)
 
 ## System boundary

@@ -29,22 +29,25 @@ A lower source cannot silently override a higher source.
 | Release and maintenance | Lifecycle and version control | Release authority | Approval, change, and maintenance records | LACE prepares the package; publication remains downstream |
 | Automation | Runtime assembly and repair concepts | Planned production/regression direction | Manual controlled baseline | Automation permitted within explicit human decision boundaries |
 
-## Predecessor identifier handling
+## Template namespace resolution
 
-Historical LACE asset drafts used identifiers including:
+LACE uses the permanent canonical syntax `LACE-TMP-###`. Predecessor identifiers remain source-qualified aliases and are prohibited for new production.
 
-- `TMP-0002` — Job Aid, Task-Based, with QRG-style tables
-- `TMP-0003` — QRG, Compact
+| Canonical ID | Canonical name | Predecessor alias | Source system |
+|---|---|---|---|
+| LACE-TMP-001 | Applicability Assessment | TMP-001 | L&D Operating System |
+| LACE-TMP-002 | Entry Gate Record | TMP-002 | L&D Operating System |
+| LACE-TMP-003 | Request and Intake Record | TMP-003 | L&D Operating System |
+| LACE-TMP-004 | Controlled Evidence Index | PIL-003 | L&D Operating System |
+| LACE-TMP-005 | Asset Build Specification | TMP-007 | L&D Operating System |
+| LACE-TMP-006 | Workflow and Handoff Record | TMP-009 | L&D Operating System |
+| LACE-TMP-007 | Lifecycle Review Record | TMP-012 | L&D Operating System |
+| LACE-TMP-100 | Task-Based Job Aid | TMP-0002 | LACE draft assets |
+| LACE-TMP-101 | Compact Quick Reference Guide | TMP-0003 | LACE draft assets |
 
-The L&D Operating System implementation toolkit separately used:
+The apparent `TMP-002`/`TMP-0002` collision is resolved because both map to different canonical identities and retain source-qualified aliases. Zero-padding is never used to distinguish canonical identities.
 
-- `TMP-001` — Applicability Assessment
-- `TMP-002` — Entry Gate Record
-- `TMP-007` — Asset Build Specification
-- `TMP-009` — Workflow and Handoff Record
-- `PIL-003` — Controlled Evidence Index
-
-These are treated as predecessor identifiers, not interchangeable canonical IDs. LACE v1.0 requires a future controlled template-register crosswalk before automation relies on template IDs.
+The namespace rules, reserved ranges, lifecycle, versioning, and collision procedure are governed by `template-namespace.md`; the machine-readable mappings are governed by `template-register.yaml`.
 
 ## Historical evidence of use
 
@@ -72,7 +75,6 @@ Those notes applied asset-type selection, task-focused screenshot planning, acce
 
 The following items are implementation improvements, not blockers to the canonical specification:
 
-- canonical template register and predecessor-ID mapping;
 - editable presentation and document master families;
 - governed vector component library;
 - machine-readable generation schemas;

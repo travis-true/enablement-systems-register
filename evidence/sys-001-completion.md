@@ -99,6 +99,23 @@ Verification confirmed:
 - decision-engine mappings to all four kits;
 - 12 decision cases with zero outcome or template-routing mismatches.
 
+## Automated-validation evidence
+
+The repository workflow now runs both the systems-register validator and the dedicated LACE validator on every pull request and push to `main`.
+
+The LACE validator blocks:
+
+- schema, YAML, and JSON defects;
+- missing critical package files;
+- template ID, range, status, alias, path, and version defects;
+- record and build-kit schema violations;
+- decision-rule integrity and controlled-test failures;
+- references to inactive templates;
+- invalid build-ready and release-ready states;
+- broken or escaping local links.
+
+Automation does not replace source, visual, accessibility, approval, or publication evidence for completed assets.
+
 ## Residual improvements
 
 - Run and record a pilot using only the canonical LACE v1.0 package.

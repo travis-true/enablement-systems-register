@@ -118,6 +118,8 @@ LACE uses six asset families.
 
 The asset decision must consider desired performance, audience, task complexity and frequency, workflow position, operational risk, moment of need, environment, maintenance burden, delivery constraints, and source readiness.
 
+Production must use an active registered format build kit when one matches the approved asset decision. LACE v1.1 development currently approves `LACE-TMP-100`, `LACE-TMP-101`, `LACE-TMP-102`, and `LACE-TMP-400`. An asset without an active kit requires a documented human-approved production plan and cannot borrow another template identity.
+
 ## 9. Standard asset specification
 
 Every asset build specification must define:

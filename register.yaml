@@ -22,9 +22,11 @@ systems:
       - systems/sys-001-lace/README.md
       - systems/sys-001-lace/specification.md
       - systems/sys-001-lace/source-crosswalk.md
+      - systems/sys-001-lace/template-namespace.md
+      - systems/sys-001-lace/template-register.yaml
     evidence:
       - evidence/sys-001-completion.md
-    next_action: Pilot the canonical specification and establish one governed machine-readable template namespace.
+    next_action: Build the canonical schemas and reusable records using the resolved LACE-TMP namespace.
     version: 1.0.0
     last_reviewed: 2026-09-02
     next_review: 2027-03-02

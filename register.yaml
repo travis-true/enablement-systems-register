@@ -1,0 +1,245 @@
+register:
+  name: Enablement Systems Register
+  schema_version: 1.0.0
+  owner: Travis True
+  authoritative_location: GitHub
+  discovery_layer: Notion
+  visibility: public-sanitized
+  last_updated: 2026-09-02
+
+systems:
+  - id: FW-001
+    name: GCSE Prompt Framework
+    category: framework
+    status: complete
+    owner: Travis True
+    purpose: Structure reliable prompts through Goal, Context, Source, and Expectation.
+    audience: Employees and prompt authors using generative AI tools.
+    scope: Prompt design, explanation, improvement, validation, and app-specific optimization.
+    completion_score: 100
+    related_systems: [PB-001]
+    artifacts:
+      - frameworks/fw-001-gcse-prompt-framework.md
+    evidence:
+      - evidence/fw-001-completion.md
+    next_action: Review examples and validation criteria at the next scheduled review.
+    version: 1.0.0
+    last_reviewed: 2026-08-25
+    next_review: 2027-02-25
+    labels: [ai-enablement, prompting, public-safe]
+
+  - id: FW-002
+    name: L&D Operating System
+    category: framework
+    status: maintenance
+    owner: Travis True
+    purpose: Govern training and enablement intake, design, delivery, evaluation, and maintenance.
+    audience: Learning, training, and enablement practitioners.
+    scope: Full lifecycle governance, intake, roles, analytics, integrations, and controlled change.
+    completion_score: 100
+    related_systems: [WF-001, WF-002]
+    artifacts:
+      - frameworks/fw-002-ld-operating-system.md
+      - https://github.com/travis-true/L-D-OS
+    evidence:
+      - evidence/fw-002-completion.md
+    next_action: Monitor pilot use and process improvement issues in the L-D-OS repository.
+    version: 1.0.1
+    last_reviewed: 2026-08-31
+    next_review: 2026-11-30
+    labels: [learning-development, governance, open-source]
+
+  - id: FW-003
+    name: Governed AI Enablement Framework
+    category: framework
+    status: in_progress
+    owner: Travis True
+    purpose: Coordinate role-based AI adoption through governance, practice, reinforcement, and measurement.
+    audience: Organizational AI enablement teams and employees.
+    scope: Public-safe derivative only; organization-specific policy and operational details remain internal.
+    completion_score: 70
+    related_systems: [FW-001, WF-002, PB-003]
+    artifacts:
+      - frameworks/fw-003-governed-ai-enablement.md
+    evidence: []
+    next_action: Define public-safe measures, decision rights, and pilot evidence.
+    version: 0.7.0
+    last_reviewed: 2026-09-02
+    next_review: 2026-10-02
+    labels: [ai-enablement, governance, internal-reference]
+
+  - id: FW-004
+    name: EnablementOps Framework
+    category: framework
+    status: incomplete
+    owner: Travis True
+    purpose: Unify the operating capabilities needed to run an enablement function.
+    audience: Centralized enablement teams.
+    scope: Needs analysis, governance, analytics, content operations, intake, lifecycle, change, support, and discoverability.
+    completion_score: 50
+    related_systems: [FW-002, WF-001]
+    artifacts:
+      - frameworks/fw-004-enablementops-framework.md
+    evidence: []
+    next_action: Define capability maturity levels, measures, ownership, and adoption roadmap.
+    version: 0.5.0
+    last_reviewed: 2026-09-02
+    next_review: 2026-10-02
+    labels: [enablement-operations, capability-model]
+
+  - id: WF-001
+    name: Training Request Intake and Triage
+    category: workflow
+    status: complete
+    owner: Travis True
+    purpose: Convert incoming requests into governed, prioritized enablement work.
+    audience: Requesters, enablement staff, reviewers, and approvers.
+    scope: Request capture, branching, draft output, human review, submission, and status tracking.
+    completion_score: 100
+    related_systems: [FW-002]
+    artifacts:
+      - workflows/wf-001-training-request-intake.md
+      - https://github.com/travis-true/L-D-OS
+    evidence:
+      - evidence/wf-001-completion.md
+    next_action: Evaluate pilot submissions and refine conditional guidance without changing governed IDs.
+    version: 0.2.0
+    last_reviewed: 2026-08-31
+    next_review: 2026-11-30
+    labels: [intake, triage, automation]
+
+  - id: WF-002
+    name: Governed Training Asset Publication
+    category: workflow
+    status: complete
+    owner: Travis True
+    purpose: Move a training request from clarification through verified publication and measurement.
+    audience: Training developers, reviewers, approvers, and publishers.
+    scope: Clarify, source, draft, verify, accessibility review, approve, publish, and measure.
+    completion_score: 90
+    related_systems: [FW-002, PB-001]
+    artifacts:
+      - workflows/wf-002-governed-publication.md
+    evidence:
+      - evidence/wf-002-completion.md
+    next_action: Add format-specific evidence and maintenance triggers as public-safe examples become available.
+    version: 1.0.0
+    last_reviewed: 2026-09-02
+    next_review: 2027-03-02
+    labels: [publishing, accessibility, quality-assurance]
+
+  - id: WF-003
+    name: Reuse Before Restarting
+    category: workflow
+    status: complete
+    owner: Travis True
+    purpose: Find, assess, and reuse existing approved work before creating a new asset.
+    audience: Knowledge workers using enterprise search and AI-supported retrieval.
+    scope: Search, inspect sources, assess fitness, adapt, validate, and preserve attribution.
+    completion_score: 90
+    related_systems: [WF-002]
+    artifacts:
+      - workflows/wf-003-reuse-before-restarting.md
+    evidence:
+      - evidence/wf-003-completion.md
+    next_action: Add an anonymized usage measure at the next review.
+    version: 1.0.0
+    last_reviewed: 2026-08-31
+    next_review: 2027-02-28
+    labels: [knowledge-management, reuse, public-safe]
+
+  - id: WF-004
+    name: Market Opportunity Validation
+    category: workflow
+    status: in_progress
+    owner: Travis True
+    purpose: Validate product ideas with buyer-intent evidence before full production.
+    audience: Independent learning-product creators.
+    scope: Complaint harvesting, gap analysis, competitor review, scoring, smallest test, and monitoring.
+    completion_score: 70
+    related_systems: [PB-002]
+    artifacts:
+      - workflows/wf-004-market-opportunity-validation.md
+    evidence: []
+    next_action: Standardize the scoring rubric and exit criteria using results from the current product pilot.
+    version: 0.7.0
+    last_reviewed: 2026-09-02
+    next_review: 2026-10-02
+    labels: [product-development, market-validation]
+
+  - id: PB-001
+    name: Employee Training Reference Production
+    category: playbook
+    status: complete
+    owner: Travis True
+    purpose: Produce polished employee references from source material with clarification, branding, screenshots, accessibility, and QA.
+    audience: Training and enablement content developers.
+    scope: Intake, requirements approval, drafting, screenshot planning, document production, SharePoint adaptation, and verification.
+    completion_score: 100
+    related_systems: [FW-001, WF-002]
+    artifacts:
+      - playbooks/pb-001-training-reference-production.md
+    evidence:
+      - evidence/pb-001-completion.md
+    next_action: Maintain format and platform variants as supporting standards change.
+    version: 1.0.0
+    last_reviewed: 2026-08-31
+    next_review: 2027-02-28
+    labels: [documentation, accessibility, quality-assurance]
+
+  - id: PB-002
+    name: AI Academic Integrity Toolkit Launch
+    category: playbook
+    status: in_progress
+    owner: Travis True
+    purpose: Validate, build, launch, and promote an educator-facing AI academic-integrity product.
+    audience: Teachers, school leaders, and education product creators.
+    scope: Fourteen-day execution plan, product packaging, listing assets, demonstrations, and channel-specific promotion.
+    completion_score: 65
+    related_systems: [WF-004]
+    artifacts:
+      - playbooks/pb-002-ai-academic-integrity-launch.md
+    evidence: []
+    next_action: Complete the live posting cycle, capture engagement evidence, and record the go-forward decision.
+    version: 0.6.0
+    last_reviewed: 2026-09-02
+    next_review: 2026-09-16
+    labels: [education, product-launch, ai-literacy]
+
+  - id: PB-003
+    name: 30-Day AI Adoption Plan
+    category: playbook
+    status: incomplete
+    owner: Travis True
+    purpose: Guide an organization from initial AI awareness to measured, reinforced adoption.
+    audience: AI enablement leads, managers, and participating employees.
+    scope: Readiness, role-based use cases, practice, manager support, reinforcement, measurement, and review.
+    completion_score: 45
+    related_systems: [FW-003]
+    artifacts:
+      - playbooks/pb-003-30-day-ai-adoption.md
+    evidence: []
+    next_action: Define weekly outcomes, owner checkpoints, measures, templates, and completion evidence.
+    version: 0.4.0
+    last_reviewed: 2026-09-02
+    next_review: 2026-10-02
+    labels: [ai-adoption, change-management]
+
+  - id: PB-004
+    name: Freelance Learning-Service Gig Build
+    category: playbook
+    status: in_progress
+    owner: Travis True
+    purpose: Package a defined learning service into a credible, scoped marketplace offer.
+    audience: Independent learning and enablement consultants.
+    scope: Positioning, metadata, packages, pricing, extras, intake questions, images, PDFs, and publication checks.
+    completion_score: 70
+    related_systems: [WF-004]
+    artifacts:
+      - playbooks/pb-004-freelance-gig-build.md
+    evidence: []
+    next_action: Finish the repeatable QA checklist and capture results from the next published gig.
+    version: 0.7.0
+    last_reviewed: 2026-09-02
+    next_review: 2026-10-02
+    labels: [freelance, service-design, marketplace]

@@ -1,0 +1,93 @@
+template_id: LACE-TMP-100
+template_version: 1.0.0
+status: active
+name: Task-Based Job Aid
+family: performance-support-and-documentation
+asset_type: task-based-job-aid
+purpose: Help a user complete one bounded task accurately at the moment of work.
+use_when:
+  - The user can perform with concise point-of-work guidance.
+  - The task is stable enough to maintain.
+  - Practice or extensive conceptual instruction is not the primary need.
+avoid_when:
+  - The task requires extensive policy interpretation or expert judgment.
+  - The procedure is high-risk and requires a controlled SOP.
+  - The content cannot be reduced without removing required decisions or warnings.
+variants:
+  - id: JA-1A
+    name: Linear task steps
+    selection_rule: Use for one stable path with limited decisions.
+  - id: JA-2A
+    name: Task steps plus troubleshooting
+    selection_rule: Use when predictable errors require immediate recovery guidance.
+required_inputs:
+  - Approved LACE-TMP-009 asset decision
+  - Approved LACE-TMP-005 asset build specification
+  - Controlled evidence index and verified task source
+  - Audience, environment, platform, accessibility, and output requirements
+required_sections:
+  - id: title-purpose
+    name: Title and purpose
+    required: true
+    purpose: Identify the task and when to use the aid.
+  - id: prerequisites
+    name: Prerequisites
+    required: false
+    purpose: State access, setup, or knowledge required before beginning.
+  - id: steps
+    name: Numbered task steps
+    required: true
+    purpose: Present the minimum complete action sequence.
+  - id: expected-result
+    name: Expected result
+    required: true
+    purpose: Tell the user how to confirm successful completion.
+  - id: troubleshooting
+    name: Troubleshooting
+    required: false
+    purpose: Recover from predictable errors without obscuring the primary path.
+  - id: support
+    name: Support and escalation
+    required: true
+    purpose: Identify when to stop and who owns unresolved issues.
+  - id: source-version
+    name: Source and version
+    required: true
+    purpose: Preserve authority, ownership, and maintenance traceability.
+design_rules:
+  - Start with the task and need-to-act information.
+  - Use numbered steps and concise imperative language.
+  - Keep warnings adjacent to the affected step.
+  - Use tables or callouts only when they improve action or comparison.
+  - Do not impose a page limit that removes required content.
+  - Keep generated source editable and verify the final distribution format.
+accessibility_requirements:
+  - Use real headings, lists, tables, and logical reading order.
+  - Meet applicable contrast and minimum-type requirements.
+  - Do not rely on color, position, shape, sound, or motion alone.
+  - Provide meaningful text alternatives for essential visuals.
+  - Verify readability at 200 percent zoom or equivalent reflow.
+media_rules:
+  - Use screenshots only when they materially improve task completion.
+  - Record screenshot purpose, capture guidance, callouts, alt text, platform, and version.
+  - Limit callouts to the minimum needed and never obscure interface controls.
+  - Use fictional, sanitized, or approved data.
+  - Preserve clean source and annotated media separately.
+output_package:
+  - Editable source file
+  - Approved distribution file
+  - Build specification and controlled evidence index
+  - Accessibility and quality results
+  - Screenshot or media source files when used
+  - Approval, change, and maintenance records
+acceptance_criteria:
+  - A user can identify when to use the aid and complete the task without missing a required action.
+  - Steps, decisions, warnings, results, recovery, and support are accurate and traceable.
+  - Interface labels, screenshots, links, and technical behavior are verified.
+  - The asset passes accessibility, visual, technical, and package gates.
+qa_gate:
+  visual_score_minimum: 95
+  critical_defects_maximum: 0
+  major_defects_maximum: 0
+  inspect_every_rendered_page_or_segment: true
+  master_package_gate_required: true

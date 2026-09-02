@@ -4,12 +4,12 @@ record_id: RECORD-ID
 system_id: SYS-001
 status: draft
 owner: RECORD-OWNER
-created_date: 2026-09-02
-updated_date: 2026-09-02
+created_date: "2026-09-02"
+updated_date: "2026-09-02"
 asset_id: ASSET-ID
 current_asset_version: 1.0.0
 review_trigger: scheduled
-review_date: 2026-09-02
+review_date: "2026-09-02"
 usage_summary: Record available use and performance evidence.
 issues: []
 source_changes: []

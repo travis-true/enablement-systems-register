@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/travis-true/enablement-systems-register/systems/sys-001-lace/schemas/entry-gate-record.schema.json",
+  "title": "LACE Entry Gate Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "template_id",
+    "template_version",
+    "record_id",
+    "system_id",
+    "status",
+    "owner",
+    "created_date",
+    "updated_date",
+    "request_id",
+    "outcome_defined",
+    "audience_defined",
+    "authoritative_sources_available",
+    "source_owner_identified",
+    "constraints_identified",
+    "upstream_approval_status",
+    "material_blockers",
+    "documented_constraints",
+    "gate_status",
+    "approved_by",
+    "decision_date"
+  ],
+  "properties": {
+    "template_id": {
+      "const": "LACE-TMP-002"
+    },
+    "template_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "system_id": {
+      "const": "SYS-001"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "in_review",
+        "approved",
+        "superseded"
+      ]
+    },
+    "owner": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "updated_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "request_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "outcome_defined": {
+      "type": "boolean"
+    },
+    "audience_defined": {
+      "type": "boolean"
+    },
+    "authoritative_sources_available": {
+      "type": "boolean"
+    },
+    "source_owner_identified": {
+      "type": "boolean"
+    },
+    "constraints_identified": {
+      "type": "boolean"
+    },
+    "upstream_approval_status": {
+      "enum": [
+        "not-required",
+        "pending",
+        "approved",
+        "rejected"
+      ]
+    },
+    "material_blockers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "documented_constraints": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "gate_status": {
+      "enum": [
+        "ready",
+        "ready-with-constraints",
+        "not-ready"
+      ]
+    },
+    "approved_by": {
+      "type": "string",
+      "minLength": 1
+    },
+    "decision_date": {
+      "type": "string",
+      "format": "date"
+    }
+  }
+}

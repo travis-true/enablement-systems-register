@@ -1,0 +1,95 @@
+template_id: LACE-TMP-101
+template_version: 1.0.0
+status: active
+name: Compact Quick Reference Guide
+family: performance-support-and-documentation
+asset_type: compact-quick-reference-guide
+purpose: Provide highly scannable recall, comparison, navigation, or post-learning support.
+use_when:
+  - The audience already has enough context to use concise cues.
+  - Information must be found quickly during or after work.
+  - A compact reference is sufficient and maintainable.
+avoid_when:
+  - The audience needs foundational instruction or coached practice.
+  - Required procedure, risk, or troubleshooting cannot fit without unsafe compression.
+  - The content changes too frequently for a fixed-layout reference.
+variants:
+  - id: QRG-1A
+    name: Linear procedure
+    selection_rule: Use for a compact ordered sequence with limited branching.
+  - id: QRG-1B
+    name: Visual task map
+    selection_rule: Use when navigation and choice paths must be visually explicit.
+  - id: QRG-2A
+    name: Procedure plus troubleshooting
+    selection_rule: Use when the primary procedure and immediate recovery guidance must remain balanced.
+required_inputs:
+  - Approved LACE-TMP-009 asset decision
+  - Approved LACE-TMP-005 asset build specification
+  - Controlled evidence index and verified reference content
+  - Selected QRG variant and documented capacity decision
+required_sections:
+  - id: title-use
+    name: Title and use condition
+    required: true
+    purpose: Establish topic and moment of need.
+  - id: reference-content
+    name: Primary reference content
+    required: true
+    purpose: Present the minimum cues, actions, choices, or comparisons needed.
+  - id: verification
+    name: Check or confirmation
+    required: true
+    purpose: Help the user verify the correct result or selection.
+  - id: troubleshooting
+    name: Troubleshooting or escalation
+    required: false
+    purpose: Address immediate recovery where the selected variant requires it.
+  - id: support
+    name: Support
+    required: true
+    purpose: Define the assistance or escalation path.
+  - id: source-version
+    name: Source and version
+    required: true
+    purpose: Preserve authority and maintenance traceability.
+design_rules:
+  - Optimize for scanning, retrieval, and action rather than narrative reading.
+  - Keep the selected variant's grid, zones, components, and capacity internally consistent.
+  - Keep QRG-1B navigation and choice paths visually clear.
+  - Keep QRG-2A procedure and troubleshooting content balanced.
+  - Use short sections and compact tables or cards where they improve retrieval.
+  - Do not force required content into an arbitrary one-page limit.
+  - Use an editable fixed-layout source when visual placement is essential.
+accessibility_requirements:
+  - Preserve logical reading order across columns, cards, and visual paths.
+  - Use real headings, lists, and tables in accessible outputs.
+  - Meet applicable contrast and minimum-type requirements.
+  - Do not rely on color, location, shape, or icon meaning alone.
+  - Provide text equivalents for every required visual path.
+  - Verify the exported distribution file separately from the editable master.
+media_rules:
+  - Include screenshots or icons only when they reduce search or interpretation time.
+  - Record purpose, capture guidance, callouts, alt text, platform, and version.
+  - Keep callouts minimal and avoid covering interface controls.
+  - Use sanitized or approved data.
+  - Preserve source and annotated media separately.
+output_package:
+  - Editable fixed-layout source
+  - Accessible distribution file
+  - Build specification and controlled evidence index
+  - Accessibility and visual QA results
+  - Media source files when used
+  - Approval, change, and maintenance records
+acceptance_criteria:
+  - The intended information can be located quickly without relying on prior layout knowledge.
+  - Required cues, actions, decisions, verification, and support remain complete.
+  - The selected variant matches the information structure.
+  - Content fits without clipping, unsafe compression, or hidden overflow.
+  - The asset passes accessibility, visual, technical, and package gates.
+qa_gate:
+  visual_score_minimum: 95
+  critical_defects_maximum: 0
+  major_defects_maximum: 0
+  inspect_every_rendered_page_or_segment: true
+  master_package_gate_required: true

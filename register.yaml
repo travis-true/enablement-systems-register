@@ -14,20 +14,27 @@ systems:
     status: complete
     owner: Travis True
     purpose: Structure reliable prompts through Goal, Context, Source, and Expectation.
-    audience: Employees and prompt authors using generative AI tools.
-    scope: Prompt design, explanation, improvement, validation, and app-specific optimization.
+    audience: Prompt authors using generative AI tools.
+    scope: Prompt design, explanation, improvement, optimization, validation, safety, practice, and reusable collection curation.
     completion_score: 100
     related_systems: [PB-001]
     artifacts:
-      - frameworks/fw-001-gcse-prompt-framework.md
+      - frameworks/fw-001-gcse-prompt-framework/README.md
+      - frameworks/fw-001-gcse-prompt-framework/framework.md
+      - frameworks/fw-001-gcse-prompt-framework/quick-reference.md
+      - frameworks/fw-001-gcse-prompt-framework/templates/prompt-template.md
+      - frameworks/fw-001-gcse-prompt-framework/examples/example-prompts.md
+      - frameworks/fw-001-gcse-prompt-framework/practice/practice-activities.md
+      - frameworks/fw-001-gcse-prompt-framework/governance/safety-and-quality.md
+      - frameworks/fw-001-gcse-prompt-framework/implementation/operating-guide.md
+      - frameworks/fw-001-gcse-prompt-framework/merge-decisions.md
     evidence:
       - evidence/fw-001-completion.md
-    next_action: Review examples and validation criteria at the next scheduled review.
-    version: 1.0.0
-    last_reviewed: 2026-08-25
-    next_review: 2027-02-25
+    next_action: Monitor use and review the package at the next scheduled review.
+    version: 2.0.0
+    last_reviewed: 2026-09-02
+    next_review: 2027-03-02
     labels: [ai-enablement, prompting, public-safe]
-
   - id: FW-002
     name: L&D Operating System
     category: framework
@@ -243,3 +250,4 @@ systems:
     last_reviewed: 2026-09-02
     next_review: 2026-10-02
     labels: [freelance, service-design, marketplace]
+

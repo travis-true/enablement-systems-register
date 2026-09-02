@@ -16,7 +16,7 @@ Templates, evidence, and related artifacts support systems but are not registere
 .
 ├── register.yaml              # Canonical system index
 ├── schema/                    # Machine-readable validation rules
-├── frameworks/                # Framework documentation
+├── frameworks/                # Framework documents or canonical packages
 ├── workflows/                 # Workflow documentation
 ├── playbooks/                 # Playbook documentation
 ├── templates/                 # Reusable authoring templates
@@ -39,23 +39,23 @@ Templates, evidence, and related artifacts support systems but are not registere
 
 Completion scores are directional portfolio signals, not substitutes for evidence. A system cannot be `complete` or `maintenance` without at least one evidence reference.
 
-## IDs and files
+## IDs and paths
 
 - Framework: `FW-###`
 - Workflow: `WF-###`
 - Playbook: `PB-###`
-- Detail file: `<id>-<short-slug>.md`, using lowercase IDs in filenames
+- Detail path: `<id>-<short-slug>.md` for a single-file system or `<id>-<short-slug>/README.md` for a package, using lowercase IDs
 
 IDs are permanent and never reused. Retired systems move to `archive/` but remain in the register.
 
 ## Public-safety boundary
 
-This repository contains only public or sanitized descriptions. Do not commit confidential company information, employee data, internal screenshots, protected brand assets, credentials, or proprietary source material. Internal systems may be represented by a generic derivative and an `internal_reference` label without identifying the employer or storage location.
+This repository contains only public or sanitized descriptions. Do not commit confidential company information, employee data, internal screenshots, protected assets, credentials, or proprietary source material. Internal systems may be represented by a generic derivative and an `internal_reference` label without identifying the employer or storage location.
 
 ## Change process
 
 1. Open a system issue or change request.
-2. Update the detail file and `register.yaml` on a branch.
+2. Update the detail path and `register.yaml` on a branch.
 3. Run `python scripts/validate_register.py`.
 4. Submit a pull request with evidence and impact notes.
 5. Merge after review; then refresh the Notion summary record.

@@ -1,0 +1,531 @@
+engine:
+  id: LACE-DE-001
+  name: LACE Asset Decision Engine
+  version: 1.0.0
+  status: approved
+  system_id: SYS-001
+  output_template_id: LACE-TMP-009
+  evaluation_model: ordered-first-match
+  numeric_score_role: advisory-only
+  maximum_companions: 3
+
+input_contract:
+  required:
+    - mandatory_intake_complete
+    - performance_gap_observed
+    - cause
+    - desired_action
+    - task_complexity
+    - task_frequency
+    - risk_level
+    - moment_of_need
+    - practice_required
+    - feedback_required
+    - competence_evidence_required
+    - facilitation_required
+    - interaction_required
+    - visual_demonstration_required
+    - async_scale_required
+    - tracking_required
+    - content_pattern
+    - decision_branches
+    - content_volatility
+    - source_status
+    - accessibility_feasible
+    - delivery_channels
+  vocabulary:
+    cause:
+      - knowledge
+      - skill
+      - judgment
+      - practice
+      - moment-of-work-guidance
+      - awareness
+      - update
+      - alignment
+      - retrieval
+      - access
+      - permission
+      - workflow
+      - policy
+      - staffing
+      - incentive
+      - system
+      - measurement
+      - operational-production
+      - unknown
+    desired_action:
+      - recall
+      - perform
+      - decide
+      - practice
+      - demonstrate-competence
+      - understand
+      - facilitate
+      - communicate
+      - plan
+      - evaluate
+    task_complexity: [low, moderate, high]
+    task_frequency: [rare, periodic, frequent]
+    risk_level: [low, moderate, high, critical]
+    moment_of_need: [before-work, during-work, after-learning, ongoing]
+    content_pattern: [procedure, reference, questions, decision, explanation, demonstration, communication, evaluation, mixed]
+    content_volatility: [low, moderate, high]
+    source_status: [verified, partial, unverified]
+
+precedence:
+  - id: PRE-001
+    rule: Mandatory blockers are evaluated before route or asset rules.
+  - id: PRE-002
+    rule: Root cause controls the intervention route before preferred format.
+  - id: PRE-003
+    rule: Operational barriers are corrected before training is selected.
+  - id: PRE-004
+    rule: One primary asset is selected before companions.
+  - id: PRE-005
+    rule: Companions require distinct purposes and cannot duplicate the primary asset.
+  - id: PRE-006
+    rule: Human approval controls production; confidence never overrides a blocker.
+
+blockers:
+  - id: BLK-001
+    priority: 1000
+    match: all
+    when:
+      - field: mandatory_intake_complete
+        operator: equals
+        value: false
+    outcome: blocked
+    reason: Mandatory intake information is incomplete.
+  - id: BLK-002
+    priority: 990
+    match: all
+    when:
+      - field: source_status
+        operator: equals
+        value: unverified
+    outcome: blocked
+    reason: Required source material is unverified.
+  - id: BLK-003
+    priority: 980
+    match: all
+    when:
+      - field: accessibility_feasible
+        operator: equals
+        value: false
+    outcome: blocked
+    reason: The proposed delivery cannot meet applicable accessibility requirements.
+
+route_rules:
+  - id: RTE-001
+    priority: 900
+    match: all
+    when:
+      - field: cause
+        operator: in
+        value: [access, permission, workflow, policy, staffing, incentive, system]
+    route: operational-fix
+    rationale: Correct the operational barrier before producing training.
+    human_review: [process-or-system-owner]
+  - id: RTE-002
+    priority: 850
+    match: all
+    when:
+      - field: cause
+        operator: equals
+        value: measurement
+    route: assessment-or-evaluation
+    rationale: The primary need is evidence or measurement.
+    human_review: [measurement-owner]
+  - id: RTE-003
+    priority: 800
+    match: all
+    when:
+      - field: cause
+        operator: in
+        value: [awareness, update, alignment]
+    route: communication-or-reference
+    rationale: The primary need is awareness, alignment, or an update.
+    human_review: []
+  - id: RTE-004
+    priority: 750
+    match: any
+    when:
+      - field: cause
+        operator: in
+        value: [moment-of-work-guidance, retrieval]
+      - field: moment_of_need
+        operator: equals
+        value: during-work
+    route: performance-support
+    rationale: Guidance is required in the workflow.
+    human_review: []
+  - id: RTE-005
+    priority: 700
+    match: all
+    when:
+      - field: cause
+        operator: in
+        value: [knowledge, skill, judgment, practice]
+      - field: practice_required
+        operator: equals
+        value: true
+    route: training-or-blended
+    rationale: The gap requires instruction with practice.
+    human_review: []
+  - id: RTE-006
+    priority: 650
+    match: all
+    when:
+      - field: cause
+        operator: in
+        value: [knowledge, skill, judgment]
+    route: training
+    rationale: The gap is attributable to knowledge, skill, or judgment.
+    human_review: []
+  - id: RTE-999
+    priority: 1
+    match: all
+    when: []
+    route: further-analysis
+    rationale: Evidence does not support a governed intervention recommendation.
+    human_review: [learning-strategist]
+
+primary_asset_rules:
+  - id: AST-001
+    priority: 950
+    compatible_routes: [operational-fix]
+    match: all
+    when: []
+    recommendation:
+      family: null
+      asset_type: operational-fix-record
+      template_id: null
+    rationale: LACE records the decision but does not substitute a learning asset for an operational correction.
+
+  - id: AST-002
+    priority: 920
+    compatible_routes: [assessment-or-evaluation]
+    match: any
+    when:
+      - field: competence_evidence_required
+        operator: equals
+        value: true
+      - field: desired_action
+        operator: in
+        value: [demonstrate-competence, evaluate]
+    recommendation:
+      family: planning-and-evaluation
+      asset_type: assessment
+      template_id: null
+    rationale: Evidence of competence or performance must be collected.
+
+  - id: AST-003
+    priority: 910
+    compatible_routes: [assessment-or-evaluation]
+    match: all
+    when: []
+    recommendation:
+      family: planning-and-evaluation
+      asset_type: measurement-plan
+      template_id: null
+    rationale: The need is evaluation planning rather than instruction.
+
+  - id: AST-004
+    priority: 900
+    compatible_routes: [performance-support, communication-or-reference, training, training-or-blended]
+    match: all
+    when:
+      - field: decision_branches
+        operator: equals
+        value: true
+      - field: desired_action
+        operator: equals
+        value: decide
+    recommendation:
+      family: performance-support-and-documentation
+      asset_type: decision-tree
+      template_id: null
+    rationale: The user must choose among governed paths.
+
+  - id: AST-005
+    priority: 890
+    compatible_routes: [performance-support, training, training-or-blended]
+    match: all
+    when:
+      - field: content_pattern
+        operator: equals
+        value: procedure
+      - field: task_complexity
+        operator: equals
+        value: high
+      - field: risk_level
+        operator: in
+        value: [high, critical]
+    recommendation:
+      family: performance-support-and-documentation
+      asset_type: standard-operating-procedure
+      template_id: null
+    rationale: A complex, high-risk procedure requires controlled procedural documentation.
+
+  - id: AST-006
+    priority: 880
+    compatible_routes: [performance-support]
+    match: all
+    when:
+      - field: content_pattern
+        operator: equals
+        value: procedure
+      - field: task_complexity
+        operator: in
+        value: [low, moderate]
+    recommendation:
+      family: performance-support-and-documentation
+      asset_type: task-based-job-aid
+      template_id: LACE-TMP-100
+    rationale: A bounded task can be completed with point-of-work guidance.
+
+  - id: AST-007
+    priority: 870
+    compatible_routes: [performance-support, communication-or-reference]
+    match: all
+    when:
+      - field: content_pattern
+        operator: equals
+        value: questions
+    recommendation:
+      family: performance-support-and-documentation
+      asset_type: frequently-asked-questions
+      template_id: null
+    rationale: The source and use need are organized around recurring questions.
+
+  - id: AST-008
+    priority: 860
+    compatible_routes: [performance-support, communication-or-reference]
+    match: any
+    when:
+      - field: moment_of_need
+        operator: equals
+        value: after-learning
+      - field: desired_action
+        operator: equals
+        value: recall
+      - field: content_pattern
+        operator: equals
+        value: reference
+    recommendation:
+      family: performance-support-and-documentation
+      asset_type: compact-quick-reference-guide
+      template_id: LACE-TMP-101
+    rationale: The user needs compact recall or reference support.
+
+  - id: AST-009
+    priority: 850
+    compatible_routes: [performance-support, communication-or-reference]
+    match: all
+    when:
+      - field: content_pattern
+        operator: equals
+        value: explanation
+    recommendation:
+      family: performance-support-and-documentation
+      asset_type: knowledge-article
+      template_id: null
+    rationale: Durable explanation or searchable reference is required.
+
+  - id: AST-010
+    priority: 820
+    compatible_routes: [training, training-or-blended]
+    match: any
+    when:
+      - field: facilitation_required
+        operator: equals
+        value: true
+      - field: interaction_required
+        operator: equals
+        value: true
+    recommendation:
+      family: instructor-led-and-virtual
+      asset_type: facilitated-learning-package
+      template_id: null
+    rationale: Real-time facilitation, interaction, or coached practice is required.
+
+  - id: AST-011
+    priority: 810
+    compatible_routes: [training, training-or-blended]
+    match: all
+    when:
+      - field: async_scale_required
+        operator: equals
+        value: true
+    recommendation:
+      family: self-paced-digital
+      asset_type: self-paced-learning-module
+      template_id: null
+    rationale: Consistent asynchronous learning is required at scale.
+
+  - id: AST-012
+    priority: 800
+    compatible_routes: [training, training-or-blended, performance-support]
+    match: all
+    when:
+      - field: visual_demonstration_required
+        operator: equals
+        value: true
+      - field: content_pattern
+        operator: equals
+        value: demonstration
+    recommendation:
+      family: video-and-multimedia
+      asset_type: demonstration-video
+      template_id: null
+    rationale: Motion or visual sequence is essential to understanding performance.
+
+  - id: AST-013
+    priority: 790
+    compatible_routes: [communication-or-reference]
+    match: all
+    when:
+      - field: content_pattern
+        operator: equals
+        value: communication
+    recommendation:
+      family: communications-and-adoption
+      asset_type: communication-asset
+      template_id: null
+    rationale: The outcome requires awareness, alignment, or action communication.
+
+  - id: AST-014
+    priority: 10
+    compatible_routes: [training, training-or-blended, performance-support, communication-or-reference, assessment-or-evaluation]
+    match: all
+    when: []
+    recommendation:
+      family: null
+      asset_type: unresolved
+      template_id: null
+    rationale: No asset rule is sufficiently supported; human selection is required.
+
+companion_rules:
+  - id: CMP-001
+    purpose: reinforce
+    match: all
+    when:
+      - field: task_frequency
+        operator: in
+        value: [rare, periodic]
+    recommendation:
+      family: performance-support-and-documentation
+      asset_type: compact-quick-reference-guide
+      template_id: LACE-TMP-101
+
+  - id: CMP-002
+    purpose: assess
+    match: all
+    when:
+      - field: competence_evidence_required
+        operator: equals
+        value: true
+    recommendation:
+      family: planning-and-evaluation
+      asset_type: assessment
+      template_id: null
+
+  - id: CMP-003
+    purpose: prepare
+    match: all
+    when:
+      - field: cause
+        operator: in
+        value: [awareness, update, alignment]
+    recommendation:
+      family: communications-and-adoption
+      asset_type: communication-asset
+      template_id: null
+
+  - id: CMP-004
+    purpose: reinforce
+    match: all
+    when:
+      - field: practice_required
+        operator: equals
+        value: true
+      - field: task_frequency
+        operator: equals
+        value: rare
+    recommendation:
+      family: communications-and-adoption
+      asset_type: reinforcement-plan
+      template_id: null
+
+companion_controls:
+  allowed_purposes: [prepare, deliver, practice, assess, reinforce, administer, produce]
+  distinct_purpose_required: true
+  duplicate_primary_prohibited: true
+  duplicate_companion_prohibited: true
+  maximum: 3
+
+warnings:
+  - id: WRN-001
+    match: all
+    when:
+      - field: content_volatility
+        operator: equals
+        value: high
+    message: Prefer maintainable text or componentized media; require re-verification before release.
+  - id: WRN-002
+    match: all
+    when:
+      - field: source_status
+        operator: equals
+        value: partial
+    message: Restrict recommendations to verified content and record unresolved source gaps.
+  - id: WRN-003
+    match: all
+    when:
+      - field: risk_level
+        operator: in
+        value: [high, critical]
+    message: Require specialist review, explicit acceptance criteria, and release approval.
+
+tie_breakers:
+  - smallest-effective-solution
+  - closest-to-moment-of-need
+  - lowest-maintenance-burden
+  - strongest-accessibility-and-usability-fit
+  - strongest-source-support
+
+confidence:
+  high:
+    requirements:
+      - mandatory_intake_complete is true
+      - source_status is verified
+      - no blockers apply
+      - one route rule and one non-fallback asset rule control the result
+  medium:
+    requirements:
+      - source_status is partial
+      - recommendation is limited to verified content
+      - human review is recorded
+  low:
+    requirements:
+      - fallback route or unresolved asset rule applies
+      - recommendation cannot be approved without further analysis
+
+human_review_triggers:
+  - risk_level is high or critical
+  - source_status is partial
+  - route is operational-fix
+  - primary asset is unresolved
+  - requested override changes route, family, type, or companion count
+  - content volatility is high
+  - delivery or accessibility constraints conflict
+  - recommendation contains restricted or confidential sources
+
+reopen_triggers:
+  - material audience change
+  - material outcome change
+  - delivery or format change
+  - scope change
+  - source-authority change
+  - risk change

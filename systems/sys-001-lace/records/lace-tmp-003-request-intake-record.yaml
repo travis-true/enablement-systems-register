@@ -4,12 +4,12 @@ record_id: RECORD-ID
 system_id: SYS-001
 status: draft
 owner: RECORD-OWNER
-created_date: 2026-09-02
-updated_date: 2026-09-02
+created_date: "2026-09-02"
+updated_date: "2026-09-02"
 request_id: REQUEST-ID
 title: Request title
 requester: REQUESTER
-request_date: 2026-09-02
+request_date: "2026-09-02"
 business_need: Describe the business or performance need.
 performance_outcome: Describe what the audience must do.
 audience: Define the intended audience.

@@ -1,0 +1,22 @@
+template_id: LACE-TMP-004
+template_version: 1.0.0
+record_id: RECORD-ID
+system_id: SYS-001
+status: draft
+owner: RECORD-OWNER
+created_date: 2026-09-02
+updated_date: 2026-09-02
+request_id: REQUEST-ID
+entries:
+  - evidence_id: EVIDENCE-ID
+    title: Source title
+    source_type: Source type
+    location: Controlled source location
+    authority_level: unverified
+    owner: SOURCE-OWNER
+    version_or_date: Version or effective date
+    use_status: pending-validation
+    supported_claims:
+      - Identify supported claims or sections.
+    limitations:
+      - Record known limitations.

@@ -6,8 +6,8 @@ These are the approved pilot-ready production kits for SYS-001.
 |---|---|---|---|
 | LACE-TMP-100 | Task-Based Job Aid | `task-based-job-aid` | Supported alternative and inherited LACE format |
 | LACE-TMP-101 | Compact Quick Reference Guide | `compact-quick-reference-guide` | QRG pilot |
-| LACE-TMP-102 | Detailed Procedural Guide | `detailed-procedural-guide` | Detailed-guide pilot |
-| LACE-TMP-400 | Instructional Multimedia Package | `instructional-multimedia-package` | Multimedia pilot |
+| LACE-TMP-102 | Detailed Procedural Guide | `standard-operating-procedure` or `knowledge-article` requiring detailed instruction | Detailed-guide pilot |
+| LACE-TMP-400 | Instructional Multimedia Package | `demonstration-video` | Multimedia pilot |
 
 ## Required use
 

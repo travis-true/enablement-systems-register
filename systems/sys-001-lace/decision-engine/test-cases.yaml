@@ -44,6 +44,7 @@ cases:
       asset_rule: AST-006
       family: performance-support-and-documentation
       asset_type: task-based-job-aid
+      template_id: LACE-TMP-100
 
   - id: TC-002
     name: Compact recall after learning
@@ -59,6 +60,7 @@ cases:
       asset_rule: AST-008
       family: performance-support-and-documentation
       asset_type: compact-quick-reference-guide
+      template_id: LACE-TMP-101
       companion_count: 0
 
   - id: TC-003
@@ -110,6 +112,7 @@ cases:
       asset_rule: AST-012
       family: video-and-multimedia
       asset_type: demonstration-video
+      template_id: LACE-TMP-400
 
   - id: TC-006
     name: Awareness update
@@ -177,6 +180,7 @@ cases:
       asset_rule: AST-005
       family: performance-support-and-documentation
       asset_type: standard-operating-procedure
+      template_id: LACE-TMP-102
 
   - id: TC-011
     name: Companion deduplication and governed warnings
@@ -204,3 +208,20 @@ cases:
       companion_purposes: [reinforce, assess]
       warning_rules: [WRN-001, WRN-002, WRN-003]
       confidence: medium
+
+  - id: TC-012
+    name: Detailed searchable explanation
+    inputs:
+      cause: retrieval
+      desired_action: understand
+      content_pattern: explanation
+      moment_of_need: during-work
+      task_complexity: high
+    expected:
+      status: recommendation-ready
+      route_rule: RTE-004
+      route: performance-support
+      asset_rule: AST-009
+      family: performance-support-and-documentation
+      asset_type: knowledge-article
+      template_id: LACE-TMP-102

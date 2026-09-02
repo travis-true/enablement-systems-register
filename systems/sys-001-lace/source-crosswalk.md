@@ -29,6 +29,22 @@ A lower source cannot silently override a higher source.
 | Release and maintenance | Lifecycle and version control | Release authority | Approval, change, and maintenance records | LACE prepares the package; publication remains downstream |
 | Automation | Runtime assembly and repair concepts | Planned production/regression direction | Manual controlled baseline | Automation permitted within explicit human decision boundaries |
 
+## Decision-engine consolidation
+
+LACE-DE-001 consolidates the following predecessor controls:
+
+| Predecessor source | Retained authority |
+|---|---|
+| Selection Decision Logic | Cause precedence, stop rules, confidence limits, and reopening triggers |
+| Primary and Companion Asset Selection Rules | One primary asset, zero to three distinct-purpose companions, and duplication controls |
+| Asset Selection and Approval Workflow | Mandatory intake, human approval, override tradeoffs, and change reopening |
+| Delivery Method and Format Selection Rules | Moment of use, interaction, channel, native format, derivative, accessibility, and maintenance checks |
+| Master Asset Recommendation Matrix | Ranking evidence across the governed asset families |
+| LDCS Blueprint Library | Confirmed asset types and blueprint intent |
+| Phase 5 production taxonomy | Six canonical LACE asset families |
+
+Numeric ranking remains advisory. Blockers, cause precedence, source authority, accessibility, risk, and human approval remain controlling.
+
 ## Template namespace resolution
 
 LACE uses the permanent canonical syntax `LACE-TMP-###`. Predecessor identifiers remain source-qualified aliases and are prohibited for new production.

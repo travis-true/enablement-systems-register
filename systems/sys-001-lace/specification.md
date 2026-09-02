@@ -156,7 +156,8 @@ Every asset build specification must define:
 1. Search for approved reusable assets and components.
 2. Assess currency, authority, fitness, licensing, and modification needs.
 3. Select the smallest effective asset or coordinated asset set.
-4. Record the decision and rejected alternatives.
+4. Evaluate `LACE-DE-001` using the approved machine-readable rules.
+5. Record the route, primary asset, no more than three distinct-purpose companions, rejected alternatives, warnings, confidence, reviews, and approval in `LACE-TMP-009`.
 
 ### Stage 4 — Blueprint and content plan
 

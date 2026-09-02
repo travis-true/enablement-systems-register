@@ -1,0 +1,178 @@
+suite:
+  id: LACE-DE-001-TESTS
+  version: 1.0.0
+  engine_id: LACE-DE-001
+
+defaults:
+  mandatory_intake_complete: true
+  performance_gap_observed: true
+  cause: knowledge
+  desired_action: perform
+  task_complexity: moderate
+  task_frequency: periodic
+  risk_level: moderate
+  moment_of_need: before-work
+  practice_required: false
+  feedback_required: false
+  competence_evidence_required: false
+  facilitation_required: false
+  interaction_required: false
+  visual_demonstration_required: false
+  async_scale_required: false
+  tracking_required: false
+  content_pattern: mixed
+  decision_branches: false
+  content_volatility: low
+  source_status: verified
+  accessibility_feasible: true
+  delivery_channels: [digital]
+
+cases:
+  - id: TC-001
+    name: Low-risk point-of-work procedure
+    inputs:
+      cause: moment-of-work-guidance
+      desired_action: perform
+      content_pattern: procedure
+      moment_of_need: during-work
+      task_complexity: low
+      risk_level: low
+    expected:
+      status: recommendation-ready
+      route_rule: RTE-004
+      route: performance-support
+      asset_rule: AST-006
+      family: performance-support-and-documentation
+      asset_type: task-based-job-aid
+
+  - id: TC-002
+    name: Compact recall after learning
+    inputs:
+      cause: retrieval
+      desired_action: recall
+      content_pattern: reference
+      moment_of_need: after-learning
+    expected:
+      status: recommendation-ready
+      route_rule: RTE-004
+      route: performance-support
+      asset_rule: AST-008
+      family: performance-support-and-documentation
+      asset_type: compact-quick-reference-guide
+
+  - id: TC-003
+    name: Facilitated judgment practice
+    inputs:
+      cause: judgment
+      desired_action: practice
+      content_pattern: mixed
+      practice_required: true
+      feedback_required: true
+      facilitation_required: true
+      interaction_required: true
+    expected:
+      status: recommendation-ready
+      route_rule: RTE-005
+      route: training-or-blended
+      asset_rule: AST-010
+      family: instructor-led-and-virtual
+      asset_type: facilitated-learning-package
+
+  - id: TC-004
+    name: Asynchronous learning at scale
+    inputs:
+      cause: knowledge
+      desired_action: understand
+      content_pattern: explanation
+      practice_required: true
+      async_scale_required: true
+      tracking_required: true
+    expected:
+      status: recommendation-ready
+      route_rule: RTE-005
+      route: training-or-blended
+      asset_rule: AST-011
+      family: self-paced-digital
+      asset_type: self-paced-learning-module
+
+  - id: TC-005
+    name: Visual task demonstration
+    inputs:
+      cause: skill
+      desired_action: perform
+      content_pattern: demonstration
+      visual_demonstration_required: true
+    expected:
+      status: recommendation-ready
+      route_rule: RTE-006
+      route: training
+      asset_rule: AST-012
+      family: video-and-multimedia
+      asset_type: demonstration-video
+
+  - id: TC-006
+    name: Awareness update
+    inputs:
+      cause: update
+      desired_action: communicate
+      content_pattern: communication
+    expected:
+      status: recommendation-ready
+      route_rule: RTE-003
+      route: communication-or-reference
+      asset_rule: AST-013
+      family: communications-and-adoption
+      asset_type: communication-asset
+
+  - id: TC-007
+    name: Competence measurement
+    inputs:
+      cause: measurement
+      desired_action: demonstrate-competence
+      content_pattern: evaluation
+      competence_evidence_required: true
+    expected:
+      status: recommendation-ready
+      route_rule: RTE-002
+      route: assessment-or-evaluation
+      asset_rule: AST-002
+      family: planning-and-evaluation
+      asset_type: assessment
+
+  - id: TC-008
+    name: Permission barrier
+    inputs:
+      cause: permission
+      desired_action: perform
+      content_pattern: procedure
+    expected:
+      status: recommendation-ready
+      route_rule: RTE-001
+      route: operational-fix
+      asset_rule: AST-001
+      family: null
+      asset_type: operational-fix-record
+
+  - id: TC-009
+    name: Incomplete mandatory intake
+    inputs:
+      mandatory_intake_complete: false
+    expected:
+      status: blocked
+      blocker_rule: BLK-001
+
+  - id: TC-010
+    name: Complex high-risk procedure
+    inputs:
+      cause: skill
+      desired_action: perform
+      content_pattern: procedure
+      task_complexity: high
+      risk_level: critical
+    expected:
+      status: recommendation-ready
+      route_rule: RTE-006
+      route: training
+      asset_rule: AST-005
+      family: performance-support-and-documentation
+      asset_type: standard-operating-procedure

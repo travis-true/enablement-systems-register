@@ -4,8 +4,8 @@ record_id: RECORD-ID
 system_id: SYS-001
 status: draft
 owner: RECORD-OWNER
-created_date: 2026-09-02
-updated_date: 2026-09-02
+created_date: "2026-09-02"
+updated_date: "2026-09-02"
 request_id: REQUEST-ID
 desired_outcome: Describe the observable outcome.
 need_type: mixed
@@ -13,4 +13,4 @@ training_appropriate: true
 rationale: Record the evidence supporting this determination.
 selected_route: further-analysis
 decision_owner: DECISION-OWNER
-decision_date: 2026-09-02
+decision_date: "2026-09-02"

@@ -1,6 +1,6 @@
 register:
   name: Enablement Systems Register
-  schema_version: 1.0.0
+  schema_version: 1.1.0
   owner: Travis True
   authoritative_location: GitHub
   discovery_layer: Notion
@@ -8,6 +8,28 @@ register:
   last_updated: 2026-09-02
 
 systems:
+  - id: SYS-001
+    name: LACE Learning Asset Creation Engine
+    category: system
+    status: complete
+    owner: Travis True
+    purpose: Transform approved knowledge and learning-design decisions into consistent, accessible, traceable, production-ready learning assets.
+    audience: Learning strategists, instructional designers, asset developers, reviewers, approvers, and publishers.
+    scope: Intake, source intelligence, reuse, asset selection, production specification, content and visual creation, rendering, repair, quality gates, and release handoff.
+    completion_score: 90
+    related_systems: [FW-002, WF-002, WF-003, PB-001]
+    artifacts:
+      - systems/sys-001-lace/README.md
+      - systems/sys-001-lace/specification.md
+      - systems/sys-001-lace/source-crosswalk.md
+    evidence:
+      - evidence/sys-001-completion.md
+    next_action: Pilot the canonical specification and establish one governed machine-readable template namespace.
+    version: 1.0.0
+    last_reviewed: 2026-09-02
+    next_review: 2027-03-02
+    labels: [learning-assets, content-production, accessibility, quality-assurance, public-safe]
+
   - id: FW-001
     name: GCSE Prompt Framework
     category: framework
@@ -44,7 +66,7 @@ systems:
     audience: Learning, training, and enablement practitioners.
     scope: Full lifecycle governance, intake, roles, analytics, integrations, and controlled change.
     completion_score: 100
-    related_systems: [WF-001, WF-002]
+    related_systems: [SYS-001, WF-001, WF-002]
     artifacts:
       - frameworks/fw-002-ld-operating-system.md
       - https://github.com/travis-true/L-D-OS
@@ -124,7 +146,7 @@ systems:
     audience: Training developers, reviewers, approvers, and publishers.
     scope: Clarify, source, draft, verify, accessibility review, approve, publish, and measure.
     completion_score: 90
-    related_systems: [FW-002, PB-001]
+    related_systems: [SYS-001, FW-002, PB-001]
     artifacts:
       - workflows/wf-002-governed-publication.md
     evidence:
@@ -144,7 +166,7 @@ systems:
     audience: Knowledge workers using enterprise search and AI-supported retrieval.
     scope: Search, inspect sources, assess fitness, adapt, validate, and preserve attribution.
     completion_score: 90
-    related_systems: [WF-002]
+    related_systems: [SYS-001, WF-002]
     artifacts:
       - workflows/wf-003-reuse-before-restarting.md
     evidence:
@@ -183,7 +205,7 @@ systems:
     audience: Training and enablement content developers.
     scope: Intake, requirements approval, drafting, screenshot planning, document production, SharePoint adaptation, and verification.
     completion_score: 100
-    related_systems: [FW-001, WF-002]
+    related_systems: [SYS-001, FW-001, WF-002]
     artifacts:
       - playbooks/pb-001-training-reference-production.md
     evidence:

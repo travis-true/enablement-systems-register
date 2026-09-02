@@ -1,9 +1,10 @@
 # Enablement Systems Register
 
-The authoritative, version-controlled inventory of Travis True's reusable enablement frameworks, workflows, and playbooks. Notion may mirror summary fields for discovery and portfolio views; GitHub remains the source of truth.
+The authoritative, version-controlled inventory of Travis True's reusable enablement systems, frameworks, workflows, and playbooks. Notion may mirror summary fields for discovery and portfolio views; GitHub remains the source of truth.
 
 ## What belongs here
 
+- **Systems** — end-to-end operating engines that coordinate multiple frameworks, workflows, playbooks, standards, and controls.
 - **Frameworks** — principles and decision structures that guide work.
 - **Workflows** — ordered steps that move work from trigger to outcome.
 - **Playbooks** — reusable operating guidance combining roles, rules, judgment, examples, and exceptions.
@@ -16,6 +17,7 @@ Templates, evidence, and related artifacts support systems but are not registere
 .
 ├── register.yaml              # Canonical system index
 ├── schema/                    # Machine-readable validation rules
+├── systems/                   # End-to-end operating-system specifications
 ├── frameworks/                # Framework documents or canonical packages
 ├── workflows/                 # Workflow documentation
 ├── playbooks/                 # Playbook documentation
@@ -41,6 +43,7 @@ Completion scores are directional portfolio signals, not substitutes for evidenc
 
 ## IDs and paths
 
+- System: `SYS-###`
 - Framework: `FW-###`
 - Workflow: `WF-###`
 - Playbook: `PB-###`

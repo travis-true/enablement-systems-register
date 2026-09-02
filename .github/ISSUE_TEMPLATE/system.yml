@@ -1,0 +1,39 @@
+name: Add or complete a system
+description: Propose a new framework, workflow, or playbook, or close a completion gap.
+title: "[System] "
+labels: [system-review]
+body:
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options: [Framework, Workflow, Playbook]
+    validations:
+      required: true
+  - type: input
+    id: system_id
+    attributes:
+      label: Existing system ID
+      description: Leave blank for a new system.
+      placeholder: FW-001
+  - type: textarea
+    id: purpose
+    attributes:
+      label: Purpose or gap
+      description: What should this system accomplish, or what prevents completion?
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: Completion evidence
+      description: Identify the artifacts, tests, approvals, or usage evidence that will establish completion.
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Public-safety check
+      options:
+        - label: This issue contains no confidential, personal, credential, or protected organizational information.
+          required: true

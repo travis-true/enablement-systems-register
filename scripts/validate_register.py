@@ -13,7 +13,7 @@ except ImportError:
 
 ROOT = Path(__file__).resolve().parents[1]
 REGISTER = ROOT / "register.yaml"
-ID_RE = re.compile(r"^(FW|WF|PB)-\d{3}$")
+ID_RE = re.compile(r"^(SYS|FW|WF|PB)-\d{3}$")
 VALID_CATEGORIES = {"system", "framework", "workflow", "playbook"}
 VALID_STATUSES = {"candidate", "incomplete", "in_progress", "complete", "maintenance", "retired"}
 REQUIRED = {

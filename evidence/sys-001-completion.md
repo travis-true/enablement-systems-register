@@ -61,6 +61,24 @@ LACE now includes eight paired, standalone JSON Schemas and reusable YAML record
 
 All eight template/schema pairs passed structural, required-field, type, enum, pattern, date, uniqueness, and state-gate checks before activation. `LACE-TMP-001` through `LACE-TMP-008` are active. Format-specific templates `LACE-TMP-100` and `LACE-TMP-101` remain planned.
 
+## Decision-engine evidence
+
+LACE-DE-001 now encodes blocker precedence, cause-based routing, primary-asset selection, companion controls, warnings, tie-breakers, confidence, human-review triggers, and decision-reopening conditions. LACE-TMP-009 preserves the recommendation and approval trail.
+
+Verification covered:
+
+- 39 unique executable rules;
+- 11 controlled decision cases;
+- all six LACE asset families;
+- operational-fix and blocked outcomes;
+- primary-asset and route precedence;
+- companion deduplication and the three-companion maximum;
+- volatility, partial-source, and high-risk warnings;
+- confidence assignment;
+- schema conformance for the rule set and decision record.
+
+All cases passed with no schema, rule-integrity, or outcome mismatch.
+
 ## Residual improvements
 
 - Run and record a pilot using only the canonical LACE v1.0 package.

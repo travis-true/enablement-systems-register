@@ -1,0 +1,98 @@
+template_id: LACE-TMP-400
+template_version: 1.0.0
+status: active
+name: Instructional Multimedia Package
+family: video-and-multimedia
+asset_type: instructional-multimedia-package
+purpose: Produce an accessible, source-grounded demonstration, quick tip, or animated explanation in which motion, timing, or synchronized media materially improves learning.
+use_when:
+  - Motion, sequence, timing, narration, or visual demonstration is essential.
+  - The audience and delivery channel can reliably access the media.
+  - The maintenance burden is justified and assigned.
+avoid_when:
+  - Static text or images would perform the task equally well.
+  - Required interface behavior or source content cannot be verified.
+  - Captions, transcript, essential visual description, or accessible controls cannot be provided.
+variants:
+  - id: MM-1A
+    name: Demonstration video
+    selection_rule: Use for a verified visible task or system sequence.
+  - id: MM-1B
+    name: Quick tip video
+    selection_rule: Use for one bounded idea or action; target one to three minutes when the content allows.
+  - id: MM-1C
+    name: Animated explainer
+    selection_rule: Use when a concept, relationship, or process is clearer through controlled animation.
+required_inputs:
+  - Approved LACE-TMP-009 asset decision
+  - Approved LACE-TMP-005 asset build specification
+  - Controlled evidence index and verified script sources
+  - Approved platform, version, channel, accessibility, visual, data-handling, and output requirements
+required_sections:
+  - id: purpose-outcome
+    name: Purpose and outcome
+    required: true
+    purpose: Define what the viewer must understand or do.
+  - id: script
+    name: Narration and on-screen text
+    required: true
+    purpose: Provide the exact source-grounded spoken and visible language.
+  - id: storyboard
+    name: Timed storyboard
+    required: true
+    purpose: Align narration, visuals, action, text, and accessibility treatment.
+  - id: accessibility
+    name: Accessibility plan
+    required: true
+    purpose: Define captions, transcript, essential visual description, controls, and alternatives.
+  - id: verification
+    name: Technical and content verification
+    required: true
+    purpose: Confirm platform behavior, timing, source accuracy, and output quality.
+  - id: publishing
+    name: Output and publishing handoff
+    required: true
+    purpose: Identify files, destinations, ownership, and maintenance triggers.
+design_rules:
+  - Use motion only when it improves comprehension, orientation, demonstration, or emphasis.
+  - Keep narration, visuals, and on-screen text synchronized without unnecessary duplication.
+  - Keep on-screen text concise and readable at the final display size.
+  - Preserve essential context when cropping, zooming, or highlighting an interface.
+  - Avoid rapid, distracting, flashing, or nonessential animation.
+  - Do not impose a duration limit that removes required instruction; justify duration by outcome and channel.
+  - Keep all generated source elements editable.
+accessibility_requirements:
+  - Provide synchronized captions for spoken content and essential audio.
+  - Provide a speaker-identified transcript that includes essential visual information.
+  - Provide audio description or an equivalent integrated description when visuals convey essential information not available in audio.
+  - Do not rely on color, sound, motion, or position alone.
+  - Provide clear pause, stop, volume, seek, and playback controls in the delivery environment.
+  - Verify text contrast, readable size, caption accuracy, timing, and keyboard operation.
+media_rules:
+  - Use sanitized or approved interfaces, data, names, and imagery.
+  - Record the platform and version for every demonstration.
+  - Preserve clean captures, edited project files, narration, captions, transcript, and exports.
+  - Verify every visible action and result against the controlling source.
+  - Re-record or annotate only when the change remains accurate and does not obscure critical context.
+output_package:
+  - Editable project and source media
+  - Approved master media export
+  - Caption file
+  - Accessible transcript with essential visual information
+  - Storyboard and final script
+  - Build specification and controlled evidence index
+  - Accessibility, visual, audio, technical, and content-verification evidence
+  - Approval, publishing handoff, change summary, and lifecycle record
+acceptance_criteria:
+  - The media communicates the approved outcome without unsupported narration, visuals, or interface behavior.
+  - Narration, on-screen text, actions, captions, transcript, and essential visual descriptions agree.
+  - Platform and version context is visible or documented.
+  - Final media has intelligible audio, readable visuals, accurate timing, and no clipped or missing content.
+  - Accessible alternatives and playback controls are verified.
+  - Every segment passes accessibility, visual, technical, source, and package gates.
+qa_gate:
+  visual_score_minimum: 95
+  critical_defects_maximum: 0
+  major_defects_maximum: 0
+  inspect_every_rendered_page_or_segment: true
+  master_package_gate_required: true

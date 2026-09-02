@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/travis-true/enablement-systems-register/systems/sys-001-lace/schemas/controlled-evidence-index.schema.json",
+  "title": "LACE Controlled Evidence Index",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "template_id",
+    "template_version",
+    "record_id",
+    "system_id",
+    "status",
+    "owner",
+    "created_date",
+    "updated_date",
+    "request_id",
+    "entries"
+  ],
+  "properties": {
+    "template_id": {
+      "const": "LACE-TMP-004"
+    },
+    "template_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "system_id": {
+      "const": "SYS-001"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "in_review",
+        "approved",
+        "superseded"
+      ]
+    },
+    "owner": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "updated_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "request_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "evidence_id",
+          "title",
+          "source_type",
+          "location",
+          "authority_level",
+          "owner",
+          "version_or_date",
+          "use_status",
+          "supported_claims",
+          "limitations"
+        ],
+        "properties": {
+          "evidence_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_type": {
+            "type": "string",
+            "minLength": 1
+          },
+          "location": {
+            "type": "string",
+            "minLength": 1
+          },
+          "authority_level": {
+            "enum": [
+              "controlling",
+              "authoritative",
+              "supporting",
+              "reference-only",
+              "unverified"
+            ]
+          },
+          "owner": {
+            "type": "string",
+            "minLength": 1
+          },
+          "version_or_date": {
+            "type": "string",
+            "minLength": 1
+          },
+          "use_status": {
+            "enum": [
+              "approved",
+              "restricted",
+              "excluded",
+              "pending-validation"
+            ]
+          },
+          "supported_claims": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "limitations": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          }
+        }
+      }
+    }
+  }
+}

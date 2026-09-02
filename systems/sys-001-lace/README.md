@@ -17,6 +17,9 @@ LACE is the governed production system that converts approved source material an
 - [Control-record operating sequence](control-records.md)
 - [JSON Schemas](schemas/)
 - [Reusable YAML records](records/)
+- [Asset decision rules](decision-engine/decision-rules.yaml)
+- [Decision-engine operating guide](decision-engine/operating-guide.md)
+- [Decision-engine test cases](decision-engine/test-cases.yaml)
 - [Completion evidence](../../evidence/sys-001-completion.md)
 
 ## System boundary

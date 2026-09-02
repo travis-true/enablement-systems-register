@@ -1,0 +1,129 @@
+namespace:
+  decision_id: LACE-NDR-001
+  system_id: SYS-001
+  prefix: LACE-TMP
+  id_pattern: "^LACE-TMP-[0-9]{3}$"
+  version: 1.0.0
+  status: approved
+  effective_date: 2026-09-02
+  owner: Travis True
+  next_number_policy: next-unused-in-family-range
+  reuse_retired_ids: false
+
+ranges:
+  - range: "001-099"
+    family: system-control-and-lifecycle
+  - range: "100-199"
+    family: performance-support-and-documentation
+  - range: "200-299"
+    family: instructor-led-and-virtual
+  - range: "300-399"
+    family: self-paced-digital
+  - range: "400-499"
+    family: video-and-multimedia
+  - range: "500-599"
+    family: communications-and-adoption
+  - range: "600-699"
+    family: planning-and-evaluation
+  - range: "700-899"
+    family: reserved
+  - range: "900-999"
+    family: migration-compatibility-exception
+
+allowed_statuses:
+  - planned
+  - active
+  - deprecated
+  - retired
+  - superseded
+
+templates:
+  - id: LACE-TMP-001
+    name: Applicability Assessment
+    family: system-control-and-lifecycle
+    status: planned
+    version: 1.0.0
+    legacy_aliases:
+      - source_system: L&D Operating System
+        id: TMP-001
+        name: Applicability Assessment
+
+  - id: LACE-TMP-002
+    name: Entry Gate Record
+    family: system-control-and-lifecycle
+    status: planned
+    version: 1.0.0
+    legacy_aliases:
+      - source_system: L&D Operating System
+        id: TMP-002
+        name: Entry Gate Record
+
+  - id: LACE-TMP-003
+    name: Request and Intake Record
+    family: system-control-and-lifecycle
+    status: planned
+    version: 1.0.0
+    legacy_aliases:
+      - source_system: L&D Operating System
+        id: TMP-003
+        name: Request and Intake Record
+
+  - id: LACE-TMP-004
+    name: Controlled Evidence Index
+    family: system-control-and-lifecycle
+    status: planned
+    version: 1.0.0
+    legacy_aliases:
+      - source_system: L&D Operating System
+        id: PIL-003
+        name: Controlled Evidence Index
+
+  - id: LACE-TMP-005
+    name: Asset Build Specification
+    family: system-control-and-lifecycle
+    status: planned
+    version: 1.0.0
+    legacy_aliases:
+      - source_system: L&D Operating System
+        id: TMP-007
+        name: Asset Build Specification
+
+  - id: LACE-TMP-006
+    name: Workflow and Handoff Record
+    family: system-control-and-lifecycle
+    status: planned
+    version: 1.0.0
+    legacy_aliases:
+      - source_system: L&D Operating System
+        id: TMP-009
+        name: Workflow and Handoff Record
+
+  - id: LACE-TMP-007
+    name: Lifecycle Review Record
+    family: system-control-and-lifecycle
+    status: planned
+    version: 1.0.0
+    legacy_aliases:
+      - source_system: L&D Operating System
+        id: TMP-012
+        name: Lifecycle Review Record
+
+  - id: LACE-TMP-100
+    name: Task-Based Job Aid
+    family: performance-support-and-documentation
+    status: planned
+    version: 1.0.0
+    legacy_aliases:
+      - source_system: LACE draft assets
+        id: TMP-0002
+        name: Job Aid - Task-Based, with QRG-style tables
+
+  - id: LACE-TMP-101
+    name: Compact Quick Reference Guide
+    family: performance-support-and-documentation
+    status: planned
+    version: 1.0.0
+    legacy_aliases:
+      - source_system: LACE draft assets
+        id: TMP-0003
+        name: QRG - Compact

@@ -49,8 +49,8 @@ The notes governed asset selection, screenshots, accessibility, interface and li
 ## Residual improvements
 
 - Run and record a pilot using only the canonical LACE v1.0 package.
-- Establish one canonical machine-readable template namespace.
+- Maintain the approved `LACE-TMP-###` namespace and test its mappings during the v1.1 pilot.
 - Add automated schema, rendering, accessibility, and visual-regression checks.
 - Build governed editable master families and a component library.
 
-These improvements increase automation maturity but do not prevent controlled manual operation of v1.0.
+The template namespace is resolved; the remaining improvements increase automation maturity but do not prevent controlled manual operation of v1.0.

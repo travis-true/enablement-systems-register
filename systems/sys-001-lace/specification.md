@@ -273,7 +273,9 @@ The escalation record must identify the issue, impact, owner, decision required,
 - Changes to authority, entry conditions, asset taxonomy, required schema, decision logic, quality gates, or release requirements require a controlled version change.
 - Asset examples and implementation guidance may change without redefining the system when they remain compatible.
 - IDs are permanent and must not be reused.
-- Template identifiers must use one governed namespace; predecessor identifiers remain aliases until crosswalked.
+- Template identifiers use the governed `LACE-TMP-###` namespace and the reserved family ranges defined in `template-namespace.md`.
+- `template-register.yaml` is the sole authority for canonical template identities, versions, statuses, and legacy aliases.
+- Predecessor IDs are traceability aliases only and are prohibited for new LACE production.
 - Review LACE at least annually and after a major policy, platform, accessibility, brand, automation, or operating-model change.
 - Preserve predecessor history and source attribution.
 

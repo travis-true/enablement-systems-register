@@ -59,6 +59,7 @@ cases:
       asset_rule: AST-008
       family: performance-support-and-documentation
       asset_type: compact-quick-reference-guide
+      companion_count: 0
 
   - id: TC-003
     name: Facilitated judgment practice
@@ -176,3 +177,30 @@ cases:
       asset_rule: AST-005
       family: performance-support-and-documentation
       asset_type: standard-operating-procedure
+
+  - id: TC-011
+    name: Companion deduplication and governed warnings
+    inputs:
+      cause: judgment
+      desired_action: practice
+      content_pattern: mixed
+      practice_required: true
+      feedback_required: true
+      facilitation_required: true
+      interaction_required: true
+      competence_evidence_required: true
+      task_frequency: rare
+      risk_level: high
+      content_volatility: high
+      source_status: partial
+    expected:
+      status: recommendation-ready
+      route_rule: RTE-005
+      route: training-or-blended
+      asset_rule: AST-010
+      family: instructor-led-and-virtual
+      asset_type: facilitated-learning-package
+      companion_count: 2
+      companion_purposes: [reinforce, assess]
+      warning_rules: [WRN-001, WRN-002, WRN-003]
+      confidence: medium

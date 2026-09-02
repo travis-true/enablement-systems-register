@@ -79,6 +79,26 @@ Verification covered:
 
 All cases passed with no schema, rule-integrity, or outcome mismatch.
 
+## Format build-kit evidence
+
+Four critical build kits are active:
+
+- `LACE-TMP-100` Task-Based Job Aid;
+- `LACE-TMP-101` Compact Quick Reference Guide, including QRG-1A, QRG-1B, and QRG-2A;
+- `LACE-TMP-102` Detailed Procedural Guide;
+- `LACE-TMP-400` Instructional Multimedia Package.
+
+Each kit contains a schema-validated production profile and reusable content template. The profiles govern applicability, variants, inputs, required sections, design, accessibility, media, output packages, acceptance criteria, and the 95-point visual gate with zero Critical or Major defects.
+
+Verification confirmed:
+
+- four unique active template IDs;
+- profile/schema conformance with zero errors;
+- template ID and version agreement;
+- required sections and output packages present;
+- decision-engine mappings to all four kits;
+- 12 decision cases with zero outcome or template-routing mismatches.
+
 ## Residual improvements
 
 - Run and record a pilot using only the canonical LACE v1.0 package.

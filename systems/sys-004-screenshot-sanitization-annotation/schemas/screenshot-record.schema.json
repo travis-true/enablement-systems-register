@@ -1,0 +1,222 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/travis-true/enablement-systems-register/systems/sys-004-screenshot-sanitization-annotation/schemas/screenshot-record.schema.json",
+  "title": "SYS-004 screenshot record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "system_id",
+    "record_id",
+    "title",
+    "status",
+    "instructional_purpose",
+    "capture",
+    "privacy",
+    "accessibility",
+    "files",
+    "qa",
+    "lifecycle"
+  ],
+  "properties": {
+    "system_id": {
+      "const": "SYS-004"
+    },
+    "record_id": {
+      "type": "string",
+      "pattern": "^SSAS-[0-9]{3}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 3
+    },
+    "status": {
+      "enum": [
+        "proposed",
+        "approved",
+        "in_capture",
+        "in_review",
+        "released",
+        "blocked",
+        "retired"
+      ]
+    },
+    "instructional_purpose": {
+      "type": "string",
+      "minLength": 10
+    },
+    "capture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "product",
+        "platform",
+        "verified_date",
+        "state"
+      ],
+      "properties": {
+        "product": {
+          "type": "string"
+        },
+        "platform": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "verified_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "state": {
+          "type": "string",
+          "minLength": 5
+        }
+      }
+    },
+    "privacy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "data_class",
+        "synthetic_data",
+        "review_status"
+      ],
+      "properties": {
+        "data_class": {
+          "enum": [
+            "public-safe",
+            "internal-synthetic"
+          ]
+        },
+        "synthetic_data": {
+          "type": "boolean"
+        },
+        "review_status": {
+          "enum": [
+            "pass",
+            "blocked"
+          ]
+        },
+        "replacements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "accessibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "alt_text",
+        "adjacent_instructions",
+        "color_independent"
+      ],
+      "properties": {
+        "alt_text": {
+          "type": "string",
+          "minLength": 10
+        },
+        "adjacent_instructions": {
+          "type": "boolean",
+          "const": true
+        },
+        "color_independent": {
+          "type": "boolean",
+          "const": true
+        },
+        "long_description": {
+          "type": "string"
+        }
+      }
+    },
+    "files": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source",
+        "master",
+        "final"
+      ],
+      "properties": {
+        "source": {
+          "type": "string",
+          "pattern": "_source_v[0-9]+\\.[0-9]+\\.png$"
+        },
+        "master": {
+          "type": "string",
+          "pattern": "_annotated-master_v[0-9]+\\.[0-9]+\\.pptx$"
+        },
+        "final": {
+          "type": "string",
+          "pattern": "_final_v[0-9]+\\.[0-9]+\\.png$"
+        }
+      }
+    },
+    "qa": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "decision",
+        "open_blocker",
+        "open_critical",
+        "open_major"
+      ],
+      "properties": {
+        "decision": {
+          "enum": [
+            "pass",
+            "blocked"
+          ]
+        },
+        "open_blocker": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 0
+        },
+        "open_critical": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 0
+        },
+        "open_major": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 0
+        },
+        "open_minor": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "lifecycle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "owner",
+        "version",
+        "released_date",
+        "recapture_trigger"
+      ],
+      "properties": {
+        "owner": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+        },
+        "released_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "recapture_trigger": {
+          "type": "string",
+          "minLength": 10
+        }
+      }
+    }
+  }
+}

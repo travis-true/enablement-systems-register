@@ -1,0 +1,12 @@
+pilot_id: SSAS-PILOT-001
+system_id: SYS-004
+version: 1.0.0
+date: 2026-09-03
+scope: Public-safe synthetic screenshot record and release workflow
+record: ../../records/example-screenshot.yaml
+result: pass
+defects:
+  blocker: 0
+  critical: 0
+  major: 0
+  minor: 0

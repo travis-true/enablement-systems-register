@@ -1,0 +1,37 @@
+system_id: SYS-004
+record_id: SSAS-001
+title: Open the sample settings panel
+status: released
+instructional_purpose: Help learners locate the settings control in a synthetic demonstration interface.
+capture:
+  product: Sample web application
+  platform: Web
+  version: "1.0"
+  verified_date: 2026-09-03
+  state: Synthetic settings panel closed with account area excluded.
+privacy:
+  data_class: public-safe
+  synthetic_data: true
+  review_status: pass
+  replacements:
+    - Replaced display name with Jordan White.
+    - Replaced email with jordan.white@example.com.
+accessibility:
+  alt_text: Sample application with callout 1 identifying the Settings control.
+  adjacent_instructions: true
+  color_independent: true
+files:
+  source: SSAS-001_open-settings_source_v1.0.png
+  master: SSAS-001_open-settings_annotated-master_v1.0.pptx
+  final: SSAS-001_open-settings_final_v1.0.png
+qa:
+  decision: pass
+  open_blocker: 0
+  open_critical: 0
+  open_major: 0
+  open_minor: 0
+lifecycle:
+  owner: Travis True
+  version: 1.0.0
+  released_date: 2026-09-03
+  recapture_trigger: Reverify after any sample interface, annotation, or accessibility-standard change.

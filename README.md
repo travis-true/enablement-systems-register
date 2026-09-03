@@ -62,6 +62,8 @@ This repository contains only public or sanitized descriptions. Do not commit co
 3. Run all validation commands:
    - `python scripts/validate_register.py`
    - `python scripts/validate_lace.py`
+   - `python scripts/validate_screenshot_system.py`
+   - `python -m unittest -v scripts/test_validate_screenshot_system.py`
    - `python -m unittest -v scripts/test_validate_lace_pilots.py`
    - `python scripts/validate_lace_pilots.py`
 4. Submit a pull request with evidence and impact notes.

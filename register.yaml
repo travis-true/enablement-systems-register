@@ -276,6 +276,40 @@ systems:
     next_review: 2027-03-03
     labels: [engagement-operations, operating-system, activation, campaigns, governance]
 
+  - id: SYS-004
+    name: Screenshot Sanitization & Annotation System
+    category: system
+    status: maintenance
+    owner: Travis True
+    purpose: Govern the creation of privacy-safe, accurate, accessible, annotated instructional screenshots from intake through release and recapture.
+    audience: Training developers, technical writers, reviewers, approvers, and publishers.
+    scope: Screenshot need decisions, capture specifications, synthetic data, sanitization, annotation, accessibility, quality assurance, release, inventory, and lifecycle maintenance.
+    completion_score: 100
+    related_systems: [SYS-001, SYS-002, WF-002, PB-001]
+    artifacts:
+      - systems/sys-004-screenshot-sanitization-annotation/README.md
+      - systems/sys-004-screenshot-sanitization-annotation/governance-and-lifecycle-standard.md
+      - systems/sys-004-screenshot-sanitization-annotation/privacy-and-replacement-standard.md
+      - systems/sys-004-screenshot-sanitization-annotation/annotation-and-accessibility-standard.md
+      - systems/sys-004-screenshot-sanitization-annotation/quality-assurance-standard.md
+      - systems/sys-004-screenshot-sanitization-annotation/templates/screenshot-specification.md
+      - systems/sys-004-screenshot-sanitization-annotation/schemas/screenshot-record.schema.json
+      - systems/sys-004-screenshot-sanitization-annotation/records/example-screenshot.yaml
+      - systems/sys-004-screenshot-sanitization-annotation/pilots/screenshot-pilot-001/manifest.yaml
+      - systems/sys-004-screenshot-sanitization-annotation/pilots/screenshot-pilot-001/qa-evidence.md
+      - systems/sys-004-screenshot-sanitization-annotation/releases/v1.0.0/release-manifest.yaml
+      - systems/sys-004-screenshot-sanitization-annotation/releases/v1.0.0/approval.md
+      - systems/sys-004-screenshot-sanitization-annotation/releases/v1.0.0/release-notes.md
+      - scripts/validate_screenshot_system.py
+      - scripts/test_validate_screenshot_system.py
+    evidence:
+      - evidence/sys-004-completion.md
+    next_action: Monitor governed use and review after a material privacy, accessibility, platform, annotation-tool, or capture-standard change.
+    version: 1.0.0
+    last_reviewed: 2026-09-03
+    next_review: 2027-03-03
+    labels: [screenshots, privacy, accessibility, annotation, quality-assurance]
+
   - id: FW-004
     name: EnablementOps Framework
     category: framework

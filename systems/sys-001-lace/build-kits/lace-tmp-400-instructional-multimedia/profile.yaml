@@ -1,5 +1,5 @@
 template_id: LACE-TMP-400
-template_version: 1.0.0
+template_version: 1.1.0
 status: active
 name: Instructional Multimedia Package
 family: video-and-multimedia
@@ -23,6 +23,9 @@ variants:
   - id: MM-1C
     name: Animated explainer
     selection_rule: Use when a concept, relationship, or process is clearer through controlled animation.
+  - id: MM-1D
+    name: Silent visual microlearning
+    selection_rule: Use for a short timed visual sequence when spoken audio adds no instructional value and a synchronized text alternative is supplied.
 required_inputs:
   - Approved LACE-TMP-009 asset decision
   - Approved LACE-TMP-005 asset build specification
@@ -34,7 +37,7 @@ required_sections:
     required: true
     purpose: Define what the viewer must understand or do.
   - id: script
-    name: Narration and on-screen text
+    name: Narration and/or on-screen text
     required: true
     purpose: Provide the exact source-grounded spoken and visible language.
   - id: storyboard
@@ -87,7 +90,7 @@ acceptance_criteria:
   - The media communicates the approved outcome without unsupported narration, visuals, or interface behavior.
   - Narration, on-screen text, actions, captions, transcript, and essential visual descriptions agree.
   - Platform and version context is visible or documented.
-  - Final media has intelligible audio, readable visuals, accurate timing, and no clipped or missing content.
+  - Final media has intelligible audio when audio is present, readable visuals, accurate timing, and no clipped or missing content.
   - Accessible alternatives and playback controls are verified.
   - Every segment passes accessibility, visual, technical, source, and package gates.
 qa_gate:

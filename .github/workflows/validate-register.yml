@@ -1,4 +1,4 @@
-name: Validate register, LACE, and EnablementOps
+name: Validate governed enablement systems
 
 on:
   pull_request:
@@ -27,3 +27,5 @@ jobs:
       - run: python scripts/validate_lace.py
       - run: python -m unittest -v scripts/test_validate_lace_pilots.py
       - run: python scripts/validate_lace_pilots.py
+      - run: python scripts/validate_screenshot_system.py
+      - run: python -m unittest -v scripts/test_validate_screenshot_system.py

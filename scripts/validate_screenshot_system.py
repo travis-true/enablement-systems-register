@@ -3,6 +3,7 @@ from pathlib import Path
 import json
 import sys
 import yaml
+from jsonschema import Draft202012Validator, FormatChecker
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = ROOT / "systems/sys-004-screenshot-sanitization-annotation"
@@ -22,15 +23,20 @@ def validate():
         return errors
     schema = json.loads((BASE / "schemas/screenshot-record.schema.json").read_text())
     record = yaml.safe_load((BASE / "records/example-screenshot.yaml").read_text())
-    if record.get("system_id") != "SYS-004": errors.append("record system_id must be SYS-004")
+    for error in sorted(Draft202012Validator(schema, format_checker=FormatChecker()).iter_errors(record), key=lambda e: list(e.path)):
+        location = ".".join(str(part) for part in error.path) or "<root>"
+        errors.append(f"schema {location}: {error.message}")
     if record.get("status") != "released": errors.append("example must be released")
     if record.get("privacy", {}).get("review_status") != "pass": errors.append("privacy must pass")
     if record.get("qa", {}).get("decision") != "pass": errors.append("QA must pass")
     for level in ("open_blocker", "open_critical", "open_major"):
         if record.get("qa", {}).get(level) != 0: errors.append(f"{level} must be zero")
-    if not schema.get("$schema", "").endswith("2020-12/schema"): errors.append("schema draft mismatch")
-    for key in ("source", "master", "final"):
-        if key not in record.get("files", {}): errors.append(f"missing file state: {key}")
+    release = yaml.safe_load((BASE / "releases/v1.0.0/release-manifest.yaml").read_text())
+    if release.get("system_id") != "SYS-004" or release.get("status") != "released":
+        errors.append("release manifest identity/status mismatch")
+    pilot = yaml.safe_load((BASE / "pilots/screenshot-pilot-001/manifest.yaml").read_text())
+    if pilot.get("system_id") != "SYS-004" or pilot.get("result") != "pass":
+        errors.append("pilot identity/result mismatch")
     return errors
 if __name__ == "__main__":
     problems = validate()

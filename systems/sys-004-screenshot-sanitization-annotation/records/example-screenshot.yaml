@@ -7,7 +7,7 @@ capture:
   product: Sample web application
   platform: Web
   version: "1.0"
-  verified_date: 2026-09-03
+  verified_date: "2026-09-03"
   state: Synthetic settings panel closed with account area excluded.
 privacy:
   data_class: public-safe
@@ -33,5 +33,5 @@ qa:
 lifecycle:
   owner: Travis True
   version: 1.0.0
-  released_date: 2026-09-03
+  released_date: "2026-09-03"
   recapture_trigger: Reverify after any sample interface, annotation, or accessibility-standard change.

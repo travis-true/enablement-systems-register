@@ -149,7 +149,7 @@ systems:
     purpose: Govern how enablement work is requested, prioritized, designed, produced, delivered, measured, maintained, and improved.
     audience: Enablement leaders, learning and performance professionals, content and knowledge teams, reviewers, approvers, publishers, analysts, and support partners.
     scope: Needs analysis, intake, prioritization, governance, learning and performance support, content operations, delivery, reinforcement, measurement, lifecycle, accessibility, quality, automation, support, and discoverability.
-    completion_score: 78
+    completion_score: 86
     related_systems: [SYS-001, FW-002, WF-001, WF-002, WF-003]
     artifacts:
       - systems/sys-002-enablementops/README.md
@@ -162,12 +162,18 @@ systems:
       - systems/sys-002-enablementops/golden-example-standard.md
       - systems/sys-002-enablementops/golden-example-register.yaml
       - systems/sys-002-enablementops/templates/golden-promotion-record.md
+      - systems/sys-002-enablementops/quality-assurance-standard.md
+      - systems/sys-002-enablementops/defect-severity-standard.md
+      - systems/sys-002-enablementops/visual-regression-standard.md
+      - systems/sys-002-enablementops/qa-test-matrix.yaml
+      - systems/sys-002-enablementops/templates/qa-release-record.md
     evidence:
       - evidence/sys-002-step-1-consolidation.md
       - evidence/sys-002-step-2-production-standards.md
       - evidence/sys-002-step-3-golden-examples.md
-    next_action: Strengthen visual and functional quality assurance.
-    version: 0.8.0
+      - evidence/sys-002-step-4-quality-assurance.md
+    next_action: Complete automation and machine-readable schema capabilities.
+    version: 0.9.0
     last_reviewed: 2026-09-03
     next_review: 2026-10-03
     labels: [enablement-operations, operating-system, governance, capability-model]

@@ -1,0 +1,45 @@
+record:
+  id: EO-PR-002
+  system: SYS-002
+  version: 1.0.0
+  status: qa
+  owner: Travis True
+  date: 2026-09-03
+need:
+  outcome: Provide compact safe-use performance support for general workplace Copilot users.
+  audience: General workplace Copilot users
+  moment_of_need: While preparing and reviewing a Copilot prompt
+  primary_family_id: F06
+  companion_family_ids: []
+sources:
+  authoritative:
+    - systems/sys-001-lace/pilots/lace-pilot-001/manifest.yaml
+    - systems/sys-001-lace/pilots/lace-pilot-001/qa-evidence.md
+  verified_on: 2026-09-03
+  conflicts: []
+  assumptions: []
+  reuse_decision: adapt
+production:
+  native_format: PPTX
+  distribution_formats: [PDF]
+  build_authority: SYS-001
+  specification: LACE-TMP-101
+  accessibility_plan: Verify searchable output, rendering, source traceability, privacy sanitization, and full-size visual integrity.
+qa:
+  master_score: 1.0
+  visual_score: 100
+  blockers: 0
+  critical_defects: 0
+  major_defects: 0
+  regression: pass
+  human_approval: false
+release:
+  decision: blocked
+  approver: null
+  approved_on: null
+  evidence:
+    - systems/sys-001-lace/pilots/lace-pilot-001/qa-evidence.md
+lifecycle:
+  next_review: 2027-03-03
+  replacement_triggers: [source-change, template-change, accessibility-finding]
+  support_path: systems/sys-002-enablementops/README.md

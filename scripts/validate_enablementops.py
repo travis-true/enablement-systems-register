@@ -153,7 +153,8 @@ def validate_documents(root=ROOT, overrides=None):
     productions = {"records/enablementops-production-record.yaml": loaded["records/enablementops-production-record.yaml"]}
     production_schema = load_json(system / "schemas/production-record.schema.json")
     manifests = {}
-    for pilot_dir in sorted((system / "pilots").glob("*")) if (system / "pilots").exists() else []:
+    pilot_dirs = sorted((system / "pilots").glob("*")) if (system / "pilots").exists() else []
+    for pilot_dir in pilot_dirs:
         if not pilot_dir.is_dir():
             continue
         manifest_path = pilot_dir / "manifest.yaml"

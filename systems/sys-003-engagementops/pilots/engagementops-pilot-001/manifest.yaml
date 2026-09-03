@@ -1,0 +1,29 @@
+pilot:
+  id: EO-PILOT-001
+  system: SYS-003
+  campaign_id: EO-CMP-002
+  version: 1.0.0
+  date: 2026-09-03
+  owner: Travis True
+  status: released
+  topic: EnablementOps v1.0.0 public-safe release awareness
+source_baseline:
+  - systems/sys-002-enablementops/README.md
+  - evidence/sys-002-v1.0.0-release.md
+records:
+  handoff: records/handoff.yaml
+  campaign: records/campaign.yaml
+  assets:
+    - records/asset-announcement.yaml
+    - records/asset-faq.yaml
+    - records/asset-leader.yaml
+  measurement: records/measurement.yaml
+  localization: records/localization.yaml
+  readiness: records/readiness.yaml
+assets:
+  - assets/release-announcement.md
+  - assets/release-faq.md
+  - assets/leader-talking-points.md
+approval: approval.md
+qa_evidence: qa-evidence.md
+release_boundary: Repository publication only; no other channel activation or audience-outcome claim.

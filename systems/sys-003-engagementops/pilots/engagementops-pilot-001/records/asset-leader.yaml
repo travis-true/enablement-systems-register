@@ -1,0 +1,46 @@
+record:
+  id: EO-AST-004
+  campaign_id: EO-CMP-002
+  version: 1.0.0
+  status: active
+  owner: Travis True
+purpose:
+  asset_type: manager-kit
+  objective: Give leaders concise, source-aligned talking points for optional amplification.
+  audience: [Enablement practitioners]
+delivery:
+  channel_ids: [EO-CH-008]
+  platform: Governed GitHub repository
+  format: Markdown
+  orientation: null
+  runtime: null
+message:
+  core_idea: EnablementOps v1.0.0 is the governed operating system for end-to-end enablement work.
+  hook: Share the governed system without recreating its rules.
+  call_to_action: Share the governed release with an applicable practitioner
+  reinforcement_prompt: Use the controlled records for the next applicable enablement initiative.
+content:
+  sections: [Talking points, Boundary, Call to action]
+  source_references: [systems/sys-002-enablementops/README.md, evidence/sys-002-v1.0.0-release.md, systems/sys-003-engagementops/pilots/engagementops-pilot-001/assets/leader-talking-points.md]
+visual:
+  style: Plain structured repository content
+  direction: Use semantic headings, concise sections, descriptive links, and no decorative imagery.
+accessibility:
+  captions: not-applicable
+  transcript: not-applicable
+  alt_text: not-applicable
+  reduced_motion_alternative: not-applicable
+  screen_reader_notes: Semantic Markdown headings and descriptive links verified.
+governance:
+  fidelity: F1
+  sme_review: true
+  specialist_reviews: []
+  approved: true
+  approver: Travis True
+measurement:
+  measure_ids: [EO-MET-001]
+  limitations: [Repository publication proves availability only]
+lifecycle:
+  activation_date: 2026-09-03
+  expiration: 2026-10-03
+  replacement_trigger: Replace after a material SYS-002 release or source change.

@@ -32,11 +32,11 @@ EnablementOps (`SYS-002`) owns capability and performance enablement. Engagement
 
 EngagementOps does not own source truth, learning outcomes, instructional design, technical accuracy, asset construction, publication authority, or proof that a person can perform the required work.
 
-See [Boundary, activation, and authority](boundary-activation-authority.md) and [Controlled terminology](terminology.md).
+See [Boundary, activation, and authority](boundary-activation-authority.md), [Controlled terminology](terminology.md), [Governance standard](governance-standard.md), [Lifecycle and metadata standard](lifecycle-metadata-standard.md), and [Risk, accessibility, privacy, and approval standard](risk-accessibility-approval-standard.md).
 
 ## Current maturity
 
 Status: **in progress**.  
-Version: **0.1.0**.
+Version: **0.2.0**.
 
-The system boundary, activation trigger, decision rights, handoffs, and hard stops are controlled. Governance, lifecycle standards, reusable campaign assets, measurement standards, compliance controls, integration, automation, pilots, and release remain.
+The system boundary, activation trigger, decision rights, handoffs, hard stops, source hierarchy, governance roles, metadata, lifecycle, retention, risk, accessibility, privacy, approval targets, exceptions, supersession, and retirement are controlled. Reusable campaign/channel assets and schemas, measurement standards, integration, automation, pilots, and release remain.

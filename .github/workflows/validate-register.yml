@@ -20,6 +20,8 @@ jobs:
       - run: python scripts/validate_register.py
       - run: python scripts/validate_enablementops.py
       - run: python -m unittest -v scripts/test_validate_enablementops.py
+      - run: python scripts/validate_engagementops.py
+      - run: python -m unittest -v scripts/test_validate_engagementops.py
       - run: python scripts/validate_lace.py
       - run: python -m unittest -v scripts/test_validate_lace_pilots.py
       - run: python scripts/validate_lace_pilots.py

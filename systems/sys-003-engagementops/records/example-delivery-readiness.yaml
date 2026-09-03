@@ -1,0 +1,88 @@
+record:
+  id: EO-DR-001
+  campaign_id: EO-CMP-001
+  version: 0.1.0
+  status: blocked
+  owner: Travis True
+gates:
+  - id: source
+    priority: P0
+    result: pass
+    reviewer: Demonstration source reviewer
+    reviewed_on: 2026-09-03
+    evidence: [systems/sys-003-engagementops/governance-standard.md]
+    rationale: Public-safe system sources are identified.
+  - id: technical
+    priority: P0
+    result: not-applicable
+    reviewer: Demonstration campaign owner
+    reviewed_on: 2026-09-03
+    evidence: []
+    rationale: No technical product or workflow claim is distributed.
+  - id: specialist
+    priority: P0
+    result: not-applicable
+    reviewer: Demonstration campaign owner
+    reviewed_on: 2026-09-03
+    evidence: []
+    rationale: No regulated, legal, policy, security, privacy, or high-consequence claim is distributed.
+  - id: accessibility
+    priority: P0
+    result: pass
+    reviewer: Demonstration accessibility reviewer
+    reviewed_on: 2026-09-03
+    evidence: [systems/sys-003-engagementops/risk-accessibility-approval-standard.md]
+    rationale: Structured source requirements are present; operational channel review remains required.
+  - id: brand
+    priority: P1
+    result: not-applicable
+    reviewer: Demonstration campaign owner
+    reviewed_on: 2026-09-03
+    evidence: []
+    rationale: No branded operational asset is distributed.
+  - id: operational
+    priority: P0
+    result: not-applicable
+    reviewer: Demonstration campaign owner
+    reviewed_on: 2026-09-03
+    evidence: []
+    rationale: The example does not alter an operational workflow.
+  - id: measurement
+    priority: P0
+    result: pass
+    reviewer: Demonstration analytics owner
+    reviewed_on: 2026-09-03
+    evidence: [systems/sys-003-engagementops/records/example-measurement-plan.yaml]
+    rationale: The draft plan collects no operational or personal data.
+  - id: release
+    priority: P0
+    result: not-run
+    reviewer: null
+    reviewed_on: null
+    evidence: []
+    rationale: The example is intentionally blocked and has no release authorization.
+defects:
+  blocker: 0
+  critical: 0
+  major: 0
+  exceptions: []
+screenshots:
+  present: false
+  redaction_review: not-required
+  reviewer: null
+  evidence: []
+rights:
+  result: not-applicable
+  reviewer: Demonstration campaign owner
+  evidence: []
+change_control:
+  post_approval_change: false
+  p0_regression: not-applicable
+  p1_regression: not-applicable
+  affected_approvals: []
+release:
+  decision: blocked
+  approver: null
+  approved_on: null
+  scope: Demonstration record only; no distribution.
+  expiration: 2026-10-31

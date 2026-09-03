@@ -1,0 +1,150 @@
+catalog:
+  system: SYS-003
+  version: 1.0.0
+  owner: Travis True
+  status: approved
+metrics:
+  - id: EO-MET-001
+    name: Eligible reach
+    level: reach
+    definition: Number of intended audience members eligible to receive the touchpoint.
+    numerator: null
+    denominator: null
+    unit: count
+    direction: context-dependent
+    source_class: approved audience list
+    accountable_owner: Campaign owner
+    privacy_review_trigger: Identifiable recipient-level data
+    cannot_prove: [delivery, attention, engagement, learning, adoption]
+  - id: EO-MET-002
+    name: Delivery rate
+    level: reach
+    definition: Successfully delivered touchpoints divided by eligible delivery attempts.
+    numerator: successful deliveries
+    denominator: eligible delivery attempts
+    unit: percentage
+    direction: increase
+    source_class: authorized channel analytics
+    accountable_owner: Channel owner
+    privacy_review_trigger: Recipient-level delivery records
+    cannot_prove: [attention, engagement, learning, adoption]
+  - id: EO-MET-003
+    name: Call-to-action click rate
+    level: engagement
+    definition: Unique authorized call-to-action clicks divided by delivered touchpoints.
+    numerator: unique authorized clicks
+    denominator: delivered touchpoints
+    unit: percentage
+    direction: increase
+    source_class: authorized channel analytics
+    accountable_owner: Analytics owner
+    privacy_review_trigger: User-level tracking or cross-channel linkage
+    cannot_prove: [completion, learning, adoption, performance]
+  - id: EO-MET-004
+    name: Participation rate
+    level: engagement
+    definition: People completing the defined participation action divided by the eligible audience.
+    numerator: completed participation actions
+    denominator: eligible audience
+    unit: percentage
+    direction: increase
+    source_class: approved participation record
+    accountable_owner: Program owner
+    privacy_review_trigger: Identifiable registration or attendance data
+    cannot_prove: [learning, adoption, performance, sustainment]
+  - id: EO-MET-005
+    name: Knowledge recall
+    level: learning
+    definition: Performance on an approved recall measure using its governed scoring rule.
+    numerator: points earned or correct responses
+    denominator: possible points or scored responses
+    unit: score
+    direction: increase
+    source_class: approved assessment evidence
+    accountable_owner: EnablementOps owner
+    privacy_review_trigger: Individual assessment results
+    cannot_prove: [workflow adoption, job performance, causal impact]
+  - id: EO-MET-006
+    name: Confidence rating
+    level: learning
+    definition: Self-reported confidence on a defined scale collected at a stated time.
+    numerator: observed rating total
+    denominator: valid responses
+    unit: score
+    direction: increase
+    source_class: approved survey
+    accountable_owner: Program owner
+    privacy_review_trigger: Identifiable responses or small groups
+    cannot_prove: [knowledge, skill, adoption, performance]
+  - id: EO-MET-007
+    name: Workflow completion rate
+    level: adoption
+    definition: Completed intended workflows divided by eligible workflow opportunities.
+    numerator: completed intended workflows
+    denominator: eligible workflow opportunities
+    unit: percentage
+    direction: increase
+    source_class: authorized operational analytics
+    accountable_owner: Operational owner
+    privacy_review_trigger: User-level workflow telemetry
+    cannot_prove: [quality, time saved, causal impact]
+  - id: EO-MET-008
+    name: Repeat usage rate
+    level: adoption
+    definition: Eligible users repeating the intended behavior within the defined window.
+    numerator: eligible repeat users
+    denominator: eligible users with an initial use
+    unit: percentage
+    direction: increase
+    source_class: authorized usage analytics
+    accountable_owner: Operational owner
+    privacy_review_trigger: Longitudinal user-level telemetry
+    cannot_prove: [proficiency, performance improvement, causal impact]
+  - id: EO-MET-009
+    name: Error rate
+    level: performance
+    definition: Defined verified errors divided by eligible completed work units.
+    numerator: verified errors
+    denominator: eligible completed work units
+    unit: rate
+    direction: decrease
+    source_class: approved operational quality record
+    accountable_owner: Operational owner
+    privacy_review_trigger: Employee or customer-linked error records
+    cannot_prove: [cause of change, individual competence]
+  - id: EO-MET-010
+    name: Support demand
+    level: performance
+    definition: In-scope support contacts during the defined reporting window.
+    numerator: in-scope support contacts
+    denominator: null
+    unit: count
+    direction: decrease
+    source_class: authorized support records
+    accountable_owner: Support owner
+    privacy_review_trigger: Ticket content or requester identity
+    cannot_prove: [cause of change, task quality, time saved]
+  - id: EO-MET-011
+    name: Continued-use rate
+    level: sustainment
+    definition: Eligible users continuing the intended behavior in the approved follow-up window.
+    numerator: eligible continuing users
+    denominator: eligible users with prior verified use
+    unit: percentage
+    direction: maintain
+    source_class: authorized longitudinal analytics
+    accountable_owner: Operational owner
+    privacy_review_trigger: Longitudinal user-level telemetry
+    cannot_prove: [proficiency, business impact, causal effect]
+  - id: EO-MET-012
+    name: Participation drop-off
+    level: sustainment
+    definition: Reduction in active participants between two defined comparable periods.
+    numerator: participants lost between periods
+    denominator: participants in the starting period
+    unit: percentage
+    direction: decrease
+    source_class: approved participation records
+    accountable_owner: Program owner
+    privacy_review_trigger: Identifiable participation history or small groups
+    cannot_prove: [reason for drop-off, learning decay, performance decline]

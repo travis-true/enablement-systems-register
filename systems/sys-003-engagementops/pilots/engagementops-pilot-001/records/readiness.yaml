@@ -1,0 +1,88 @@
+record:
+  id: EO-DR-002
+  campaign_id: EO-CMP-002
+  version: 1.0.0
+  status: released
+  owner: Travis True
+gates:
+  - id: source
+    priority: P0
+    result: pass
+    reviewer: Travis True
+    reviewed_on: 2026-09-03
+    evidence: [systems/sys-002-enablementops/README.md, evidence/sys-002-v1.0.0-release.md]
+    rationale: All claims trace to the governed SYS-002 release.
+  - id: technical
+    priority: P0
+    result: not-applicable
+    reviewer: Travis True
+    reviewed_on: 2026-09-03
+    evidence: []
+    rationale: Assets contain no product procedure or technical behavior claim.
+  - id: specialist
+    priority: P0
+    result: not-applicable
+    reviewer: Travis True
+    reviewed_on: 2026-09-03
+    evidence: []
+    rationale: Public-safe system-release content triggers no regulated or restricted determination.
+  - id: accessibility
+    priority: P0
+    result: pass
+    reviewer: Travis True
+    reviewed_on: 2026-09-03
+    evidence: [systems/sys-003-engagementops/pilots/engagementops-pilot-001/qa-evidence.md]
+    rationale: Semantic headings, descriptive links, plain language, and text-only equivalents pass.
+  - id: brand
+    priority: P1
+    result: not-applicable
+    reviewer: Travis True
+    reviewed_on: 2026-09-03
+    evidence: []
+    rationale: The public repository uses no governed organizational brand.
+  - id: operational
+    priority: P0
+    result: pass
+    reviewer: Travis True
+    reviewed_on: 2026-09-03
+    evidence: [systems/sys-003-engagementops/pilots/engagementops-pilot-001/records/campaign.yaml]
+    rationale: F1 source sequence, decisions, and system boundaries are preserved.
+  - id: measurement
+    priority: P0
+    result: pass
+    reviewer: Travis True
+    reviewed_on: 2026-09-03
+    evidence: [systems/sys-003-engagementops/pilots/engagementops-pilot-001/records/measurement.yaml]
+    rationale: Only repository availability is claimed; audience outcomes remain unclaimed.
+  - id: release
+    priority: P0
+    result: pass
+    reviewer: Travis True
+    reviewed_on: 2026-09-03
+    evidence: [systems/sys-003-engagementops/pilots/engagementops-pilot-001/approval.md]
+    rationale: The system owner explicitly authorized continuation to the pilot step.
+defects:
+  blocker: 0
+  critical: 0
+  major: 0
+  exceptions: []
+screenshots:
+  present: false
+  redaction_review: not-required
+  reviewer: null
+  evidence: []
+rights:
+  result: pass
+  reviewer: Travis True
+  evidence: [Original repository content derived from governed public-safe system records]
+change_control:
+  post_approval_change: false
+  p0_regression: pass
+  p1_regression: pass
+  affected_approvals: []
+release:
+  decision: released
+  approver: Travis True
+  approved_on: 2026-09-03
+  scope: Three public-safe Markdown campaign assets published in the governed repository.
+  expiration: 2026-10-03

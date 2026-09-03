@@ -1,0 +1,28 @@
+template_id: LACE-TMP-008
+template_version: 1.0.0
+record_id: LACE-PILOT-001-REL-MM-001
+system_id: SYS-001
+status: approved
+owner: Travis True
+created_date: "2026-09-03"
+updated_date: "2026-09-03"
+asset_id: LACE-PILOT-001-MM
+release_id: LACE-PILOT-001-MM-v1.0.0
+release_version: 1.0.0
+readiness_status: release-ready-with-approved-constraints
+editable_files: [../copilot-safe-use-microlearning-source.pptx]
+distribution_files: [../copilot-safe-use-microlearning.mp4, ../copilot-safe-use-microlearning.vtt, ../copilot-safe-use-microlearning-transcript.txt]
+evidence_files: [../qa-evidence.md, ../copilot-safe-use-microlearning-storyboard.md, build-spec-multimedia.yaml, handoff-multimedia.yaml]
+approval_files: [asset-decision.yaml]
+accessibility_result: pass
+quality_result: pass
+critical_defects: 0
+major_defects: 0
+approved_constraints:
+  - Release is restricted to controlled pilot evidence and does not authorize operational end-user publication.
+  - The silent asset must remain distributed with its WebVTT and transcript alternatives.
+approver: Travis True
+approval_date: "2026-09-03"
+publication_handoff: Preserve in the LACE-PILOT-001 evidence package with all accessibility alternatives; do not publish to an operational audience.
+maintenance_owner: Travis True
+next_review: "2027-03-03"

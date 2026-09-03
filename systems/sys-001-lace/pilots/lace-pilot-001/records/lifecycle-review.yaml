@@ -1,0 +1,22 @@
+template_id: LACE-TMP-007
+template_version: 1.0.0
+record_id: LACE-PILOT-001-LCR-001
+system_id: SYS-001
+status: approved
+owner: Travis True
+created_date: "2026-09-03"
+updated_date: "2026-09-03"
+asset_id: LACE-PILOT-001
+current_asset_version: 1.0.0
+review_trigger: owner-request
+review_date: "2026-09-03"
+usage_summary: Controlled evidence pilot completed with one QRG, one detailed guide, and one silent visual microlearning package; no operational end-user publication occurred.
+issues:
+  - DEF-001 semantic table-header defect was repaired and retested before closure.
+source_changes: []
+accessibility_status: pass
+disposition: retain
+required_changes:
+  - Preserve the pilot package as the direct evidence baseline for LACE v1.1.0.
+approved_by: Travis True
+next_review: "2027-03-03"

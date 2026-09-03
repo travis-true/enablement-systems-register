@@ -1,0 +1,56 @@
+record:
+  id: EO-CMP-001
+  system: SYS-003
+  version: 0.1.0
+  status: draft
+  owner: Travis True
+activation:
+  related_system_ids: [SYS-002]
+  outcome: Demonstrate the governed EngagementOps campaign record without activating a real campaign.
+  engagement_objective: Provide a complete public-safe example of campaign planning and controlled activation.
+  audience: [Enablement practitioners]
+  excluded_audience: [External audiences]
+  call_to_action: Review the example campaign record
+  start: 2026-10-01
+  end: 2026-10-31
+strategy:
+  risk_tier: R1
+  ecosystem: [launch-kit, sustainment]
+  selection_rationale: A brief launch kit plus one sustainment path is the smallest set that demonstrates the controls.
+  channel_ids: [EO-CH-002, EO-CH-003]
+  cadence: One launch touchpoint and one follow-up
+  sustainment: Close after the follow-up and documented review
+sources:
+  authoritative: [systems/sys-003-engagementops/README.md, systems/sys-003-engagementops/governance-standard.md]
+  verified_on: 2026-09-03
+  conflicts: []
+  limitations: [Demonstration record only; no operational audience or distribution]
+governance:
+  source_owner: Travis True
+  channel_owners: [Demonstration channel owner]
+  accessibility_reviewer: Demonstration accessibility reviewer
+  privacy_classification: public-sanitized
+  specialist_reviews: []
+  release_approver: null
+  human_approval: false
+touchpoints:
+  - id: EO-TP-001
+    phase: launch
+    channel_id: EO-CH-002
+    asset_ids: [EO-AST-001]
+    call_to_action: Review the example campaign record
+    scheduled_date: 2026-10-01
+    owner: Travis True
+  - id: EO-TP-002
+    phase: sustainment
+    channel_id: EO-CH-003
+    asset_ids: [EO-AST-001]
+    call_to_action: Record feedback on the example
+    scheduled_date: 2026-10-15
+    owner: Travis True
+lifecycle:
+  next_review: 2026-10-31
+  expiration: 2026-10-31
+  retention_class: demonstration-record
+  support_owner: Travis True
+  closure_condition: Close after the example receives its documented review.

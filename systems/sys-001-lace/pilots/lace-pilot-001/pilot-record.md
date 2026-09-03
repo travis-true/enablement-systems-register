@@ -9,6 +9,7 @@
 - Purpose: help users prompt, refine, and review Copilot output safely
 - Public-sanitization rule: remove organization names, contacts, customer/member classifications, and internal policy paths
 - Release boundary: this pilot validates LACE v1.0 production behavior; it does not authorize LACE v1.1.0
+- Governed record index: [`records/record-index.yaml`](records/record-index.yaml)
 
 ## Asset routing
 
@@ -40,3 +41,9 @@ No universal escalation contact is asserted because the source does not provide 
 - detailed-guide headings and table header pass structural accessibility checks;
 - multimedia package includes editable source, MP4, WebVTT captions, transcript, and storyboard;
 - repository LACE validation passes after pilot evidence is added.
+
+## Governed record completion
+
+On 2026-09-03, the missing canonical control trail was reconstructed from the preserved pilot package and approved evidence. Fifteen records now cover applicability, intake, entry readiness, evidence control, the coordinated asset decision, per-format build specifications, Stage 6-to-7 handoffs, release manifests, and lifecycle review. All 15 conform to their assigned canonical schemas.
+
+This correction adds record structure and traceability only. It does not claim additional testing or operational publication.

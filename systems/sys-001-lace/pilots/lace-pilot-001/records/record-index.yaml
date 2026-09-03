@@ -1,0 +1,35 @@
+pilot_id: LACE-PILOT-001
+system_id: SYS-001
+record_status: retrospective-controlled-reconstruction
+created_date: "2026-09-03"
+authority: Travis True
+shared_records:
+  - applicability-assessment.yaml
+  - request-intake.yaml
+  - entry-gate.yaml
+  - evidence-index.yaml
+  - asset-decision.yaml
+asset_records:
+  qrg:
+    asset_id: LACE-PILOT-001-QRG
+    build_specification: build-spec-qrg.yaml
+    handoff: handoff-qrg.yaml
+    release_manifest: release-qrg.yaml
+  detailed_guide:
+    asset_id: LACE-PILOT-001-DPG
+    build_specification: build-spec-guide.yaml
+    handoff: handoff-guide.yaml
+    release_manifest: release-guide.yaml
+  multimedia:
+    asset_id: LACE-PILOT-001-MM
+    build_specification: build-spec-multimedia.yaml
+    handoff: handoff-multimedia.yaml
+    release_manifest: release-multimedia.yaml
+lifecycle_review: lifecycle-review.yaml
+validation_evidence: validation-evidence.md
+reconstruction_basis:
+  - ../pilot-record.md
+  - ../manifest.yaml
+  - ../qa-evidence.md
+  - ../../../../../evidence/sys-001-step-6-pilot.md
+boundary: These records close the missing governed evidence trail; they do not claim operational publication or testing beyond the recorded pilot evidence.

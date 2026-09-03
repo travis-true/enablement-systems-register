@@ -16,6 +16,26 @@ files:
   - copilot-safe-use-microlearning.vtt
   - copilot-safe-use-microlearning-transcript.txt
   - copilot-safe-use-microlearning-storyboard.md
+  - records/record-index.yaml
+  - records/applicability-assessment.yaml
+  - records/request-intake.yaml
+  - records/entry-gate.yaml
+  - records/evidence-index.yaml
+  - records/asset-decision.yaml
+  - records/build-spec-qrg.yaml
+  - records/build-spec-guide.yaml
+  - records/build-spec-multimedia.yaml
+  - records/handoff-qrg.yaml
+  - records/handoff-guide.yaml
+  - records/handoff-multimedia.yaml
+  - records/release-qrg.yaml
+  - records/release-guide.yaml
+  - records/release-multimedia.yaml
+  - records/lifecycle-review.yaml
+  - records/validation-evidence.md
 qa_disposition: QA_PASS
+governed_record_status: APPROVED_RETROSPECTIVE_RECONSTRUCTION
+governed_record_authority: Travis True
+governed_record_date: "2026-09-03"
 release_authorization: AUTHORIZATION_NOT_VERIFIED
 release_boundary: Pilot evidence only; LACE v1.1.0 is not authorized by this record.

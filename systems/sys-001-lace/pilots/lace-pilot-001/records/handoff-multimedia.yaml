@@ -1,0 +1,28 @@
+template_id: LACE-TMP-006
+template_version: 1.0.0
+record_id: LACE-PILOT-001-HO-MM-001
+system_id: SYS-001
+status: approved
+owner: Travis True
+created_date: "2026-09-03"
+updated_date: "2026-09-03"
+asset_id: LACE-PILOT-001-MM
+from_stage: 6
+to_stage: 7
+handoff_status: accepted-with-constraints
+deliverables:
+  - copilot-safe-use-microlearning-source.pptx
+  - copilot-safe-use-microlearning.mp4
+  - copilot-safe-use-microlearning.vtt
+  - copilot-safe-use-microlearning-transcript.txt
+  - copilot-safe-use-microlearning-storyboard.md
+  - build-spec-multimedia.yaml
+  - ../qa-evidence.md
+open_items: []
+documented_constraints:
+  - Pilot evidence use only; no operational publication authorized.
+  - The asset is intentionally silent and requires its synchronized text alternatives.
+transferring_owner: LACE asset production
+receiving_owner: Travis True
+acknowledgment: Final multimedia candidate received with editable source, verified MP4, WebVTT, transcript, storyboard, and QA evidence.
+handoff_date: "2026-09-03"

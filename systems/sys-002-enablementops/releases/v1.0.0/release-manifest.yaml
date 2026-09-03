@@ -1,0 +1,37 @@
+record_id: EO-REL-1.0.0
+system_id: SYS-002
+release_version: 1.0.0
+status: released
+authority: Travis True
+authorization_date: 2026-09-03
+basis:
+  - evidence/sys-002-step-1-consolidation.md
+  - evidence/sys-002-step-2-production-standards.md
+  - evidence/sys-002-step-3-golden-examples.md
+  - evidence/sys-002-step-4-quality-assurance.md
+  - evidence/sys-002-step-5-automation-schemas.md
+  - evidence/sys-002-step-6-pilots-regression.md
+  - systems/sys-002-enablementops/releases/v1.0.0/approval.md
+validation:
+  schema: pass
+  semantic: pass
+  regression_tests: 9
+  human_authorization: true
+defects:
+  blocker: 0
+  critical: 0
+  major: 0
+scope:
+  - EnablementOps operating model and controlled terminology
+  - Production standards, template families, and tool profiles
+  - Golden examples and cross-format quality controls
+  - Structured records, schemas, validation, and regression automation
+  - Public-safe pilot evidence and lifecycle governance
+exclusions:
+  - Publication authorization for the three EO-PILOT-001 asset candidates
+  - Organization-specific confidential implementation details
+  - EngagementOps, except for its documented optional activation boundary
+review:
+  owner: Travis True
+  next_review: 2027-03-03
+rollback: Revert the v1.0.0 release changes through Git history while preserving SYS-002 and all governed record identifiers.

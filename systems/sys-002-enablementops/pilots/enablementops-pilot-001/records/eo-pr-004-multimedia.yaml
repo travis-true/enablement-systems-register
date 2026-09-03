@@ -1,0 +1,45 @@
+record:
+  id: EO-PR-004
+  system: SYS-002
+  version: 1.0.0
+  status: qa
+  owner: Travis True
+  date: 2026-09-03
+need:
+  outcome: Reinforce safe Copilot behaviors through a short equivalent-access microlearning package.
+  audience: General workplace Copilot users
+  moment_of_need: During short reinforcement learning
+  primary_family_id: F02
+  companion_family_ids: [F04]
+sources:
+  authoritative:
+    - systems/sys-001-lace/pilots/lace-pilot-001/manifest.yaml
+    - systems/sys-001-lace/pilots/lace-pilot-001/qa-evidence.md
+  verified_on: 2026-09-03
+  conflicts: []
+  assumptions: []
+  reuse_decision: adapt
+production:
+  native_format: PPTX storyboard
+  distribution_formats: [MP4, VTT, TXT]
+  build_authority: SYS-001
+  specification: LACE-TMP-400
+  accessibility_plan: Verify full media decode, timed captions, complete transcript, frame rendering, traceability, and privacy sanitization.
+qa:
+  master_score: 1.0
+  visual_score: 100
+  blockers: 0
+  critical_defects: 0
+  major_defects: 0
+  regression: pass
+  human_approval: false
+release:
+  decision: blocked
+  approver: null
+  approved_on: null
+  evidence:
+    - systems/sys-001-lace/pilots/lace-pilot-001/qa-evidence.md
+lifecycle:
+  next_review: 2027-03-03
+  replacement_triggers: [source-change, template-change, media-platform-change]
+  support_path: systems/sys-002-enablementops/README.md

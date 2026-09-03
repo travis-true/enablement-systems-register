@@ -1,0 +1,29 @@
+template_id: LACE-TMP-003
+template_version: 1.0.0
+record_id: LACE-PILOT-001-INT-001
+system_id: SYS-001
+status: approved
+owner: Travis True
+created_date: "2026-09-03"
+updated_date: "2026-09-03"
+request_id: LACE-PILOT-001
+title: Copilot Expansion Workshop - Week 1 Safe-Copilot pilot
+requester: Travis True
+request_date: "2026-09-02"
+business_need: Test the complete LACE v1.0 production workflow with three governed asset formats before releasing a pilot-derived system revision.
+performance_outcome: General workplace Copilot users can prompt clearly, refine results, review outputs, and pause when information permission is uncertain.
+audience: General workplace Copilot users with mixed experience levels.
+use_context: Public-sanitized controlled pilot evidence; not an operational end-user publication.
+task_or_workflow: Apply the Prompt-Refine-Review safe-use loop to approved workplace information.
+risk_level: moderate
+delivery_constraints:
+  - Remove organization names, contacts, customer or member classifications, and internal policy paths.
+  - Retain editable, distribution, accessibility-alternative, and QA evidence files.
+  - Limit release to the controlled pilot evidence repository.
+source_refs:
+  - LACE-PILOT-001-EVI-001
+requested_due_date: "2026-09-03"
+assumptions:
+  - The selected source was approved by the pilot authority for this public-sanitized derivative.
+known_gaps:
+  - The sanitized source does not identify a universal escalation contact.

@@ -32,11 +32,11 @@ EnablementOps (`SYS-002`) owns capability and performance enablement. Engagement
 
 EngagementOps does not own source truth, learning outcomes, instructional design, technical accuracy, asset construction, publication authority, or proof that a person can perform the required work.
 
-See [Boundary, activation, and authority](boundary-activation-authority.md), [Controlled terminology](terminology.md), [Governance standard](governance-standard.md), [Lifecycle and metadata standard](lifecycle-metadata-standard.md), and [Risk, accessibility, privacy, and approval standard](risk-accessibility-approval-standard.md), [Asset ecosystem](asset-ecosystem.md), and [Channel-profile catalog](channel-profile-catalog.yaml).
+See [Boundary, activation, and authority](boundary-activation-authority.md), [Controlled terminology](terminology.md), [Governance standard](governance-standard.md), [Lifecycle and metadata standard](lifecycle-metadata-standard.md), and [Risk, accessibility, privacy, and approval standard](risk-accessibility-approval-standard.md), [Asset ecosystem](asset-ecosystem.md), and [Channel-profile catalog](channel-profile-catalog.yaml), [Measurement standard](measurement-standard.md), and [Metric catalog](metric-catalog.yaml).
 
 ## Current maturity
 
 Status: **in progress**.  
-Version: **0.3.0**.
+Version: **0.4.0**.
 
-The system boundary, activation trigger, governance, lifecycle, risk controls, reusable campaign and asset records, eight channel profiles, three schemas, semantic validation, negative tests, and CI enforcement are controlled. Measurement standards, integration, broader automation, pilots, and release remain.
+The system boundary, governance, lifecycle, risk controls, campaign and asset records, channel profiles, six-level measurement ladder, metric catalog, measurement plans, five schemas, semantic validation, negative tests, and CI enforcement are controlled. Localization and remaining compliance detail, integration, broader automation, pilots, and release remain.

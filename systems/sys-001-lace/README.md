@@ -1,10 +1,10 @@
 # SYS-001 — LACE Learning Asset Creation Engine
 
-**Version:** 1.0.0  
-**Status:** Complete  
+**Version:** 1.1.0  
+**Status:** Maintenance  
 **Owner:** Travis True  
 **Classification:** Public-safe  
-**Canonical effective date:** 2026-09-02
+**Canonical effective date:** 2026-09-03
 
 LACE is the governed production system that converts approved source material and learning-design decisions into consistent, accessible, traceable, build-ready learning and performance-support assets.
 
@@ -22,7 +22,10 @@ LACE is the governed production system that converts approved source material an
 - [Decision-engine test cases](decision-engine/test-cases.yaml)
 - [Format-specific build kits](build-kits/)
 - [Automated validation](validation.md)
+- [Direct pilot package](pilots/lace-pilot-001/)
+- [v1.1.0 release notes](releases/v1.1.0/release-notes.md)
 - [Completion evidence](../../evidence/sys-001-completion.md)
+- [v1.1.0 release evidence](../../evidence/sys-001-v1.1.0-release.md)
 
 ## System boundary
 

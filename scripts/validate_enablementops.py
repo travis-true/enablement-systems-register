@@ -18,6 +18,7 @@ BASE_DOCUMENTS = {
     "golden-example-register.yaml": "schemas/golden-example-register.schema.json",
     "qa-test-matrix.yaml": "schemas/qa-test-matrix.schema.json",
     "records/enablementops-production-record.yaml": "schemas/production-record.schema.json",
+    "releases/v1.0.0/release-manifest.yaml": "schemas/system-release-manifest.schema.json",
 }
 
 
@@ -150,6 +151,11 @@ def validate_documents(root=ROOT, overrides=None):
         loaded[document_path] = data
         errors.extend(schema_errors(data, load_json(system / schema_path), document_path))
 
+    release_manifest = loaded["releases/v1.0.0/release-manifest.yaml"]
+    if release_manifest["release_version"] != release_manifest["record_id"].removeprefix("EO-REL-"):
+        errors.append("system release manifest record ID and version must match")
+    if release_manifest["validation"]["regression_tests"] < 8:
+        errors.append("system release manifest understates required regression coverage")
     productions = {"records/enablementops-production-record.yaml": loaded["records/enablementops-production-record.yaml"]}
     production_schema = load_json(system / "schemas/production-record.schema.json")
     manifests = {}
@@ -193,7 +199,7 @@ def main():
         return 1
     pilot_count = len(list((SYSTEM / "pilots").glob("*/manifest.yaml")))
     record_count = 1 + len(list((SYSTEM / "pilots").glob("*/records/*.yaml")))
-    print(f"EnablementOps validation passed: 4 schemas, {record_count} production records, {pilot_count} pilot manifest, and semantic regression controls.")
+    print(f"EnablementOps validation passed: 5 schemas, {record_count} production records, {pilot_count} pilot manifest, 1 release manifest, and semantic regression controls.")
     return 0
 
 

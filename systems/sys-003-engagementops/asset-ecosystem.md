@@ -14,6 +14,6 @@ Each selected component requires an asset specification and must reference a con
 F0–F3 fidelity:
 
 - F0 — presentation may be adapted without changing controlled meaning.
-- F1 — wording may be simplified within approved meaning and sources.
+- F1 — sequence and decision points must be preserved; presentation may change within approved meaning.
 - F2 — meaning-sensitive content requires named SME review.
 - F3 — policy, legal, compliance, security, privacy, or high-consequence content requires exact preservation or explicit specialist approval.

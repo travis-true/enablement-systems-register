@@ -25,9 +25,9 @@ Describe the outcome this guide supports.
 
 | Role | Responsibility | Decision or escalation authority |
 |---|---|---|
+| Role | Responsibility | Authority |
 
 > Accessibility: Mark the first row as a semantic table header and verify the final editable and distribution files.
-| Role | Responsibility | Authority |
 
 ## Before you begin
 
@@ -70,17 +70,17 @@ Use sanitized examples that demonstrate application without creating new policy 
 
 | Issue or condition | Likely cause | Safe action | Stop or escalate when |
 |---|---|---|---|
+| Issue | Cause | Action | Boundary |
 
 > Accessibility: Mark the first row as a semantic table header and verify the final editable and distribution files.
-| Issue | Cause | Action | Boundary |
 
 ## Records and evidence
 
 | Record | Owner | Required content | Storage or handoff |
 |---|---|---|---|
+| Record | Owner | Content | Controlled destination |
 
 > Accessibility: Mark the first row as a semantic table header and verify the final editable and distribution files.
-| Record | Owner | Content | Controlled destination |
 
 ## Support and escalation
 

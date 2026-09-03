@@ -1,0 +1,42 @@
+record:
+  id: EO-PR-001
+  system: SYS-002
+  version: 1.0.0
+  status: draft
+  owner: Travis True
+  date: 2026-09-03
+need:
+  outcome: Demonstrate the structured EnablementOps production record.
+  audience: Enablement practitioners
+  moment_of_need: Production planning
+  primary_family_id: F06
+  companion_family_ids: []
+sources:
+  authoritative: [systems/sys-002-enablementops/production-standard.md]
+  verified_on: 2026-09-03
+  conflicts: []
+  assumptions: []
+  reuse_decision: new
+production:
+  native_format: YAML
+  distribution_formats: [YAML]
+  build_authority: SYS-001
+  specification: systems/sys-002-enablementops/templates/family-production-specification.md
+  accessibility_plan: Apply the format-appropriate accessibility and manual review controls.
+qa:
+  master_score: 0
+  visual_score: null
+  blockers: 0
+  critical_defects: 0
+  major_defects: 0
+  regression: not-run
+  human_approval: false
+release:
+  decision: blocked
+  approver: null
+  approved_on: null
+  evidence: []
+lifecycle:
+  next_review: 2026-10-03
+  replacement_triggers: [schema-change, production-standard-change]
+  support_path: systems/sys-002-enablementops/README.md

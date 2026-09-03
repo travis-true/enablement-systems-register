@@ -152,5 +152,12 @@ class EngagementOpsValidationTests(unittest.TestCase):
         self.assertTrue(any("collision status requires evidence" in item for item in errors))
 
 
+    def test_system_release_without_human_authorization_fails(self):
+        data = record("releases/v1.0.0/release-manifest.yaml")
+        data["validation"]["human_authorization"] = False
+        errors = MODULE.validate_documents(overrides={"releases/v1.0.0/release-manifest.yaml": data})
+        self.assertTrue(any("True was expected" in item or "human_authorization" in item for item in errors))
+
+
 if __name__ == "__main__":
     unittest.main()

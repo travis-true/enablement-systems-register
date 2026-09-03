@@ -1,0 +1,36 @@
+record:
+  id: EO-HO-002
+  version: 1.0.0
+  source_system: SYS-002
+  target_system: SYS-003
+  status: accepted
+request:
+  initiative_id: SYS-002-RELEASE-1.0.0
+  campaign_id: EO-CMP-002
+  outcome: Make the governed EnablementOps v1.0.0 release discoverable to enablement practitioners.
+  intended_behavior: Enablement practitioners review the released system and use it for an applicable initiative.
+  audience: [Enablement practitioners]
+  excluded_audience: [Unspecified external operational audiences]
+  trigger: The first governed EnablementOps release requires a concise public-safe awareness path.
+  call_to_action: Review EnablementOps v1.0.0
+  timing: Repository publication on 2026-09-03
+  dependencies: [SYS-002 v1.0.0 release, public-safe repository access]
+sources:
+  authoritative: [systems/sys-002-enablementops/README.md, evidence/sys-002-v1.0.0-release.md]
+  owner: Travis True
+  verified_on: 2026-09-03
+constraints:
+  risk_tier: R1
+  material: [Public-safe content only, no audience-response claims without evidence]
+  required_reviews: [source, accessibility, release]
+  measurement_limits: [Repository publication proves availability, not reach, engagement, adoption, or impact]
+governance:
+  requester: Travis True
+  receiver: Travis True
+  decision_authority: SYS-003 owner
+disposition:
+  decision: accepted
+  decided_on: 2026-09-03
+  material_gaps: []
+  nonmaterial_gaps: [No authorized audience analytics source]
+  evidence: [evidence/sys-002-v1.0.0-release.md]

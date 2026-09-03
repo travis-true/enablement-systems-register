@@ -150,7 +150,7 @@ systems:
     audience: Enablement leaders, learning and performance professionals, content and knowledge teams, reviewers, approvers, publishers, analysts, and support partners.
     scope: Needs analysis, intake, prioritization, governance, learning and performance support, content operations, delivery, reinforcement, measurement, lifecycle, accessibility, quality, automation, support, and discoverability.
     completion_score: 100
-    related_systems: [SYS-001, FW-002, WF-001, WF-002, WF-003]
+    related_systems: [SYS-001, SYS-003, FW-002, WF-001, WF-002, WF-003]
     artifacts:
       - systems/sys-002-enablementops/README.md
       - systems/sys-002-enablementops/terminology.md
@@ -197,6 +197,29 @@ systems:
     last_reviewed: 2026-09-03
     next_review: 2027-03-03
     labels: [enablement-operations, operating-system, governance, capability-model]
+
+
+  - id: SYS-003
+    name: EngagementOps
+    category: system
+    status: in_progress
+    owner: Travis True
+    purpose: Govern how defined audiences become aware, participate, respond to calls to action, and remain engaged in support of approved outcomes.
+    audience: Enablement leaders, engagement strategists, communications partners, content owners, channel owners, reviewers, approvers, analysts, and support partners.
+    scope: Audience segmentation, activation strategy, campaigns, touchpoints, channels, calls to action, participation, feedback, engagement measurement, sustainment, lifecycle, accessibility, privacy, approval, and governance.
+    completion_score: 25
+    related_systems: [SYS-001, SYS-002, WF-002]
+    artifacts:
+      - systems/sys-003-engagementops/README.md
+      - systems/sys-003-engagementops/boundary-activation-authority.md
+      - systems/sys-003-engagementops/terminology.md
+    evidence:
+      - evidence/sys-003-step-1-boundary-activation.md
+    next_action: Complete governance, lifecycle, metadata, source-of-truth, privacy, accessibility, and approval standards.
+    version: 0.1.0
+    last_reviewed: 2026-09-03
+    next_review: 2026-10-03
+    labels: [engagement-operations, operating-system, activation, campaigns, governance]
 
   - id: FW-004
     name: EnablementOps Framework

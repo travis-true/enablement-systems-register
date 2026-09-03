@@ -1,0 +1,56 @@
+record:
+  id: EO-MP-001
+  campaign_id: EO-CMP-001
+  version: 0.1.0
+  status: draft
+  owner: Travis True
+purpose:
+  objective: Demonstrate a governed engagement measurement plan without collecting operational data.
+  decision_supported: Decide whether the example campaign record is structurally ready for future pilot use.
+  claim_level: engagement
+baseline:
+  status: not-available
+  period: null
+  source: null
+  value: null
+  rationale: This is a demonstration record with no operational audience or prior campaign.
+measures:
+  - measure_id: EO-MET-001
+    target: null
+    threshold_authority: null
+    frequency: once before activation
+    window: proposed campaign window
+    limitations: [Eligible reach does not prove delivery or attention]
+  - measure_id: EO-MET-004
+    target: null
+    threshold_authority: null
+    frequency: once at closure
+    window: proposed campaign window
+    limitations: [Participation does not prove learning or adoption]
+collection:
+  source: Demonstration records only
+  method: Manual structural review
+  population: Example campaign record
+  fields: [required-field completion, semantic-reference result]
+  aggregation: One public-safe example
+  access: [SYS-003 maintainers]
+  privacy_classification: public-sanitized
+  retention_class: demonstration-record
+  disposition_authority: SYS-003 owner
+reporting:
+  audience: [Enablement practitioners]
+  cadence: once at review
+  freshness: dated at validation
+  missing_data: Operational values remain null and are not imputed.
+  interpretation_boundary: Structural readiness only; no audience response, change, or impact claim.
+governance:
+  analytics_owner: Demonstration analytics owner
+  program_owner: Travis True
+  privacy_review: No personal or operational data collected
+  approved: false
+  approver: null
+decision:
+  outcome: not-decided
+  decided_on: null
+  decision_owner: null
+  evidence: []

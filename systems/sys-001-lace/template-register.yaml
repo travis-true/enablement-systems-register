@@ -170,7 +170,7 @@ templates:
     name: Detailed Procedural Guide
     family: performance-support-and-documentation
     status: active
-    version: 1.0.0
+    version: 1.1.0
     schema_path: schemas/build-kit-profile.schema.json
     profile_path: build-kits/lace-tmp-102-detailed-procedural-guide/profile.yaml
     template_path: build-kits/lace-tmp-102-detailed-procedural-guide/template.md
@@ -180,7 +180,7 @@ templates:
     name: Instructional Multimedia Package
     family: video-and-multimedia
     status: active
-    version: 1.0.0
+    version: 1.1.0
     schema_path: schemas/build-kit-profile.schema.json
     profile_path: build-kits/lace-tmp-400-instructional-multimedia/profile.yaml
     template_path: build-kits/lace-tmp-400-instructional-multimedia/template.md

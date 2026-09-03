@@ -120,5 +120,37 @@ class EngagementOpsValidationTests(unittest.TestCase):
         self.assertTrue(any("P0 gate" in item or "human approval" in item for item in errors))
 
 
+    def test_accepted_handoff_with_material_gap_fails(self):
+        data = record("records/example-activation-handoff.yaml")
+        data["disposition"]["material_gaps"] = ["Missing approval authority"]
+        errors = MODULE.validate_documents(overrides={"records/example-activation-handoff.yaml": data})
+        self.assertTrue(any("material gaps" in item for item in errors))
+
+    def test_registry_status_mismatch_fails(self):
+        data = record("campaign-registry.yaml")
+        data["campaigns"][0]["status"] = "active"
+        errors = MODULE.validate_documents(overrides={"campaign-registry.yaml": data})
+        self.assertTrue(any("version/status" in item for item in errors))
+
+    def test_calendar_unknown_touchpoint_fails(self):
+        data = record("campaign-calendar.yaml")
+        data["events"][0]["touchpoint_id"] = "EO-TP-999"
+        errors = MODULE.validate_documents(overrides={"campaign-calendar.yaml": data})
+        self.assertTrue(any("unknown touchpoint" in item for item in errors))
+
+    def test_calendar_date_mismatch_fails(self):
+        data = record("campaign-calendar.yaml")
+        data["events"][0]["scheduled_at"] = "2026-10-02T15:00:00Z"
+        errors = MODULE.validate_documents(overrides={"campaign-calendar.yaml": data})
+        self.assertTrue(any("calendar date" in item for item in errors))
+
+    def test_collision_review_without_evidence_fails(self):
+        data = record("campaign-calendar.yaml")
+        data["events"][0]["collision_status"] = "review-required"
+        data["events"][0]["collision_evidence"] = []
+        errors = MODULE.validate_documents(overrides={"campaign-calendar.yaml": data})
+        self.assertTrue(any("collision status requires evidence" in item for item in errors))
+
+
 if __name__ == "__main__":
     unittest.main()

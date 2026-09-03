@@ -20,3 +20,18 @@ campaigns:
     classification: public-sanitized
     next_review: 2026-10-31
     superseded_by: null
+  - id: EO-CMP-002
+    version: 1.0.0
+    status: active
+    owner: Travis True
+    related_system_ids: [SYS-002]
+    handoff_id: EO-HO-002
+    record_path: systems/sys-003-engagementops/pilots/engagementops-pilot-001/records/campaign.yaml
+    asset_ids: [EO-AST-002, EO-AST-003, EO-AST-004]
+    channel_ids: [EO-CH-002, EO-CH-008]
+    measure_ids: [EO-MET-001]
+    start: 2026-09-03
+    end: 2026-10-03
+    classification: public-sanitized
+    next_review: 2026-10-03
+    superseded_by: null

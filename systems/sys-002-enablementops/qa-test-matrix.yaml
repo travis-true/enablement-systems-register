@@ -1,0 +1,69 @@
+matrix:
+  system: SYS-002
+  version: 1.0.0
+  effective_date: 2026-09-03
+  owner: Travis True
+  statuses: [Not Reviewed, Pass, Warning, Blocked, Not Applicable]
+  master_score_minimum: 0.90
+  visual_score_minimum: 95
+  critical_visual_defects_allowed: 0
+  major_visual_defects_allowed: 0
+  native_and_export_review_required: true
+  human_approval_required: true
+
+formats:
+  DOCX:
+    automated: [file-opens, accessibility-checker, link-check]
+    manual: [styles-and-structure, reading-order, tables, alt-text, editability, page-render, exported-pdf]
+  PPTX:
+    automated: [file-opens, accessibility-checker, bounds-check, link-check]
+    manual: [slide-titles, reading-order, contrast, alt-text, slide-show, editability, final-size-render]
+  XLSX:
+    automated: [file-opens, formula-error-scan, accessibility-checker, link-check]
+    manual: [sheet-names, headers, labels-beyond-color, keyboard-navigation, input-output-clarity, chart-equivalent, editability]
+  PDF:
+    automated: [file-opens, page-count, tag-check-when-supported, link-check]
+    manual: [reading-order, headings, lists, tables, links, alt-text, language, zoom, print-readability]
+  WEB_LMS:
+    automated: [build, schema-or-config, link-check, accessibility-scan]
+    manual: [responsive-layout, keyboard-only, focus, forms-and-errors, navigation, completion, target-browser]
+  MEDIA:
+    automated: [file-opens, duration, caption-file-present, transcript-present]
+    manual: [caption-accuracy-and-sync, transcript, essential-visual-description, controls, motion, audio-quality, playback]
+  IMAGE:
+    automated: [file-opens, dimensions, filename]
+    manual: [privacy, legibility-at-use-size, contrast, text-alternative, crop, annotation-accuracy]
+  MARKDOWN_JSON_YAML:
+    automated: [syntax, schema-when-available, links, references]
+    manual: [authority, completeness, readability, version-and-status, public-safety]
+
+mandatory_scenarios:
+  - complete-valid-input
+  - missing-nonmaterial-input
+  - missing-material-input
+  - conflicting-authoritative-sources
+  - unverified-or-outdated-evidence
+  - unauthorized-decision-request
+  - required-human-decision
+  - required-specialist-determination
+  - restricted-information-trigger
+  - accepted-or-rejected-handoff
+  - returned-work-and-successful-correction
+  - failed-or-disputed-correction
+  - material-change-and-rollback
+  - critical-qa-or-accessibility-finding
+  - fast-track-request
+  - high-risk-overlay
+  - post-approval-change
+  - maintenance-supersession-or-retirement
+  - attempted-hard-stop-bypass
+
+release_requirements:
+  - all-applicable-critical-tests-pass
+  - required-negative-tests-pass
+  - no-unresolved-blocker-or-critical-defect
+  - major-defects-corrected-or-authorized
+  - regression-tests-pass
+  - dependencies-confirmed
+  - evidence-complete
+  - authorized-human-approval

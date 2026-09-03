@@ -1,0 +1,41 @@
+template_id: LACE-TMP-004
+template_version: 1.0.0
+record_id: LACE-PILOT-001-EVI-INDEX-001
+system_id: SYS-001
+status: approved
+owner: Travis True
+created_date: "2026-09-03"
+updated_date: "2026-09-03"
+request_id: LACE-PILOT-001
+entries:
+  - evidence_id: LACE-PILOT-001-EVI-001
+    title: Copilot Expansion - Week 1 Safe-Copilot
+    source_type: approved quick-reference PDF
+    location: Week1_Safe-Copilot_Quick-Reference_v2.0.pdf
+    authority_level: authoritative
+    owner: Travis True, pilot source-acceptance authority
+    version_or_date: v2.0; updated June 2026
+    use_status: approved
+    supported_claims:
+      - Users guide Copilot and remain accountable for review and judgment.
+      - GCSE means Goal, Context, Source, and Expectation.
+      - Users should prompt clearly, refine the result, and review before sharing.
+      - Review covers accuracy, fit, data handling, and judgment.
+      - Users should pause and exclude information when permission is uncertain.
+    limitations:
+      - Organization-specific names, contacts, classifications, and policy paths are excluded from the public derivative.
+      - No universal escalation contact is provided.
+  - evidence_id: LACE-PILOT-001-EVI-002
+    title: LACE-PILOT-001 QA evidence
+    source_type: final-candidate and package QA record
+    location: ../qa-evidence.md
+    authority_level: supporting
+    owner: Travis True
+    version_or_date: "2026-09-03"
+    use_status: approved
+    supported_claims:
+      - All pilot formats opened, rendered, and passed their recorded technical checks.
+      - DEF-001 was repaired and retested with no remaining audit findings.
+      - No open Blocker, Critical, Major, or Minor defects remained.
+    limitations:
+      - Microsoft Office, Acrobat screen-reader behavior, and representative-user testing were not independently verified.

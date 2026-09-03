@@ -1,0 +1,42 @@
+record_id: EO-SYS-REL-1.0.0
+system_id: SYS-003
+release_version: 1.0.0
+status: released
+authority: Travis True
+authorization_date: 2026-09-03
+basis:
+  - evidence/sys-003-step-1-boundary-activation.md
+  - evidence/sys-003-step-2-governance-lifecycle.md
+  - evidence/sys-003-step-3-campaign-channel-assets.md
+  - evidence/sys-003-step-4-measurement-analytics.md
+  - evidence/sys-003-step-5-delivery-controls.md
+  - evidence/sys-003-step-6-integration-automation.md
+  - evidence/sys-003-step-7-pilot-regression.md
+  - systems/sys-003-engagementops/releases/v1.0.0/approval.md
+validation:
+  schemas: 11
+  core_regression_tests: 22
+  pilot_regression_tests: 5
+  pilot: pass
+  semantic: pass
+  human_authorization: true
+defects:
+  blocker: 0
+  critical: 0
+  major: 0
+  minor: 0
+scope:
+  - Optional EngagementOps activation and authority model
+  - Governance, lifecycle, metadata, risk, accessibility, privacy, approval, and localization controls
+  - Campaign, asset, channel, measurement, readiness, registry, calendar, handoff, and export records
+  - Schema, semantic, negative, cross-system, pilot, and CI validation
+  - Public-safe EO-PILOT-001 evidence
+exclusions:
+  - Automatic activation for EnablementOps initiatives
+  - Authorization of future campaigns, channels, tracking, data collection, or publication
+  - Specialist determinations outside assigned authority
+  - Claims of verified pilot reach, engagement, adoption, performance, sustainment, or causal impact
+review:
+  owner: Travis True
+  next_review: 2027-03-03
+rollback: Revert the v1.0.0 release changes through Git history while preserving SYS-003 and every governed identifier.

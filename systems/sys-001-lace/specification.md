@@ -1,4 +1,4 @@
-# LACE v1.0 canonical specification
+# LACE v1.1.0 canonical specification
 
 ## 1. Purpose
 
@@ -118,7 +118,7 @@ LACE uses six asset families.
 
 The asset decision must consider desired performance, audience, task complexity and frequency, workflow position, operational risk, moment of need, environment, maintenance burden, delivery constraints, and source readiness.
 
-Production must use an active registered format build kit when one matches the approved asset decision. LACE v1.1 development currently approves `LACE-TMP-100`, `LACE-TMP-101`, `LACE-TMP-102`, and `LACE-TMP-400`. An asset without an active kit requires a documented human-approved production plan and cannot borrow another template identity.
+Production must use an active registered format build kit when one matches the approved asset decision. LACE v1.1.0 approves `LACE-TMP-100`, `LACE-TMP-101`, `LACE-TMP-102`, and `LACE-TMP-400`. An asset without an active kit requires a documented human-approved production plan and cannot borrow another template identity.
 
 ## 9. Standard asset specification
 
@@ -180,16 +180,18 @@ Every asset build specification must define:
 
 1. Render or preview the asset in its delivery context.
 2. Inspect content, layout, overflow, media, links, interaction, and accessibility.
-3. Classify defects by severity.
-4. Repair or regenerate affected components.
-5. Re-render and repeat until the applicable gate is met.
+3. Verify semantic structure in the editable source and again in each distribution format; visible formatting alone is not accessibility evidence.
+4. Classify defects by severity.
+5. Repair or regenerate affected components.
+6. Re-render and repeat until the applicable gate is met.
 
 ### Stage 7 — Approval and handoff
 
 1. Run visual, content, technical, accessibility, and package QA.
 2. Assign a production-readiness status.
-3. Record approvals, constraints, changes, and maintenance metadata.
-4. Hand the approved release package to the publication workflow.
+3. Record QA disposition and release authorization as separate decisions.
+4. Record approvals, constraints, changes, and maintenance metadata.
+5. Hand the approved release package to the publication workflow.
 
 ## 11. Writing and visual standards
 
@@ -203,7 +205,7 @@ LACE assets must apply:
 - governed design tokens, grids, typography, color, spacing, and components;
 - no decoration that competes with comprehension;
 - no reliance on color alone;
-- readable tables with repeated header rows when applicable;
+- readable tables with semantic header cells and repeated header rows when applicable;
 - alt text and meaningful labels;
 - task-focused screenshots with documented purpose, capture guidance, callouts, and alt text;
 - controlled icon, illustration, diagram, and media use;
@@ -305,7 +307,7 @@ LACE may automate intake normalization, source extraction, asset recommendations
 
 ## 18. Definition of done
 
-LACE v1.0 is complete when it has:
+LACE v1.1.0 is complete when it has:
 
 - a unique ID, owner, purpose, audience, and bounded scope;
 - triggers and entry conditions;
@@ -315,4 +317,5 @@ LACE v1.0 is complete when it has:
 - reusable specifications and standards;
 - version and review dates;
 - completion evidence;
+- direct pilot evidence covering an active QRG, detailed-guide, and multimedia build kit;
 - registered relationships without duplicating governing systems.

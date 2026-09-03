@@ -1,6 +1,6 @@
 ---
 template_id: LACE-TMP-102
-template_version: 1.0.0
+template_version: 1.1.0
 asset_id: ASSET-ID
 title: Detailed guide title
 variant: DPG-1A
@@ -26,6 +26,8 @@ Describe the outcome this guide supports.
 | Role | Responsibility | Decision or escalation authority |
 |---|---|---|
 | Role | Responsibility | Authority |
+
+> Accessibility: Mark the first row as a semantic table header and verify the final editable and distribution files.
 
 ## Before you begin
 
@@ -70,11 +72,15 @@ Use sanitized examples that demonstrate application without creating new policy 
 |---|---|---|---|
 | Issue | Cause | Action | Boundary |
 
+> Accessibility: Mark the first row as a semantic table header and verify the final editable and distribution files.
+
 ## Records and evidence
 
 | Record | Owner | Required content | Storage or handoff |
 |---|---|---|---|
 | Record | Owner | Content | Controlled destination |
+
+> Accessibility: Mark the first row as a semantic table header and verify the final editable and distribution files.
 
 ## Support and escalation
 

@@ -1,5 +1,5 @@
 template_id: LACE-TMP-102
-template_version: 1.0.0
+template_version: 1.1.0
 status: active
 name: Detailed Procedural Guide
 family: performance-support-and-documentation
@@ -71,11 +71,12 @@ design_rules:
   - Do not impose arbitrary page limits that remove required content.
   - Preserve editable source and verify every rendered page.
 accessibility_requirements:
-  - Use real heading levels, lists, table headers, bookmarks, and logical reading order.
+  - Use real heading levels, lists, semantically marked table headers, bookmarks, and logical reading order.
   - Use descriptive active links and alternatives for meaningful visuals.
   - Do not place essential information only in headers, footers, color, position, or images.
   - Verify contrast, zoom or reflow, keyboard access where applicable, and tagged export.
   - Recheck accessibility after conversion to the distribution format.
+  - Run a structural accessibility audit on the final editable and distribution files; visual appearance alone cannot prove table-header semantics.
 media_rules:
   - Use task-focused screenshots with documented purpose, capture guidance, callouts, alt text, platform, and version.
   - Limit callouts to the minimum needed and avoid covering interface controls.
@@ -94,6 +95,7 @@ acceptance_criteria:
   - Every required procedural claim is traceable to an approved source.
   - A user can complete and verify the process and recognize when to stop or escalate.
   - Every page renders without clipping, broken flow, orphaned content, or inaccessible structure.
+  - Every table with a header row exposes that row semantically in the editable source and distribution output.
   - The asset passes accessibility, visual, technical, and package gates.
 qa_gate:
   visual_score_minimum: 95

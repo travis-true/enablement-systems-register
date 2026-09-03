@@ -96,4 +96,4 @@ The following items are implementation improvements, not blockers to the canonic
 - machine-readable generation schemas;
 - automated rendering and visual regression;
 - lightweight internal asset-generator interface;
-- measured production pilot using the consolidated specification.
+- additional measured pilots across higher-risk and interactive asset types.

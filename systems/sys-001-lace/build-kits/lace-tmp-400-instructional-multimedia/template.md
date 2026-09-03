@@ -1,6 +1,6 @@
 ---
 template_id: LACE-TMP-400
-template_version: 1.0.0
+template_version: 1.1.0
 asset_id: ASSET-ID
 title: Multimedia title
 variant: MM-1A

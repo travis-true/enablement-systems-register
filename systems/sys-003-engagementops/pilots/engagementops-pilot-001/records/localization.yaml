@@ -1,0 +1,38 @@
+record:
+  id: EO-LOC-002
+  campaign_id: EO-CMP-002
+  version: 1.0.0
+  status: not-required
+  owner: Travis True
+locales:
+  required: false
+  source: en-US
+  targets: []
+  audience_basis: Public-safe English-language repository pilot for enablement practitioners
+  fallback: Maintain the approved en-US source; do not claim localized availability.
+fidelity:
+  level: F1
+  mode: not-applicable
+  protected_terms: [EnablementOps, EngagementOps, LACE]
+  source_version: SYS-002 v1.0.0
+requirements:
+  reading_direction: left-to-right
+  text_expansion: not-applicable
+  font_support: Unicode Markdown
+  captions: not-applicable
+  transcript: not-applicable
+  alt_text: not-applicable because no images are used
+  screen_reader_language: preserve en-US language context
+  date_time_number: use ISO dates in governed records
+  channel_rendering: verify Markdown heading and link structure
+reviews:
+  linguistic: source-language review complete
+  sme: source fidelity reviewed by system owner
+  accessibility: semantic Markdown structure reviewed
+  specialist: []
+  approved: false
+  approver: null
+lifecycle:
+  expiration: 2026-10-03
+  source_change_trigger: Reassess after audience, source, or locale change.
+  disposition: Retain with pilot evidence and do not claim localization.

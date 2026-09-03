@@ -29,3 +29,27 @@ events:
     expiration: 2026-10-15
     collision_status: clear
     collision_evidence: [No same-audience and same-channel event overlaps this proposed time]
+  - id: EO-CAL-003
+    campaign_id: EO-CMP-002
+    touchpoint_id: EO-TP-003
+    audience_group: Enablement practitioners
+    channel_id: EO-CH-002
+    scheduled_at: 2026-09-03T13:00:00Z
+    status: completed
+    owner: Travis True
+    dependency: [EO-DR-002 release decision]
+    expiration: 2026-10-03
+    collision_status: clear
+    collision_evidence: [No conflicting governed repository campaign event was recorded]
+  - id: EO-CAL-004
+    campaign_id: EO-CMP-002
+    touchpoint_id: EO-TP-004
+    audience_group: Enablement practitioners
+    channel_id: EO-CH-008
+    scheduled_at: 2026-09-03T13:00:00Z
+    status: completed
+    owner: Travis True
+    dependency: [EO-DR-002 release decision]
+    expiration: 2026-10-03
+    collision_status: clear
+    collision_evidence: [Different controlled channel from the simultaneous repository touchpoint]

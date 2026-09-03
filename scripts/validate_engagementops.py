@@ -18,6 +18,8 @@ DOCUMENTS = {
     "records/example-asset-specification.yaml": "schemas/asset-specification.schema.json",
     "metric-catalog.yaml": "schemas/metric-catalog.schema.json",
     "records/example-measurement-plan.yaml": "schemas/measurement-plan.schema.json",
+    "records/example-localization-profile.yaml": "schemas/localization-profile.schema.json",
+    "records/example-delivery-readiness.yaml": "schemas/delivery-readiness-record.schema.json",
 }
 
 
@@ -44,7 +46,7 @@ def schema_errors(data, schema, label):
     return errors
 
 
-def semantic_errors(catalog, campaign, asset, metric_catalog, measurement_plan):
+def semantic_errors(catalog, campaign, asset, metric_catalog, measurement_plan, localization, readiness):
     errors = []
     channels = catalog["channels"]
     channel_ids = [item["id"] for item in channels]
@@ -115,6 +117,38 @@ def semantic_errors(catalog, campaign, asset, metric_catalog, measurement_plan):
     if measurement_plan["decision"]["outcome"] != "not-decided":
         if not measurement_plan["decision"]["decided_on"] or not measurement_plan["decision"]["decision_owner"]:
             errors.append("measurement decision requires date and decision owner")
+
+    if localization["record"]["campaign_id"] != campaign["record"]["id"]:
+        errors.append("localization profile campaign reference does not match")
+    if localization["locales"]["required"] and not localization["locales"]["targets"]:
+        errors.append("required localization must identify target locales")
+    if localization["record"]["status"] in {"approved", "active"}:
+        if not localization["reviews"]["approved"] or not localization["reviews"]["approver"]:
+            errors.append("approved/active localization requires recorded approval")
+    if localization["fidelity"]["level"] in {"F2", "F3"} and "not-required" in localization["reviews"]["sme"]:
+        errors.append("F2/F3 localization requires SME review")
+    if localization["fidelity"]["level"] == "F3" and not localization["reviews"]["specialist"]:
+        errors.append("F3 localization requires specialist review")
+
+    if readiness["record"]["campaign_id"] != campaign["record"]["id"]:
+        errors.append("delivery-readiness campaign reference does not match")
+    gate_ids = [item["id"] for item in readiness["gates"]]
+    required_gates = {"source", "technical", "specialist", "accessibility", "brand", "operational", "measurement", "release"}
+    if set(gate_ids) != required_gates or len(gate_ids) != len(required_gates):
+        errors.append("delivery readiness must contain each required gate exactly once")
+    if readiness["screenshots"]["present"] and readiness["screenshots"]["redaction_review"] != "pass":
+        errors.append("screenshots require a passing redaction review")
+    if readiness["change_control"]["post_approval_change"]:
+        if readiness["change_control"]["p0_regression"] != "pass" or readiness["change_control"]["p1_regression"] != "pass":
+            errors.append("post-approval change requires passing P0/P1 regression")
+    if readiness["release"]["decision"] in {"approved", "released"}:
+        p0 = [item for item in readiness["gates"] if item["priority"] == "P0"]
+        if any(item["result"] not in {"pass", "not-applicable"} for item in p0):
+            errors.append("release has an incomplete or failing P0 gate")
+        if readiness["defects"]["blocker"] or readiness["defects"]["critical"]:
+            errors.append("release has an open Blocker or Critical defect")
+        if not readiness["release"]["approver"] or not readiness["release"]["approved_on"]:
+            errors.append("release requires recorded human approval")
     return errors
 
 
@@ -136,6 +170,8 @@ def validate_documents(root=ROOT, overrides=None):
             loaded["records/example-asset-specification.yaml"],
             loaded["metric-catalog.yaml"],
             loaded["records/example-measurement-plan.yaml"],
+            loaded["records/example-localization-profile.yaml"],
+            loaded["records/example-delivery-readiness.yaml"],
         ))
     return errors
 
@@ -146,7 +182,7 @@ def main():
         print("EngagementOps validation failed:")
         print("\n".join(f"- {error}" for error in errors))
         return 1
-    print("EngagementOps validation passed: 5 schemas, 8 channel profiles, 12 metrics, 1 campaign, 1 asset specification, 1 measurement plan, and semantic cross-references.")
+    print("EngagementOps validation passed: 7 schemas, 8 channel profiles, 12 metrics, 5 governed example records, and semantic release controls.")
     return 0
 
 

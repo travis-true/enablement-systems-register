@@ -19,3 +19,5 @@ jobs:
       - run: python -m pip install --disable-pip-version-check PyYAML jsonschema
       - run: python scripts/validate_register.py
       - run: python scripts/validate_lace.py
+      - run: python -m unittest -v scripts/test_validate_lace_pilots.py
+      - run: python scripts/validate_lace_pilots.py

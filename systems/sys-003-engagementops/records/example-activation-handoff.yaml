@@ -1,0 +1,36 @@
+record:
+  id: EO-HO-001
+  version: 0.1.0
+  source_system: SYS-002
+  target_system: SYS-003
+  status: accepted
+request:
+  initiative_id: SYS-003-DEMO-001
+  campaign_id: EO-CMP-001
+  outcome: Demonstrate the governed handoff between EnablementOps and EngagementOps.
+  intended_behavior: Enablement practitioners can identify the records required for optional engagement activation.
+  audience: [Enablement practitioners]
+  excluded_audience: [External operational audiences]
+  trigger: A coordinated example is needed to validate the optional SYS-003 integration.
+  call_to_action: Review the linked example records
+  timing: Demonstration window during October 2026
+  dependencies: [SYS-002 v1.0.0, SYS-003 governance standards]
+sources:
+  authoritative: [systems/sys-002-enablementops/README.md, systems/sys-003-engagementops/boundary-activation-authority.md]
+  owner: Travis True
+  verified_on: 2026-09-03
+constraints:
+  risk_tier: R1
+  material: [No operational publication or audience activation]
+  required_reviews: [source, accessibility, release]
+  measurement_limits: [Structural validation only; no engagement, adoption, or impact claim]
+governance:
+  requester: Travis True
+  receiver: Travis True
+  decision_authority: SYS-003 owner
+disposition:
+  decision: accepted
+  decided_on: 2026-09-03
+  material_gaps: []
+  nonmaterial_gaps: [Operational pilot audience and channel owners remain future decisions]
+  evidence: [evidence/sys-003-step-1-boundary-activation.md]

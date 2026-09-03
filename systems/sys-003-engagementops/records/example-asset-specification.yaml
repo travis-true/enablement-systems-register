@@ -1,0 +1,46 @@
+record:
+  id: EO-AST-001
+  campaign_id: EO-CMP-001
+  version: 0.1.0
+  status: draft
+  owner: Travis True
+purpose:
+  asset_type: faq
+  objective: Explain the controlled fields in the public-safe example campaign.
+  audience: [Enablement practitioners]
+delivery:
+  channel_ids: [EO-CH-002, EO-CH-003]
+  platform: Demonstration only
+  format: Markdown
+  orientation: null
+  runtime: null
+message:
+  core_idea: EngagementOps requires governed activation and lifecycle records.
+  hook: Plan engagement without losing authority.
+  call_to_action: Review the example campaign record
+  reinforcement_prompt: Record any missing control before reuse.
+content:
+  sections: [Purpose, Activation, Channels, Governance, Lifecycle]
+  source_references: [systems/sys-003-engagementops/governance-standard.md, systems/sys-003-engagementops/lifecycle-metadata-standard.md]
+visual:
+  style: Plain structured reference
+  direction: Use clear headings, short sections, and no decorative imagery.
+accessibility:
+  captions: not-applicable
+  transcript: not-applicable
+  alt_text: not-applicable
+  reduced_motion_alternative: not-applicable
+  screen_reader_notes: Use semantic headings and descriptive links.
+governance:
+  fidelity: F1
+  sme_review: false
+  specialist_reviews: []
+  approved: false
+  approver: null
+measurement:
+  measure_ids: []
+  limitations: [No operational measurement; demonstration asset only]
+lifecycle:
+  activation_date: null
+  expiration: 2026-10-31
+  replacement_trigger: Replace after a material SYS-003 schema or governance change.

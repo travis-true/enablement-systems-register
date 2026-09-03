@@ -1,0 +1,86 @@
+catalog:
+  system: SYS-003
+  version: 1.0.0
+  owner: Travis True
+  status: approved
+channels:
+  - id: EO-CH-001
+    name: Messaging and collaboration
+    channel_class: messaging
+    audience_fit: Known internal groups needing timely, conversational touchpoints.
+    use_cases: [announcement, reminder, discussion, peer-reinforcement]
+    required_specs: [message-length, post-format, link-behavior, moderation-owner, activation-window]
+    accessibility_checks: [plain-language, descriptive-links, image-alternatives, keyboard-access, readable-formatting]
+    privacy_checks: [membership, posting-permissions, notification-scope, data-classification]
+    approval_roles: [campaign-owner, channel-owner, release-approver]
+    measurement_options: [delivered, viewed-when-available, reactions, replies, call-to-action-completions]
+  - id: EO-CH-002
+    name: Intranet and portals
+    channel_class: web-portal
+    audience_fit: Audiences needing durable, searchable, authoritative campaign information.
+    use_cases: [landing-page, news, faq, campaign-hub, resource-directory]
+    required_specs: [page-template, navigation, responsive-layout, search-metadata, owner, review-date]
+    accessibility_checks: [headings, keyboard, focus, contrast, alt-text, reflow, link-purpose]
+    privacy_checks: [site-permissions, audience-scope, analytics-access, embedded-content]
+    approval_roles: [content-owner, channel-owner, accessibility-reviewer, release-approver]
+    measurement_options: [page-views, unique-visitors, dwell-time, downloads, call-to-action-completions]
+  - id: EO-CH-003
+    name: Email
+    channel_class: email
+    audience_fit: Defined recipients needing direct, time-bound notification or action.
+    use_cases: [announcement, invitation, reminder, manager-message, follow-up]
+    required_specs: [sender, recipient-rule, subject, preheader, body, call-to-action, send-time, reply-path]
+    accessibility_checks: [semantic-structure, descriptive-links, contrast, alt-text, text-equivalent, zoom]
+    privacy_checks: [recipient-validation, address-exposure, tracking-authorization, unsubscribe-or-preference-rule]
+    approval_roles: [content-owner, campaign-owner, release-approver]
+    measurement_options: [delivered, bounced, opened-when-authorized, clicked, call-to-action-completions]
+  - id: EO-CH-004
+    name: Learning and live events
+    channel_class: learning-event
+    audience_fit: Audiences needing guided explanation, demonstration, discussion, or practice.
+    use_cases: [webinar, meeting, office-hours, workshop, lms-assignment]
+    required_specs: [registration, agenda, facilitator, platform, duration, materials, recording-decision, support]
+    accessibility_checks: [captions, transcript, accessible-materials, keyboard, participation-alternative, accommodation-path]
+    privacy_checks: [registration-data, attendee-visibility, recording-consent, retention, access]
+    approval_roles: [initiative-owner, event-owner, accessibility-reviewer, release-approver]
+    measurement_options: [registrations, attendance, participation, completion, feedback]
+  - id: EO-CH-005
+    name: Social and community feeds
+    channel_class: social-community
+    audience_fit: Communities suited to discovery, conversation, recognition, and recurring reinforcement.
+    use_cases: [social-post, carousel, champion-story, poll, recurring-series]
+    required_specs: [post-format, media-ratio, copy-limit, tags, moderation, frequency, response-path]
+    accessibility_checks: [alt-text, captions, transcript, contrast, text-in-image-equivalent, motion-control]
+    privacy_checks: [community-scope, profile-exposure, user-content, moderation, screenshot-sharing]
+    approval_roles: [campaign-owner, community-owner, brand-reviewer, release-approver]
+    measurement_options: [reach, reactions, replies, shares, poll-response, call-to-action-completions]
+  - id: EO-CH-006
+    name: Display and mobile surfaces
+    channel_class: display-mobile
+    audience_fit: Broad or location-based audiences receiving brief glanceable messages.
+    use_cases: [digital-signage, mobile-card, banner, rotating-display]
+    required_specs: [pixel-size, orientation, safe-area, duration, rotation, location, fallback]
+    accessibility_checks: [contrast, text-size, reading-time, non-motion-alternative, qr-link-alternative]
+    privacy_checks: [public-visibility, location-sensitivity, device-data, qr-destination]
+    approval_roles: [campaign-owner, channel-owner, accessibility-reviewer, release-approver]
+    measurement_options: [estimated-reach, scans, destination-visits, call-to-action-completions]
+  - id: EO-CH-007
+    name: Knowledge and support
+    channel_class: support
+    audience_fit: People needing point-of-need answers, troubleshooting, or assisted support.
+    use_cases: [knowledge-base, service-portal, chat-support, job-aid, faq]
+    required_specs: [article-template, search-terms, escalation, support-owner, review-date, related-items]
+    accessibility_checks: [structure, keyboard, reflow, descriptive-links, media-alternatives, readable-steps]
+    privacy_checks: [case-data, search-visibility, transcript-handling, permissions, redaction]
+    approval_roles: [content-owner, support-owner, accessibility-reviewer, release-approver]
+    measurement_options: [searches, views, helpfulness, deflection, escalations, resolution]
+  - id: EO-CH-008
+    name: Leader and champion networks
+    channel_class: leader-network
+    audience_fit: Managers, executives, or champions who amplify and contextualize approved messages.
+    use_cases: [manager-kit, executive-message, champion-kit, talking-points, cascade]
+    required_specs: [sender-role, briefing, talking-points, audience-map, timing, feedback-path]
+    accessibility_checks: [accessible-kit, plain-language, equivalent-formats, meeting-accommodations]
+    privacy_checks: [distribution-list, confidential-briefing, participant-data, feedback-handling]
+    approval_roles: [initiative-owner, content-owner, network-owner, release-approver]
+    measurement_options: [briefings, cascade-confirmations, audience-reach, feedback, call-to-action-completions]

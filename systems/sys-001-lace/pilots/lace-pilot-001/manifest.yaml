@@ -1,0 +1,21 @@
+pilot_id: LACE-PILOT-001
+system_id: SYS-001
+topic: Copilot Expansion Workshop - Week 1 Safe-Copilot
+source_baseline: Week1_Safe-Copilot_Quick-Reference_v2.0.pdf
+templates:
+  qrg: LACE-TMP-101
+  detailed_guide: LACE-TMP-102
+  multimedia: LACE-TMP-400
+files:
+  - copilot-safe-use-qrg.pptx
+  - copilot-safe-use-qrg.pdf
+  - copilot-safe-use-detailed-guide.docx
+  - copilot-safe-use-detailed-guide.pdf
+  - copilot-safe-use-microlearning-source.pptx
+  - copilot-safe-use-microlearning.mp4
+  - copilot-safe-use-microlearning.vtt
+  - copilot-safe-use-microlearning-transcript.txt
+  - copilot-safe-use-microlearning-storyboard.md
+qa_disposition: QA_PASS
+release_authorization: AUTHORIZATION_NOT_VERIFIED
+release_boundary: Pilot evidence only; LACE v1.1.0 is not authorized by this record.

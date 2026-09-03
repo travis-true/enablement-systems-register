@@ -1,0 +1,15 @@
+COPILOT EXPANSION WORKSHOP — SAFE USE MICROLESSON
+
+Use Copilot safely. Prompt clearly. Refine the result. Review before sharing.
+
+First, prompt clearly. Use Goal, Context, Source and Expectation. Tell Copilot what success looks like.
+
+For example: Help me summarize the key decisions for a team update using this approved meeting thread. Return five plain-language bullets and include action items.
+
+Second, refine the result. Ask for a shorter version, a decision focus or a rewrite for a different audience.
+
+Third, review before sharing. Verify accuracy, audience fit, data handling and readiness. You own the final judgment.
+
+When unsure, pause. Do not include sensitive or restricted information until you confirm it is permitted.
+
+Source: Copilot Expansion: Week 1 Safe-Copilot, v2.0, updated June 2026. Public-sanitized pilot derivative.

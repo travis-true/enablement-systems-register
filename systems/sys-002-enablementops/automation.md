@@ -11,6 +11,7 @@ The automated gate validates:
 - Approved Golden metadata, QA thresholds, unique IDs, layout coverage, and family references;
 - QA formats, thresholds, mandatory scenarios, and release requirements;
 - structured production-record fields and family references;
+- the governed system-release manifest and human authorization;
 - release semantics that prevent approval below quality thresholds, with unresolved blocking defects, without regression, without evidence, or without human approval.
 
 ## Commands

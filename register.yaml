@@ -202,12 +202,12 @@ systems:
   - id: SYS-003
     name: EngagementOps
     category: system
-    status: in_progress
+    status: maintenance
     owner: Travis True
     purpose: Govern how defined audiences become aware, participate, respond to calls to action, and remain engaged in support of approved outcomes.
     audience: Enablement leaders, engagement strategists, communications partners, content owners, channel owners, reviewers, approvers, analysts, and support partners.
     scope: Audience segmentation, activation strategy, campaigns, touchpoints, channels, calls to action, participation, feedback, engagement measurement, sustainment, lifecycle, accessibility, privacy, approval, and governance.
-    completion_score: 97
+    completion_score: 100
     related_systems: [SYS-001, SYS-002, WF-002]
     artifacts:
       - systems/sys-003-engagementops/README.md
@@ -257,6 +257,10 @@ systems:
       - systems/sys-003-engagementops/pilots/engagementops-pilot-001/assets/leader-talking-points.md
       - scripts/validate_engagementops_pilots.py
       - scripts/test_validate_engagementops_pilots.py
+      - systems/sys-003-engagementops/schemas/system-release-manifest.schema.json
+      - systems/sys-003-engagementops/releases/v1.0.0/release-manifest.yaml
+      - systems/sys-003-engagementops/releases/v1.0.0/approval.md
+      - systems/sys-003-engagementops/releases/v1.0.0/release-notes.md
     evidence:
       - evidence/sys-003-step-1-boundary-activation.md
       - evidence/sys-003-step-2-governance-lifecycle.md
@@ -265,10 +269,11 @@ systems:
       - evidence/sys-003-step-5-delivery-controls.md
       - evidence/sys-003-step-6-integration-automation.md
       - evidence/sys-003-step-7-pilot-regression.md
-    next_action: Complete formal release authorization and publish the first governed SYS-003 release.
-    version: 0.7.0
+      - evidence/sys-003-v1.0.0-release.md
+    next_action: Monitor governed use and review after a material source, audience, channel, accessibility, privacy, measurement, platform, or governance change.
+    version: 1.0.0
     last_reviewed: 2026-09-03
-    next_review: 2026-10-03
+    next_review: 2027-03-03
     labels: [engagement-operations, operating-system, activation, campaigns, governance]
 
   - id: FW-004

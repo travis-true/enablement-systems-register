@@ -188,7 +188,8 @@ def semantic_errors(catalog, campaign, asset, metric_catalog, measurement_plan, 
         errors.append("calendar event IDs must be unique")
     touchpoints = {item["id"]: item for item in campaign["touchpoints"]}
     seen_touchpoints = set()
-    for event in calendar["events"]:
+    campaign_events = [item for item in calendar["events"] if item["campaign_id"] == campaign["record"]["id"]]
+    for event in campaign_events:
         if event["campaign_id"] != campaign["record"]["id"]:
             errors.append(f"{event['id']}: calendar campaign reference does not match")
         if event["touchpoint_id"] not in touchpoints:

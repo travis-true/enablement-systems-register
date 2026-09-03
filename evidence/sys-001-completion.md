@@ -4,8 +4,8 @@
 
 - **ID:** SYS-001
 - **Name:** LACE Learning Asset Creation Engine
-- **Version:** 1.0.0
-- **Assessment date:** 2026-09-02
+- **Version:** 1.1.0
+- **Assessment date:** 2026-09-03
 - **Owner:** Travis True
 
 ## Completion assessment
@@ -20,12 +20,12 @@
 | Exceptions and escalation | Material escalation conditions and required record defined | Met |
 | Reusable artifacts and standards | Canonical asset specification, six-family taxonomy, writing, visual, accessibility, and QA standards | Met |
 | Version and review controls | Semantic versioning, change controls, and review triggers defined | Met |
-| Tested, approved, or used | Predecessor LDCS, TAB Studio, and Phase 5 controls were approved or operationally applied; July 2026 drafts contain direct LACE governance notes | Met with inherited evidence |
+| Tested, approved, or used | LACE-PILOT-001 directly produced and verified a QRG, detailed guide, and multimedia package using the canonical system | Met with direct pilot evidence |
 | Related-system links | FW-002, WF-002, WF-003, and PB-001 relationships defined | Met |
 
-**Completion score: 90/100**
+**Completion score: 100/100**
 
-The score reflects a complete canonical system specification with inherited operational evidence. Ten points remain reserved for a measured pilot executed directly against the consolidated v1.0 package and its future machine-readable template register.
+The canonical package now meets every definition-of-done area and has direct pilot evidence against the consolidated system, active decision controls, build kits, and automated validation.
 
 ## Direct operational evidence
 
@@ -59,7 +59,7 @@ LACE now includes eight paired, standalone JSON Schemas and reusable YAML record
 - release manifest;
 - lifecycle review.
 
-All eight template/schema pairs passed structural, required-field, type, enum, pattern, date, uniqueness, and state-gate checks before activation. `LACE-TMP-001` through `LACE-TMP-008` are active. Format-specific templates `LACE-TMP-100` and `LACE-TMP-101` remain planned.
+All eight template/schema pairs passed structural, required-field, type, enum, pattern, date, uniqueness, and state-gate checks before activation. `LACE-TMP-001` through `LACE-TMP-009` are active, together with format build kits `LACE-TMP-100`, `LACE-TMP-101`, `LACE-TMP-102`, and `LACE-TMP-400`.
 
 ## Decision-engine evidence
 
@@ -116,10 +116,22 @@ The LACE validator blocks:
 
 Automation does not replace source, visual, accessibility, approval, or publication evidence for completed assets.
 
+## Direct pilot and v1.1.0 evidence
+
+`LACE-PILOT-001` used the Week 1 Safe-Copilot source to produce one compact QRG, one detailed procedural guide, and one instructional multimedia package. Final candidates passed source, visual, structural, technical, privacy-sanitization, cross-format, and package checks. One Major accessibility defect—a table header visible in layout but missing its semantic marker—was repaired and retested with zero remaining audit findings.
+
+The pilot also proved a valid silent visual microlearning use case. LACE v1.1.0 therefore:
+
+- requires structural accessibility verification in editable and distribution formats;
+- makes semantic table-header verification explicit in `LACE-TMP-102`;
+- adds the `MM-1D` silent visual microlearning variant to `LACE-TMP-400`;
+- makes audio acceptance conditional when no audio is instructional;
+- separates QA disposition from release authorization in the canonical workflow.
+
 ## Residual improvements
 
-- Run and record a pilot using only the canonical LACE v1.0 package.
-- Add automated schema, rendering, accessibility, and visual-regression checks.
+- Add automated rendering, accessibility, and visual-regression checks where stable tooling permits.
 - Build governed editable master families and a component library.
+- Collect operational measures across higher-risk and interactive asset types.
 
-The template namespace is resolved; the remaining improvements increase automation maturity but do not prevent controlled manual operation of v1.0.
+These are maturity improvements and do not block controlled operation of LACE v1.1.0.

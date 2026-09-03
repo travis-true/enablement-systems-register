@@ -32,11 +32,11 @@ EnablementOps (`SYS-002`) owns capability and performance enablement. Engagement
 
 EngagementOps does not own source truth, learning outcomes, instructional design, technical accuracy, asset construction, publication authority, or proof that a person can perform the required work.
 
-See [Boundary, activation, and authority](boundary-activation-authority.md), [Controlled terminology](terminology.md), [Governance standard](governance-standard.md), [Lifecycle and metadata standard](lifecycle-metadata-standard.md), and [Risk, accessibility, privacy, and approval standard](risk-accessibility-approval-standard.md), [Asset ecosystem](asset-ecosystem.md), and [Channel-profile catalog](channel-profile-catalog.yaml), [Measurement standard](measurement-standard.md), and [Metric catalog](metric-catalog.yaml), [Localization standard](localization-standard.md), and [Delivery-readiness standard](delivery-readiness-standard.md), [Integration standard](integration-standard.md), [Campaign registry](campaign-registry.yaml), and [Campaign calendar](campaign-calendar.yaml).
+See [Boundary, activation, and authority](boundary-activation-authority.md), [Controlled terminology](terminology.md), [Governance standard](governance-standard.md), [Lifecycle and metadata standard](lifecycle-metadata-standard.md), and [Risk, accessibility, privacy, and approval standard](risk-accessibility-approval-standard.md), [Asset ecosystem](asset-ecosystem.md), and [Channel-profile catalog](channel-profile-catalog.yaml), [Measurement standard](measurement-standard.md), and [Metric catalog](metric-catalog.yaml), [Localization standard](localization-standard.md), and [Delivery-readiness standard](delivery-readiness-standard.md), [Integration standard](integration-standard.md), [Campaign registry](campaign-registry.yaml), and [Campaign calendar](campaign-calendar.yaml), and [EO-PILOT-001 QA evidence](pilots/engagementops-pilot-001/qa-evidence.md).
 
 ## Current maturity
 
 Status: **in progress**.  
-Version: **0.6.0**.
+Version: **0.7.0**.
 
-The system boundary, governance, lifecycle, assets, channels, measurement, delivery controls, SYS-002 activation handoff, central campaign registry/calendar, ten schemas, cross-system validation, negative tests, and CI enforcement are controlled. Operational pilot and formal release remain.
+The system boundary, governance, lifecycle, assets, channels, measurement, delivery controls, integration, registry/calendar, schemas, cross-system validation, CI enforcement, and the first public-safe end-to-end pilot are controlled. Formal release remains.

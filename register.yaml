@@ -5,18 +5,18 @@ register:
   authoritative_location: GitHub
   discovery_layer: Notion
   visibility: public-sanitized
-  last_updated: 2026-09-02
+  last_updated: 2026-09-03
 
 systems:
   - id: SYS-001
     name: LACE Learning Asset Creation Engine
     category: system
-    status: complete
+    status: maintenance
     owner: Travis True
     purpose: Transform approved knowledge and learning-design decisions into consistent, accessible, traceable, production-ready learning assets.
     audience: Learning strategists, instructional designers, asset developers, reviewers, approvers, and publishers.
     scope: Intake, source intelligence, reuse, asset selection, production specification, content and visual creation, rendering, repair, quality gates, and release handoff.
-    completion_score: 90
+    completion_score: 100
     related_systems: [FW-002, WF-002, WF-003, PB-001]
     artifacts:
       - systems/sys-001-lace/README.md
@@ -60,12 +60,18 @@ systems:
       - systems/sys-001-lace/validation.md
       - scripts/validate_lace.py
       - .github/workflows/validate-register.yml
+      - systems/sys-001-lace/pilots/lace-pilot-001/manifest.yaml
+      - systems/sys-001-lace/pilots/lace-pilot-001/qa-evidence.md
+      - systems/sys-001-lace/releases/v1.1.0/release-manifest.yaml
+      - systems/sys-001-lace/releases/v1.1.0/release-notes.md
     evidence:
       - evidence/sys-001-completion.md
-    next_action: Pilot LACE with one QRG, one detailed guide, and one multimedia asset.
-    version: 1.0.0
-    last_reviewed: 2026-09-02
-    next_review: 2027-03-02
+      - evidence/sys-001-step-6-pilot.md
+      - evidence/sys-001-v1.1.0-release.md
+    next_action: Monitor operational use and review LACE after a material source, platform, accessibility, policy, or build-kit change.
+    version: 1.1.0
+    last_reviewed: 2026-09-03
+    next_review: 2027-03-03
     labels: [learning-assets, content-production, accessibility, quality-assurance, public-safe]
 
   - id: FW-001

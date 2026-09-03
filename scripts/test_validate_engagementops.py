@@ -59,5 +59,32 @@ class EngagementOpsValidationTests(unittest.TestCase):
         self.assertTrue(any("recorded approval" in item for item in errors))
 
 
+    def test_unknown_measure_fails(self):
+        data = record("records/example-measurement-plan.yaml")
+        data["measures"][0]["measure_id"] = "EO-MET-999"
+        errors = MODULE.validate_documents(overrides={"records/example-measurement-plan.yaml": data})
+        self.assertTrue(any("unknown metrics" in item for item in errors))
+
+    def test_available_baseline_without_value_fails(self):
+        data = record("records/example-measurement-plan.yaml")
+        data["baseline"]["status"] = "available"
+        data["baseline"]["source"] = "approved source"
+        errors = MODULE.validate_documents(overrides={"records/example-measurement-plan.yaml": data})
+        self.assertTrue(any("baseline requires" in item for item in errors))
+
+    def test_unapproved_active_measurement_plan_fails(self):
+        data = record("records/example-measurement-plan.yaml")
+        data["record"]["status"] = "active"
+        errors = MODULE.validate_documents(overrides={"records/example-measurement-plan.yaml": data})
+        self.assertTrue(any("measurement plan requires recorded approval" in item for item in errors))
+
+    def test_decision_without_owner_fails(self):
+        data = record("records/example-measurement-plan.yaml")
+        data["decision"]["outcome"] = "continue"
+        data["decision"]["decided_on"] = "2026-10-31"
+        errors = MODULE.validate_documents(overrides={"records/example-measurement-plan.yaml": data})
+        self.assertTrue(any("decision requires date and decision owner" in item for item in errors))
+
+
 if __name__ == "__main__":
     unittest.main()

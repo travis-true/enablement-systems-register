@@ -44,6 +44,6 @@ EnablementOps can contain or coordinate:
 
 Status: **in progress**.
 
-The operating-system classification, scope, boundary, terminology, production standard, template-family catalog, tool profiles, and uncovered-family fallback are controlled. Remaining completion work covers golden examples, visual and functional QA, automation and schemas, pilots and regression validation, and formal release.
+The operating-system classification, scope, boundary, terminology, production standard, template-family catalog, tool profiles, uncovered-family fallback, and golden-example governance are controlled. Two source-backed Approved Goldens cover QRG-1A and QRG-2A, while six other examples remain References. Remaining completion work covers visual and functional QA, automation and schemas, pilots and regression validation, and formal release.
 
-See [Controlled terminology](terminology.md), [Consolidation decisions](consolidation-decisions.md), [Production standard](production-standard.md), [Template-family catalog](template-family-catalog.yaml), and [Production-tool profiles](tool-profiles.md).
+See [Controlled terminology](terminology.md), [Consolidation decisions](consolidation-decisions.md), [Production standard](production-standard.md), [Template-family catalog](template-family-catalog.yaml), and [Production-tool profiles](tool-profiles.md), [Golden-example standard](golden-example-standard.md), and [Golden-example register](golden-example-register.yaml).

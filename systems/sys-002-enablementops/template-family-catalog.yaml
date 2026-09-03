@@ -1,0 +1,136 @@
+catalog:
+  system: SYS-002
+  version: 1.0.0
+  effective_date: 2026-09-03
+  owner: Travis True
+  status: approved
+  family_count: 17
+  variant_count: 33
+  authority:
+    selection: SYS-002
+    asset_construction: SYS-001
+    intake: WF-001
+    reuse: WF-003
+    publication: WF-002
+  coverage_rule: Use an active LACE build kit when available. Otherwise approve a family production specification before build.
+
+families:
+  - id: F01
+    name: Presentation
+    variants: [Slide Deck / Presentation]
+    primary_format: PPTX
+    supporting_format: Google Slides-ready
+    role: primary
+    primary_eligible: true
+  - id: F02
+    name: Learner Materials
+    variants: [Participant Guide / Workbook, Resource Links / PDFs]
+    primary_format: DOCX
+    supporting_format: Google Docs-ready
+    role: primary-or-companion
+    primary_eligible: true
+  - id: F03
+    name: Facilitator Delivery
+    variants: [Facilitator Guide, Virtual Training Scripts, Session Agenda / Schedule]
+    primary_format: DOCX
+    supporting_format: Google Docs-ready
+    role: primary-or-companion
+    primary_eligible: true
+  - id: F04
+    name: Media Production
+    variants: [Videos / Demonstrations, Audio Clips / Voiceovers]
+    primary_format: DOCX
+    supporting_format: Storyboard / script
+    role: production-specification
+    primary_eligible: false
+  - id: F05
+    name: Visual Communication
+    variants: [Infographics / Charts / Diagrams, Infographic Summaries]
+    primary_format: PPTX
+    supporting_format: DOCX production specification
+    role: primary-or-companion
+    primary_eligible: true
+  - id: F06
+    name: Procedural Performance Support
+    variants: [Screenshots / Step Guides, Cheat Sheets / Job Aids, Technical Setup Guide]
+    primary_format: DOCX
+    supporting_format: Google Docs-ready
+    role: primary
+    primary_eligible: true
+  - id: F07
+    name: Scenario-Based Learning
+    variants: [Scenarios / Case Studies, Role-Play Guides]
+    primary_format: DOCX
+    supporting_format: Google Docs-ready
+    role: primary-or-companion
+    primary_eligible: true
+  - id: F08
+    name: Practice and Simulation
+    variants: [Hands-On Exercises, Interactive Media / Simulations, Gamification / Challenges]
+    primary_format: DOCX
+    supporting_format: Interaction specification
+    role: primary-or-companion
+    primary_eligible: true
+  - id: F09
+    name: Formative Knowledge Checks
+    variants: [Polls / Quizzes]
+    primary_format: DOCX
+    supporting_format: XLSX item bank
+    role: companion
+    primary_eligible: false
+  - id: F10
+    name: Assessment
+    variants: [Pre-Training Assessment, Post-Training Assessment, Practical / Skills Assessment]
+    primary_format: DOCX
+    supporting_format: XLSX item bank / scoring
+    role: primary-or-companion
+    primary_eligible: true
+  - id: F11
+    name: Evaluation
+    variants: [Evaluation / Feedback Forms]
+    primary_format: DOCX
+    supporting_format: XLSX response plan
+    role: companion
+    primary_eligible: false
+  - id: F12
+    name: Digital Learning and LMS
+    variants: [E-Learning Module, SCORM / xAPI Files]
+    primary_format: DOCX
+    supporting_format: XLSX tracking map / production specification
+    role: primary-or-production-specification
+    primary_eligible: true
+  - id: F13
+    name: Social Learning
+    variants: [Discussion Board / Forum Prompts, Community of Practice / Discussion Guides]
+    primary_format: DOCX
+    supporting_format: Google Docs-ready
+    role: primary-or-companion
+    primary_eligible: true
+  - id: F14
+    name: Reinforcement Communications
+    variants: [Follow-Up Emails / Reminders]
+    primary_format: DOCX
+    supporting_format: Email-ready copy
+    role: companion
+    primary_eligible: false
+  - id: F15
+    name: Session Administration
+    variants: [Attendance / Tracking Sheets]
+    primary_format: XLSX
+    supporting_format: Google Sheets-ready
+    role: operational
+    primary_eligible: false
+  - id: F16
+    name: Recognition
+    variants: [Certificates / Badges]
+    primary_format: PPTX
+    supporting_format: Google Slides-ready
+    role: operational
+    primary_eligible: false
+  - id: F17
+    name: Planning and Governance
+    variants: [Gantt-Style Timeline, Traffic-Light / Dashboard, Version Control / Repository]
+    primary_format: XLSX
+    supporting_format: Markdown register
+    role: operational
+    primary_eligible: false

@@ -23,6 +23,7 @@ DOCUMENTS = {
     "records/example-activation-handoff.yaml": "schemas/activation-handoff.schema.json",
     "campaign-registry.yaml": "schemas/campaign-registry.schema.json",
     "campaign-calendar.yaml": "schemas/campaign-calendar.schema.json",
+    "releases/v1.0.0/release-manifest.yaml": "schemas/system-release-manifest.schema.json",
 }
 
 
@@ -49,7 +50,7 @@ def schema_errors(data, schema, label):
     return errors
 
 
-def semantic_errors(catalog, campaign, asset, metric_catalog, measurement_plan, localization, readiness, handoff, registry, calendar):
+def semantic_errors(catalog, campaign, asset, metric_catalog, measurement_plan, localization, readiness, handoff, registry, calendar, system_release):
     errors = []
     channels = catalog["channels"]
     channel_ids = [item["id"] for item in channels]
@@ -205,6 +206,15 @@ def semantic_errors(catalog, campaign, asset, metric_catalog, measurement_plan, 
             errors.append(f"{event['id']}: collision status requires evidence")
     if seen_touchpoints != set(touchpoints):
         errors.append("calendar must include every campaign touchpoint")
+
+    release_version = system_release["release_version"]
+    if system_release["record_id"] != f"EO-SYS-REL-{release_version}":
+        errors.append("system release record ID and version must match")
+    validation = system_release["validation"]
+    if validation["schemas"] < 11 or validation["core_regression_tests"] < 22 or validation["pilot_regression_tests"] < 5:
+        errors.append("system release manifest understates required validation coverage")
+    if not validation["human_authorization"]:
+        errors.append("system release lacks human authorization")
     return errors
 
 
@@ -231,6 +241,7 @@ def validate_documents(root=ROOT, overrides=None):
             loaded["records/example-activation-handoff.yaml"],
             loaded["campaign-registry.yaml"],
             loaded["campaign-calendar.yaml"],
+            loaded["releases/v1.0.0/release-manifest.yaml"],
         ))
     return errors
 
@@ -241,7 +252,7 @@ def main():
         print("EngagementOps validation failed:")
         print("\n".join(f"- {error}" for error in errors))
         return 1
-    print("EngagementOps validation passed: 10 schemas, 8 channel profiles, 12 metrics, 6 governed records, 1 registry, 1 calendar, and cross-system semantics.")
+    print("EngagementOps validation passed: 11 schemas, 8 channel profiles, 12 metrics, 6 governed records, 1 registry, 1 calendar, 1 release manifest, and cross-system semantics.")
     return 0
 
 

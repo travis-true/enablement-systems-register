@@ -1,0 +1,17 @@
+pilot:
+  id: EO-PILOT-001
+  system: SYS-002
+  date: 2026-09-03
+  owner: Travis True
+  mode: retrospective-end-to-end-validation
+  source_pilot: systems/sys-001-lace/pilots/lace-pilot-001/manifest.yaml
+  status: pass-with-controlled-release-block
+records:
+  - records/eo-pr-002-qrg.yaml
+  - records/eo-pr-003-detailed-guide.yaml
+  - records/eo-pr-004-multimedia.yaml
+expected_record_count: 3
+regression:
+  result: pass
+  evidence: regression-evidence.md
+release_boundary: QA completion is verified; asset release authorization was not verified, so release remained blocked.

@@ -17,7 +17,7 @@ systems:
     audience: Learning strategists, instructional designers, asset developers, reviewers, approvers, and publishers.
     scope: Intake, source intelligence, reuse, asset selection, production specification, content and visual creation, rendering, repair, quality gates, and release handoff.
     completion_score: 100
-    related_systems: [FW-002, WF-002, WF-003, PB-001]
+    related_systems: [SYS-002, FW-002, WF-002, WF-003, PB-001]
     artifacts:
       - systems/sys-001-lace/README.md
       - systems/sys-001-lace/specification.md
@@ -110,7 +110,7 @@ systems:
     audience: Learning, training, and enablement practitioners.
     scope: Full lifecycle governance, intake, roles, analytics, integrations, and controlled change.
     completion_score: 100
-    related_systems: [SYS-001, WF-001, WF-002]
+    related_systems: [SYS-001, SYS-002, WF-001, WF-002]
     artifacts:
       - frameworks/fw-002-ld-operating-system.md
       - https://github.com/travis-true/L-D-OS
@@ -141,24 +141,47 @@ systems:
     next_review: 2026-10-02
     labels: [ai-enablement, governance, internal-reference]
 
+  - id: SYS-002
+    name: EnablementOps
+    category: system
+    status: in_progress
+    owner: Travis True
+    purpose: Govern how enablement work is requested, prioritized, designed, produced, delivered, measured, maintained, and improved.
+    audience: Enablement leaders, learning and performance professionals, content and knowledge teams, reviewers, approvers, publishers, analysts, and support partners.
+    scope: Needs analysis, intake, prioritization, governance, learning and performance support, content operations, delivery, reinforcement, measurement, lifecycle, accessibility, quality, automation, support, and discoverability.
+    completion_score: 60
+    related_systems: [SYS-001, FW-002, WF-001, WF-002, WF-003]
+    artifacts:
+      - systems/sys-002-enablementops/README.md
+      - systems/sys-002-enablementops/terminology.md
+      - systems/sys-002-enablementops/consolidation-decisions.md
+    evidence:
+      - evidence/sys-002-step-1-consolidation.md
+    next_action: Close production standards and template gaps.
+    version: 0.6.0
+    last_reviewed: 2026-09-03
+    next_review: 2026-10-03
+    labels: [enablement-operations, operating-system, governance, capability-model]
+
   - id: FW-004
     name: EnablementOps Framework
     category: framework
-    status: incomplete
+    status: retired
     owner: Travis True
-    purpose: Unify the operating capabilities needed to run an enablement function.
-    audience: Centralized enablement teams.
-    scope: Needs analysis, governance, analytics, content operations, intake, lifecycle, change, support, and discoverability.
-    completion_score: 50
-    related_systems: [FW-002, WF-001]
+    purpose: Historical framework classification superseded by SYS-002 EnablementOps.
+    audience: Historical reference only.
+    scope: Retained for identifier traceability; no longer authoritative.
+    completion_score: 0
+    related_systems: [SYS-002]
     artifacts:
-      - frameworks/fw-004-enablementops-framework.md
-    evidence: []
-    next_action: Define capability maturity levels, measures, ownership, and adoption roadmap.
+      - archive/fw-004-enablementops-framework.md
+    evidence:
+      - evidence/sys-002-step-1-consolidation.md
+    next_action: None; do not reuse this identifier.
     version: 0.5.0
-    last_reviewed: 2026-09-02
-    next_review: 2026-10-02
-    labels: [enablement-operations, capability-model]
+    last_reviewed: 2026-09-03
+    next_review: 2027-09-03
+    labels: [retired, superseded, enablement-operations]
 
   - id: WF-001
     name: Training Request Intake and Triage

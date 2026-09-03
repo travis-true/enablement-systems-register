@@ -20,6 +20,9 @@ DOCUMENTS = {
     "records/example-measurement-plan.yaml": "schemas/measurement-plan.schema.json",
     "records/example-localization-profile.yaml": "schemas/localization-profile.schema.json",
     "records/example-delivery-readiness.yaml": "schemas/delivery-readiness-record.schema.json",
+    "records/example-activation-handoff.yaml": "schemas/activation-handoff.schema.json",
+    "campaign-registry.yaml": "schemas/campaign-registry.schema.json",
+    "campaign-calendar.yaml": "schemas/campaign-calendar.schema.json",
 }
 
 
@@ -46,7 +49,7 @@ def schema_errors(data, schema, label):
     return errors
 
 
-def semantic_errors(catalog, campaign, asset, metric_catalog, measurement_plan, localization, readiness):
+def semantic_errors(catalog, campaign, asset, metric_catalog, measurement_plan, localization, readiness, handoff, registry, calendar):
     errors = []
     channels = catalog["channels"]
     channel_ids = [item["id"] for item in channels]
@@ -149,6 +152,58 @@ def semantic_errors(catalog, campaign, asset, metric_catalog, measurement_plan, 
             errors.append("release has an open Blocker or Critical defect")
         if not readiness["release"]["approver"] or not readiness["release"]["approved_on"]:
             errors.append("release requires recorded human approval")
+
+    if handoff["request"]["campaign_id"] != campaign["record"]["id"]:
+        errors.append("handoff campaign reference does not match")
+    if handoff["record"]["status"] == "accepted":
+        if handoff["disposition"]["decision"] != "accepted":
+            errors.append("accepted handoff status requires accepted disposition")
+        if handoff["disposition"]["material_gaps"]:
+            errors.append("accepted handoff cannot contain material gaps")
+        if not handoff["governance"]["receiver"] or not handoff["disposition"]["decided_on"]:
+            errors.append("accepted handoff requires receiver and decision date")
+
+    campaigns = registry["campaigns"]
+    registry_ids = [item["id"] for item in campaigns]
+    if len(registry_ids) != len(set(registry_ids)):
+        errors.append("campaign registry IDs must be unique")
+    matching = [item for item in campaigns if item["id"] == campaign["record"]["id"]]
+    if len(matching) != 1:
+        errors.append("campaign record must appear exactly once in registry")
+    else:
+        entry = matching[0]
+        if entry["version"] != campaign["record"]["version"] or entry["status"] != campaign["record"]["status"]:
+            errors.append("campaign registry version/status does not match campaign")
+        if entry["handoff_id"] != handoff["record"]["id"]:
+            errors.append("campaign registry handoff reference does not match")
+        if set(entry["channel_ids"]) != set(campaign["strategy"]["channel_ids"]):
+            errors.append("campaign registry channels do not match campaign")
+        if set(entry["asset_ids"]) != referenced_assets:
+            errors.append("campaign registry assets do not match touchpoints")
+        if set(entry["measure_ids"]) != set(selected_metrics):
+            errors.append("campaign registry measures do not match measurement plan")
+
+    event_ids = [item["id"] for item in calendar["events"]]
+    if len(event_ids) != len(set(event_ids)):
+        errors.append("calendar event IDs must be unique")
+    touchpoints = {item["id"]: item for item in campaign["touchpoints"]}
+    seen_touchpoints = set()
+    for event in calendar["events"]:
+        if event["campaign_id"] != campaign["record"]["id"]:
+            errors.append(f"{event['id']}: calendar campaign reference does not match")
+        if event["touchpoint_id"] not in touchpoints:
+            errors.append(f"{event['id']}: unknown touchpoint")
+            continue
+        seen_touchpoints.add(event["touchpoint_id"])
+        touchpoint = touchpoints[event["touchpoint_id"]]
+        if event["channel_id"] != touchpoint["channel_id"]:
+            errors.append(f"{event['id']}: calendar channel does not match touchpoint")
+        if event["scheduled_at"][:10] != touchpoint["scheduled_date"]:
+            errors.append(f"{event['id']}: calendar date does not match touchpoint")
+        if event["collision_status"] in {"review-required", "resolved", "accepted"} and not event["collision_evidence"]:
+            errors.append(f"{event['id']}: collision status requires evidence")
+    if seen_touchpoints != set(touchpoints):
+        errors.append("calendar must include every campaign touchpoint")
     return errors
 
 
@@ -172,6 +227,9 @@ def validate_documents(root=ROOT, overrides=None):
             loaded["records/example-measurement-plan.yaml"],
             loaded["records/example-localization-profile.yaml"],
             loaded["records/example-delivery-readiness.yaml"],
+            loaded["records/example-activation-handoff.yaml"],
+            loaded["campaign-registry.yaml"],
+            loaded["campaign-calendar.yaml"],
         ))
     return errors
 
@@ -182,7 +240,7 @@ def main():
         print("EngagementOps validation failed:")
         print("\n".join(f"- {error}" for error in errors))
         return 1
-    print("EngagementOps validation passed: 7 schemas, 8 channel profiles, 12 metrics, 5 governed example records, and semantic release controls.")
+    print("EngagementOps validation passed: 10 schemas, 8 channel profiles, 12 metrics, 6 governed records, 1 registry, 1 calendar, and cross-system semantics.")
     return 0
 
 

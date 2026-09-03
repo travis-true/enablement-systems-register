@@ -1,0 +1,56 @@
+record:
+  id: EO-CMP-002
+  system: SYS-003
+  version: 1.0.0
+  status: active
+  owner: Travis True
+activation:
+  related_system_ids: [SYS-002]
+  outcome: Make the governed EnablementOps v1.0.0 release discoverable to enablement practitioners.
+  engagement_objective: Publish a concise announcement, FAQ, and leader amplification aid in the governed repository.
+  audience: [Enablement practitioners]
+  excluded_audience: [Unspecified external operational audiences]
+  call_to_action: Review EnablementOps v1.0.0
+  start: 2026-09-03
+  end: 2026-10-03
+strategy:
+  risk_tier: R1
+  ecosystem: [launch-kit, enablement-campaign]
+  selection_rationale: Three concise repository assets are the smallest set supporting discovery, questions, and optional leader amplification.
+  channel_ids: [EO-CH-002, EO-CH-008]
+  cadence: Initial publication with optional leader amplification
+  sustainment: Maintain links through the first scheduled review, then close or revise.
+sources:
+  authoritative: [systems/sys-002-enablementops/README.md, evidence/sys-002-v1.0.0-release.md]
+  verified_on: 2026-09-03
+  conflicts: []
+  limitations: [No authorized audience analytics source]
+governance:
+  source_owner: Travis True
+  channel_owners: [Repository owner]
+  accessibility_reviewer: Travis True
+  privacy_classification: public-sanitized
+  specialist_reviews: []
+  release_approver: Travis True
+  human_approval: true
+touchpoints:
+  - id: EO-TP-003
+    phase: launch
+    channel_id: EO-CH-002
+    asset_ids: [EO-AST-002, EO-AST-003]
+    call_to_action: Review EnablementOps v1.0.0
+    scheduled_date: 2026-09-03
+    owner: Travis True
+  - id: EO-TP-004
+    phase: activation
+    channel_id: EO-CH-008
+    asset_ids: [EO-AST-004]
+    call_to_action: Share the governed release with an applicable enablement practitioner
+    scheduled_date: 2026-09-03
+    owner: Travis True
+lifecycle:
+  next_review: 2026-10-03
+  expiration: 2026-10-03
+  retention_class: governed-release-evidence
+  support_owner: Travis True
+  closure_condition: Review availability evidence and close or revise the campaign by 2026-10-03.

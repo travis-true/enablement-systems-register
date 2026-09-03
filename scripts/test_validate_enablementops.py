@@ -20,14 +20,14 @@ def record(name):
 
 
 class EnablementOpsValidationTests(unittest.TestCase):
-    def test_current_records_pass(self):
+    def test_current_records_and_pilot_pass(self):
         self.assertEqual([], MODULE.validate_documents())
 
     def test_family_count_mismatch_fails(self):
         data = record("template-family-catalog.yaml")
         data["catalog"]["family_count"] = 16
         errors = MODULE.validate_documents(overrides={"template-family-catalog.yaml": data})
-        self.assertTrue(any("17 was expected" in item or "family_count" in item for item in errors))
+        self.assertTrue(any("family_count" in item for item in errors))
 
     def test_unknown_golden_family_fails(self):
         data = record("golden-example-register.yaml")
@@ -47,6 +47,27 @@ class EnablementOpsValidationTests(unittest.TestCase):
         data["release"]["decision"] = "released"
         errors = MODULE.validate_documents(overrides={"records/enablementops-production-record.yaml": data})
         self.assertTrue(any("released production record" in item for item in errors))
+
+    def test_pilot_unknown_family_fails(self):
+        path = "pilots/enablementops-pilot-001/records/eo-pr-002-qrg.yaml"
+        data = record(path)
+        data["need"]["primary_family_id"] = "F99"
+        errors = MODULE.validate_documents(overrides={path: data})
+        self.assertTrue(any("does not match" in item or "unknown primary family" in item for item in errors))
+
+    def test_pilot_duplicate_record_id_fails(self):
+        path = "pilots/enablementops-pilot-001/records/eo-pr-003-detailed-guide.yaml"
+        data = record(path)
+        data["record"]["id"] = "EO-PR-002"
+        errors = MODULE.validate_documents(overrides={path: data})
+        self.assertTrue(any("IDs must be unique" in item for item in errors))
+
+    def test_release_status_decision_mismatch_fails(self):
+        path = "pilots/enablementops-pilot-001/records/eo-pr-004-multimedia.yaml"
+        data = record(path)
+        data["record"]["status"] = "released"
+        errors = MODULE.validate_documents(overrides={path: data})
+        self.assertTrue(any("released status requires" in item for item in errors))
 
 
 if __name__ == "__main__":

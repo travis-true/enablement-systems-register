@@ -1,0 +1,22 @@
+registry:
+  system: SYS-003
+  version: 1.0.0
+  owner: Travis True
+  status: approved
+  authoritative_location: systems/sys-003-engagementops/campaign-registry.yaml
+campaigns:
+  - id: EO-CMP-001
+    version: 0.1.0
+    status: draft
+    owner: Travis True
+    related_system_ids: [SYS-002]
+    handoff_id: EO-HO-001
+    record_path: systems/sys-003-engagementops/records/example-campaign.yaml
+    asset_ids: [EO-AST-001]
+    channel_ids: [EO-CH-002, EO-CH-003]
+    measure_ids: [EO-MET-001, EO-MET-004]
+    start: 2026-10-01
+    end: 2026-10-31
+    classification: public-sanitized
+    next_review: 2026-10-31
+    superseded_by: null

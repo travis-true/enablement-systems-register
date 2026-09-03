@@ -1,0 +1,50 @@
+record:
+  id: EO-MP-002
+  campaign_id: EO-CMP-002
+  version: 1.0.0
+  status: active
+  owner: Travis True
+purpose:
+  objective: Verify governed repository publication while preventing unsupported audience-response claims.
+  decision_supported: Decide whether the pilot completed its controlled publication path.
+  claim_level: reach
+baseline:
+  status: not-available
+  period: null
+  source: null
+  value: null
+  rationale: No authorized audience analytics source or comparable prior campaign exists.
+measures:
+  - measure_id: EO-MET-001
+    target: Published governed assets are available at their canonical repository paths
+    threshold_authority: Travis True
+    frequency: once at release verification
+    window: 2026-09-03
+    limitations: [Availability is not verified recipient reach, attention, engagement, adoption, or impact]
+collection:
+  source: Git repository records
+  method: Verify committed canonical paths and revision evidence
+  population: Three approved pilot campaign assets
+  fields: [path, version, status, commit evidence]
+  aggregation: Package-level publication result
+  access: [Public repository readers]
+  privacy_classification: public-sanitized
+  retention_class: governed-release-evidence
+  disposition_authority: SYS-003 owner
+reporting:
+  audience: [Enablement practitioners]
+  cadence: once at pilot verification
+  freshness: dated to the release verification commit
+  missing_data: Audience analytics remain unavailable and are not imputed.
+  interpretation_boundary: Publication availability only; no verified audience reach or downstream outcome.
+governance:
+  analytics_owner: Travis True
+  program_owner: Travis True
+  privacy_review: Public-safe repository metadata only
+  approved: true
+  approver: Travis True
+decision:
+  outcome: continue
+  decided_on: 2026-09-03
+  decision_owner: Travis True
+  evidence: [systems/sys-003-engagementops/pilots/engagementops-pilot-001/manifest.yaml]

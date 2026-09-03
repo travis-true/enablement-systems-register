@@ -59,8 +59,14 @@ This repository contains only public or sanitized descriptions. Do not commit co
 
 1. Open a system issue or change request.
 2. Update the detail path and `register.yaml` on a branch.
-3. Run `python scripts/validate_register.py`.
+3. Run all validation commands:
+   - `python scripts/validate_register.py`
+   - `python scripts/validate_lace.py`
+   - `python -m unittest -v scripts/test_validate_lace_pilots.py`
+   - `python scripts/validate_lace_pilots.py`
 4. Submit a pull request with evidence and impact notes.
 5. Merge after review; then refresh the Notion summary record.
+
+The pilot-record validator automatically discovers every `systems/sys-001-lace/pilots/*/records/` package. It requires an exact record-index inventory, active registered template IDs and versions, unique record IDs, `SYS-001` ownership, and schema conformance.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the definition of done and review rules.

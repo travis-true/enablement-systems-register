@@ -1,0 +1,53 @@
+#!/usr/bin/env python3
+"""Regression tests for the SYS-002 validator."""
+
+from copy import deepcopy
+import importlib.util
+from pathlib import Path
+import unittest
+
+import yaml
+
+ROOT = Path(__file__).resolve().parents[1]
+SPEC = importlib.util.spec_from_file_location("validate_enablementops", ROOT / "scripts/validate_enablementops.py")
+MODULE = importlib.util.module_from_spec(SPEC)
+SPEC.loader.exec_module(MODULE)
+SYSTEM = ROOT / "systems/sys-002-enablementops"
+
+
+def record(name):
+    return yaml.safe_load((SYSTEM / name).read_text(encoding="utf-8"))
+
+
+class EnablementOpsValidationTests(unittest.TestCase):
+    def test_current_records_pass(self):
+        self.assertEqual([], MODULE.validate_documents())
+
+    def test_family_count_mismatch_fails(self):
+        data = record("template-family-catalog.yaml")
+        data["catalog"]["family_count"] = 16
+        errors = MODULE.validate_documents(overrides={"template-family-catalog.yaml": data})
+        self.assertTrue(any("17 was expected" in item or "family_count" in item for item in errors))
+
+    def test_unknown_golden_family_fails(self):
+        data = record("golden-example-register.yaml")
+        data["approved_goldens"][0]["family_id"] = "F99"
+        errors = MODULE.validate_documents(overrides={"golden-example-register.yaml": data})
+        self.assertTrue(any("does not match" in item or "unknown family" in item for item in errors))
+
+    def test_visual_threshold_regression_fails(self):
+        data = record("qa-test-matrix.yaml")
+        data["matrix"]["visual_score_minimum"] = 90
+        errors = MODULE.validate_documents(overrides={"qa-test-matrix.yaml": data})
+        self.assertTrue(any("minimum of 95" in item or "below 95" in item for item in errors))
+
+    def test_unapproved_release_fails(self):
+        data = record("records/enablementops-production-record.yaml")
+        data["record"]["status"] = "released"
+        data["release"]["decision"] = "released"
+        errors = MODULE.validate_documents(overrides={"records/enablementops-production-record.yaml": data})
+        self.assertTrue(any("released production record" in item for item in errors))
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -207,7 +207,7 @@ systems:
     purpose: Govern how defined audiences become aware, participate, respond to calls to action, and remain engaged in support of approved outcomes.
     audience: Enablement leaders, engagement strategists, communications partners, content owners, channel owners, reviewers, approvers, analysts, and support partners.
     scope: Audience segmentation, activation strategy, campaigns, touchpoints, channels, calls to action, participation, feedback, engagement measurement, sustainment, lifecycle, accessibility, privacy, approval, and governance.
-    completion_score: 92
+    completion_score: 97
     related_systems: [SYS-001, SYS-002, WF-002]
     artifacts:
       - systems/sys-003-engagementops/README.md
@@ -249,6 +249,14 @@ systems:
       - systems/sys-003-engagementops/schemas/campaign-calendar.schema.json
       - systems/sys-003-engagementops/records/example-activation-handoff.yaml
       - systems/sys-003-engagementops/templates/activation-handoff.md
+      - systems/sys-003-engagementops/pilots/engagementops-pilot-001/manifest.yaml
+      - systems/sys-003-engagementops/pilots/engagementops-pilot-001/approval.md
+      - systems/sys-003-engagementops/pilots/engagementops-pilot-001/qa-evidence.md
+      - systems/sys-003-engagementops/pilots/engagementops-pilot-001/assets/release-announcement.md
+      - systems/sys-003-engagementops/pilots/engagementops-pilot-001/assets/release-faq.md
+      - systems/sys-003-engagementops/pilots/engagementops-pilot-001/assets/leader-talking-points.md
+      - scripts/validate_engagementops_pilots.py
+      - scripts/test_validate_engagementops_pilots.py
     evidence:
       - evidence/sys-003-step-1-boundary-activation.md
       - evidence/sys-003-step-2-governance-lifecycle.md
@@ -256,8 +264,9 @@ systems:
       - evidence/sys-003-step-4-measurement-analytics.md
       - evidence/sys-003-step-5-delivery-controls.md
       - evidence/sys-003-step-6-integration-automation.md
-    next_action: Run a public-safe end-to-end EngagementOps pilot and regression validation.
-    version: 0.6.0
+      - evidence/sys-003-step-7-pilot-regression.md
+    next_action: Complete formal release authorization and publish the first governed SYS-003 release.
+    version: 0.7.0
     last_reviewed: 2026-09-03
     next_review: 2026-10-03
     labels: [engagement-operations, operating-system, activation, campaigns, governance]

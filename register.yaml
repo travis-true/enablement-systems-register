@@ -207,16 +207,20 @@ systems:
     purpose: Govern how defined audiences become aware, participate, respond to calls to action, and remain engaged in support of approved outcomes.
     audience: Enablement leaders, engagement strategists, communications partners, content owners, channel owners, reviewers, approvers, analysts, and support partners.
     scope: Audience segmentation, activation strategy, campaigns, touchpoints, channels, calls to action, participation, feedback, engagement measurement, sustainment, lifecycle, accessibility, privacy, approval, and governance.
-    completion_score: 25
+    completion_score: 45
     related_systems: [SYS-001, SYS-002, WF-002]
     artifacts:
       - systems/sys-003-engagementops/README.md
       - systems/sys-003-engagementops/boundary-activation-authority.md
       - systems/sys-003-engagementops/terminology.md
+      - systems/sys-003-engagementops/governance-standard.md
+      - systems/sys-003-engagementops/lifecycle-metadata-standard.md
+      - systems/sys-003-engagementops/risk-accessibility-approval-standard.md
     evidence:
       - evidence/sys-003-step-1-boundary-activation.md
-    next_action: Complete governance, lifecycle, metadata, source-of-truth, privacy, accessibility, and approval standards.
-    version: 0.1.0
+      - evidence/sys-003-step-2-governance-lifecycle.md
+    next_action: Build reusable campaign and channel assets with machine-readable schemas.
+    version: 0.2.0
     last_reviewed: 2026-09-03
     next_review: 2026-10-03
     labels: [engagement-operations, operating-system, activation, campaigns, governance]

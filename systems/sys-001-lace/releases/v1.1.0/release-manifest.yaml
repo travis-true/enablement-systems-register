@@ -1,0 +1,36 @@
+template_id: LACE-TMP-008
+template_version: 1.0.0
+record_id: LACE-REL-MAN-1.1.0
+system_id: SYS-001
+status: approved
+owner: Travis True
+created_date: "2026-09-03"
+updated_date: "2026-09-03"
+asset_id: SYS-001
+release_id: LACE-v1.1.0
+release_version: 1.1.0
+readiness_status: release-ready
+editable_files:
+  - ../../specification.md
+  - ../../build-kits/lace-tmp-102-detailed-procedural-guide/profile.yaml
+  - ../../build-kits/lace-tmp-102-detailed-procedural-guide/template.md
+  - ../../build-kits/lace-tmp-400-instructional-multimedia/profile.yaml
+distribution_files:
+  - ../../README.md
+  - release-notes.md
+evidence_files:
+  - ../../pilots/lace-pilot-001/qa-evidence.md
+  - ../../../../evidence/sys-001-step-6-pilot.md
+  - ../../../../evidence/sys-001-v1.1.0-release.md
+approval_files:
+  - approval.md
+accessibility_result: pass
+quality_result: pass
+critical_defects: 0
+major_defects: 0
+approved_constraints: []
+approver: Travis True
+approval_date: "2026-09-03"
+publication_handoff: Merge the validated release pull request to the authoritative GitHub main branch and create the v1.1.0 repository release tag.
+maintenance_owner: Travis True
+next_review: "2027-03-03"

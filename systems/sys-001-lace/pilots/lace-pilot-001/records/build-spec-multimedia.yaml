@@ -1,0 +1,51 @@
+template_id: LACE-TMP-005
+template_version: 1.0.0
+record_id: LACE-PILOT-001-BLD-MM-001
+system_id: SYS-001
+status: approved
+owner: Travis True
+created_date: "2026-09-03"
+updated_date: "2026-09-03"
+asset_id: LACE-PILOT-001-MM
+title: Use Copilot safely - Visual Microlearning
+family: video-and-multimedia
+asset_type: instructional-multimedia-package
+purpose: Reinforce the Prompt-Refine-Review behavior through a short timed visual sequence.
+performance_outcome: Viewers can recall the three-step safe-use loop and the pause-when-unsure boundary.
+audience: General workplace Copilot users with mixed experience levels.
+use_context: Silent 16:9 public-sanitized pilot microlearning with synchronized text alternatives.
+moment_of_need: After initial learning or as brief reinforcement.
+source_refs: [LACE-PILOT-001-EVI-001]
+in_scope:
+  - Six timed visual frames, prompt example, review reminder, and pause boundary.
+  - WebVTT text alternative, transcript, storyboard, and editable source.
+out_of_scope:
+  - Narration, music, interface demonstration, and organization-specific policy.
+content_requirements:
+  - Keep each frame concise, readable, and aligned with the approved source.
+accessibility_requirements:
+  - Do not rely on color, sound, motion, or position alone.
+  - Provide synchronized WebVTT and a complete transcript.
+technical_requirements:
+  - H.264 MP4, 16:9 aspect ratio, 30 fps, and successful full-file decode.
+  - Editable PPTX must render every frame without overflow.
+deliverables:
+  - ../copilot-safe-use-microlearning-source.pptx
+  - ../copilot-safe-use-microlearning.mp4
+  - ../copilot-safe-use-microlearning.vtt
+  - ../copilot-safe-use-microlearning-transcript.txt
+  - ../copilot-safe-use-microlearning-storyboard.md
+acceptance_criteria:
+  - Six frames render cleanly and remain readable at output size.
+  - MP4 completes a full decode with expected duration, dimensions, and frame rate.
+  - VTT, transcript, storyboard, and visible instructions agree.
+readiness_status: build-ready-with-documented-constraints
+reviewers:
+  - LACE artifact QA process
+approver: Travis True
+maintenance_trigger: Revalidate after a source, timing, accessibility, media, or build-kit change.
+constraints:
+  - Controlled public-sanitized pilot evidence only.
+assumptions:
+  - Spoken audio adds no instructional value to this visual reinforcement asset.
+unresolved_items: []

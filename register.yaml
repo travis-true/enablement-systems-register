@@ -149,7 +149,7 @@ systems:
     purpose: Govern how enablement work is requested, prioritized, designed, produced, delivered, measured, maintained, and improved.
     audience: Enablement leaders, learning and performance professionals, content and knowledge teams, reviewers, approvers, publishers, analysts, and support partners.
     scope: Needs analysis, intake, prioritization, governance, learning and performance support, content operations, delivery, reinforcement, measurement, lifecycle, accessibility, quality, automation, support, and discoverability.
-    completion_score: 70
+    completion_score: 78
     related_systems: [SYS-001, FW-002, WF-001, WF-002, WF-003]
     artifacts:
       - systems/sys-002-enablementops/README.md
@@ -159,11 +159,15 @@ systems:
       - systems/sys-002-enablementops/template-family-catalog.yaml
       - systems/sys-002-enablementops/tool-profiles.md
       - systems/sys-002-enablementops/templates/family-production-specification.md
+      - systems/sys-002-enablementops/golden-example-standard.md
+      - systems/sys-002-enablementops/golden-example-register.yaml
+      - systems/sys-002-enablementops/templates/golden-promotion-record.md
     evidence:
       - evidence/sys-002-step-1-consolidation.md
       - evidence/sys-002-step-2-production-standards.md
-    next_action: Establish approved golden examples.
-    version: 0.7.0
+      - evidence/sys-002-step-3-golden-examples.md
+    next_action: Strengthen visual and functional quality assurance.
+    version: 0.8.0
     last_reviewed: 2026-09-03
     next_review: 2026-10-03
     labels: [enablement-operations, operating-system, governance, capability-model]

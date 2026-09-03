@@ -32,11 +32,12 @@ EnablementOps (`SYS-002`) owns capability and performance enablement. Engagement
 
 EngagementOps does not own source truth, learning outcomes, instructional design, technical accuracy, asset construction, publication authority, or proof that a person can perform the required work.
 
-See [Boundary, activation, and authority](boundary-activation-authority.md), [Controlled terminology](terminology.md), [Governance standard](governance-standard.md), [Lifecycle and metadata standard](lifecycle-metadata-standard.md), and [Risk, accessibility, privacy, and approval standard](risk-accessibility-approval-standard.md), [Asset ecosystem](asset-ecosystem.md), and [Channel-profile catalog](channel-profile-catalog.yaml), [Measurement standard](measurement-standard.md), and [Metric catalog](metric-catalog.yaml), [Localization standard](localization-standard.md), and [Delivery-readiness standard](delivery-readiness-standard.md), [Integration standard](integration-standard.md), [Campaign registry](campaign-registry.yaml), and [Campaign calendar](campaign-calendar.yaml), and [EO-PILOT-001 QA evidence](pilots/engagementops-pilot-001/qa-evidence.md).
+See [Boundary, activation, and authority](boundary-activation-authority.md), [Controlled terminology](terminology.md), [Governance standard](governance-standard.md), [Lifecycle and metadata standard](lifecycle-metadata-standard.md), and [Risk, accessibility, privacy, and approval standard](risk-accessibility-approval-standard.md), [Asset ecosystem](asset-ecosystem.md), and [Channel-profile catalog](channel-profile-catalog.yaml), [Measurement standard](measurement-standard.md), and [Metric catalog](metric-catalog.yaml), [Localization standard](localization-standard.md), and [Delivery-readiness standard](delivery-readiness-standard.md), [Integration standard](integration-standard.md), [Campaign registry](campaign-registry.yaml), and [Campaign calendar](campaign-calendar.yaml), and [EO-PILOT-001 QA evidence](pilots/engagementops-pilot-001/qa-evidence.md), and [v1.0.0 release notes](releases/v1.0.0/release-notes.md).
 
 ## Current maturity
 
-Status: **in progress**.  
-Version: **0.7.0**.
+Status: **maintenance**.  
+Current governed release: **v1.0.0**.  
+Version: **1.0.0**.
 
-The system boundary, governance, lifecycle, assets, channels, measurement, delivery controls, integration, registry/calendar, schemas, cross-system validation, CI enforcement, and the first public-safe end-to-end pilot are controlled. Formal release remains.
+EngagementOps v1.0.0 is the first governed production release. Its optional activation boundary, governance, lifecycle, reusable campaign assets, channel profiles, measurement, delivery controls, SYS-002 integration, central registry/calendar, eleven schemas, automated validation, and public-safe pilot are controlled. Future campaigns and channel actions still require separate version-bound authorization.

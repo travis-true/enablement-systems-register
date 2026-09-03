@@ -32,11 +32,11 @@ EnablementOps (`SYS-002`) owns capability and performance enablement. Engagement
 
 EngagementOps does not own source truth, learning outcomes, instructional design, technical accuracy, asset construction, publication authority, or proof that a person can perform the required work.
 
-See [Boundary, activation, and authority](boundary-activation-authority.md), [Controlled terminology](terminology.md), [Governance standard](governance-standard.md), [Lifecycle and metadata standard](lifecycle-metadata-standard.md), and [Risk, accessibility, privacy, and approval standard](risk-accessibility-approval-standard.md), [Asset ecosystem](asset-ecosystem.md), and [Channel-profile catalog](channel-profile-catalog.yaml), [Measurement standard](measurement-standard.md), and [Metric catalog](metric-catalog.yaml), [Localization standard](localization-standard.md), and [Delivery-readiness standard](delivery-readiness-standard.md).
+See [Boundary, activation, and authority](boundary-activation-authority.md), [Controlled terminology](terminology.md), [Governance standard](governance-standard.md), [Lifecycle and metadata standard](lifecycle-metadata-standard.md), and [Risk, accessibility, privacy, and approval standard](risk-accessibility-approval-standard.md), [Asset ecosystem](asset-ecosystem.md), and [Channel-profile catalog](channel-profile-catalog.yaml), [Measurement standard](measurement-standard.md), and [Metric catalog](metric-catalog.yaml), [Localization standard](localization-standard.md), and [Delivery-readiness standard](delivery-readiness-standard.md), [Integration standard](integration-standard.md), [Campaign registry](campaign-registry.yaml), and [Campaign calendar](campaign-calendar.yaml).
 
 ## Current maturity
 
 Status: **in progress**.  
-Version: **0.5.0**.
+Version: **0.6.0**.
 
-The system boundary, governance, lifecycle, campaign assets, channels, measurement, localization, accessibility, privacy/redaction, rights, specialist review, delivery readiness, seven schemas, semantic validation, negative tests, and CI enforcement are controlled. Cross-system integration, centralized registry/calendar automation, pilots, and release remain.
+The system boundary, governance, lifecycle, assets, channels, measurement, delivery controls, SYS-002 activation handoff, central campaign registry/calendar, ten schemas, cross-system validation, negative tests, and CI enforcement are controlled. Operational pilot and formal release remain.

@@ -44,6 +44,6 @@ EnablementOps can contain or coordinate:
 
 Status: **in progress**.
 
-The operating-system classification, scope, boundary, and terminology are controlled. Remaining completion work covers production standards and templates, golden examples, visual and functional QA, automation and schemas, pilots and regression validation, and formal release.
+The operating-system classification, scope, boundary, terminology, production standard, template-family catalog, tool profiles, and uncovered-family fallback are controlled. Remaining completion work covers golden examples, visual and functional QA, automation and schemas, pilots and regression validation, and formal release.
 
-See [Controlled terminology](terminology.md) and [Consolidation decisions](consolidation-decisions.md).
+See [Controlled terminology](terminology.md), [Consolidation decisions](consolidation-decisions.md), [Production standard](production-standard.md), [Template-family catalog](template-family-catalog.yaml), and [Production-tool profiles](tool-profiles.md).

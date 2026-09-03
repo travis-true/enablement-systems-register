@@ -62,6 +62,13 @@ class EnablementOpsValidationTests(unittest.TestCase):
         errors = MODULE.validate_documents(overrides={path: data})
         self.assertTrue(any("IDs must be unique" in item for item in errors))
 
+    def test_system_release_without_human_authorization_fails(self):
+        path = "releases/v1.0.0/release-manifest.yaml"
+        data = record(path)
+        data["validation"]["human_authorization"] = False
+        errors = MODULE.validate_documents(overrides={path: data})
+        self.assertTrue(any("True was expected" in item or "human_authorization" in item for item in errors))
+
     def test_release_status_decision_mismatch_fails(self):
         path = "pilots/enablementops-pilot-001/records/eo-pr-004-multimedia.yaml"
         data = record(path)

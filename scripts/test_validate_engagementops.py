@@ -86,5 +86,39 @@ class EngagementOpsValidationTests(unittest.TestCase):
         self.assertTrue(any("decision requires date and decision owner" in item for item in errors))
 
 
+    def test_required_localization_without_targets_fails(self):
+        data = record("records/example-localization-profile.yaml")
+        data["locales"]["required"] = True
+        errors = MODULE.validate_documents(overrides={"records/example-localization-profile.yaml": data})
+        self.assertTrue(any("target locales" in item for item in errors))
+
+    def test_f3_localization_without_specialist_fails(self):
+        data = record("records/example-localization-profile.yaml")
+        data["fidelity"]["level"] = "F3"
+        errors = MODULE.validate_documents(overrides={"records/example-localization-profile.yaml": data})
+        self.assertTrue(any("F3 localization requires specialist" in item for item in errors))
+
+    def test_screenshot_without_redaction_review_fails(self):
+        data = record("records/example-delivery-readiness.yaml")
+        data["screenshots"]["present"] = True
+        data["screenshots"]["redaction_review"] = "not-run"
+        errors = MODULE.validate_documents(overrides={"records/example-delivery-readiness.yaml": data})
+        self.assertTrue(any("passing redaction review" in item for item in errors))
+
+    def test_post_approval_change_without_regression_fails(self):
+        data = record("records/example-delivery-readiness.yaml")
+        data["change_control"]["post_approval_change"] = True
+        data["change_control"]["p0_regression"] = "pass"
+        data["change_control"]["p1_regression"] = "not-run"
+        errors = MODULE.validate_documents(overrides={"records/example-delivery-readiness.yaml": data})
+        self.assertTrue(any("P0/P1 regression" in item for item in errors))
+
+    def test_release_without_human_approval_fails(self):
+        data = record("records/example-delivery-readiness.yaml")
+        data["release"]["decision"] = "released"
+        errors = MODULE.validate_documents(overrides={"records/example-delivery-readiness.yaml": data})
+        self.assertTrue(any("P0 gate" in item or "human approval" in item for item in errors))
+
+
 if __name__ == "__main__":
     unittest.main()

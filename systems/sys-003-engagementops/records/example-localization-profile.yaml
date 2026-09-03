@@ -1,0 +1,38 @@
+record:
+  id: EO-LOC-001
+  campaign_id: EO-CMP-001
+  version: 0.1.0
+  status: not-required
+  owner: Travis True
+locales:
+  required: false
+  source: en-US
+  targets: []
+  audience_basis: Public-safe demonstration for enablement practitioners
+  fallback: Use the approved source locale; no operational distribution is authorized.
+fidelity:
+  level: F1
+  mode: not-applicable
+  protected_terms: [EngagementOps, EnablementOps, LACE]
+  source_version: EO-CMP-001 v0.1.0
+requirements:
+  reading_direction: left-to-right source
+  text_expansion: not-applicable
+  font_support: standard Unicode source
+  captions: not-applicable
+  transcript: not-applicable
+  alt_text: required when images are introduced
+  screen_reader_language: identify en-US in rendered outputs
+  date_time_number: use the approved source convention
+  channel_rendering: validate every future channel adaptation
+reviews:
+  linguistic: not-required for source-only demonstration
+  sme: not-required while the record remains a draft demonstration
+  accessibility: required before any operational distribution
+  specialist: []
+  approved: false
+  approver: null
+lifecycle:
+  expiration: 2026-10-31
+  source_change_trigger: Reassess after any campaign source, audience, or locale change.
+  disposition: Retain with the demonstration campaign until governed review.

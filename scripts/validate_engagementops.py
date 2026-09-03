@@ -16,6 +16,8 @@ DOCUMENTS = {
     "channel-profile-catalog.yaml": "schemas/channel-profile-catalog.schema.json",
     "records/example-campaign.yaml": "schemas/campaign-record.schema.json",
     "records/example-asset-specification.yaml": "schemas/asset-specification.schema.json",
+    "metric-catalog.yaml": "schemas/metric-catalog.schema.json",
+    "records/example-measurement-plan.yaml": "schemas/measurement-plan.schema.json",
 }
 
 
@@ -42,7 +44,7 @@ def schema_errors(data, schema, label):
     return errors
 
 
-def semantic_errors(catalog, campaign, asset):
+def semantic_errors(catalog, campaign, asset, metric_catalog, measurement_plan):
     errors = []
     channels = catalog["channels"]
     channel_ids = [item["id"] for item in channels]
@@ -89,6 +91,30 @@ def semantic_errors(catalog, campaign, asset):
     if asset["record"]["status"] in {"approved", "active"}:
         if not asset["governance"]["approved"] or not asset["governance"]["approver"]:
             errors.append("approved/active asset requires recorded approval")
+
+    metric_ids = [item["id"] for item in metric_catalog["metrics"]]
+    if len(metric_ids) != len(set(metric_ids)):
+        errors.append("metric IDs must be unique")
+    required_levels = {"reach", "engagement", "learning", "adoption", "performance", "sustainment"}
+    if {item["level"] for item in metric_catalog["metrics"]} != required_levels:
+        errors.append("metric catalog must cover all six measurement levels")
+    if measurement_plan["record"]["campaign_id"] != campaign["record"]["id"]:
+        errors.append("measurement plan campaign reference does not match")
+    selected_metrics = [item["measure_id"] for item in measurement_plan["measures"]]
+    if len(selected_metrics) != len(set(selected_metrics)):
+        errors.append("measurement plan measure IDs must be unique")
+    unknown_metrics = set(selected_metrics) - set(metric_ids)
+    if unknown_metrics:
+        errors.append(f"measurement plan references unknown metrics: {sorted(unknown_metrics)}")
+    baseline = measurement_plan["baseline"]
+    if baseline["status"] == "available" and (baseline["source"] is None or baseline["value"] is None):
+        errors.append("available baseline requires a source and value")
+    if measurement_plan["record"]["status"] in {"approved", "active", "closed"}:
+        if not measurement_plan["governance"]["approved"] or not measurement_plan["governance"]["approver"]:
+            errors.append("governed measurement plan requires recorded approval")
+    if measurement_plan["decision"]["outcome"] != "not-decided":
+        if not measurement_plan["decision"]["decided_on"] or not measurement_plan["decision"]["decision_owner"]:
+            errors.append("measurement decision requires date and decision owner")
     return errors
 
 
@@ -108,6 +134,8 @@ def validate_documents(root=ROOT, overrides=None):
             loaded["channel-profile-catalog.yaml"],
             loaded["records/example-campaign.yaml"],
             loaded["records/example-asset-specification.yaml"],
+            loaded["metric-catalog.yaml"],
+            loaded["records/example-measurement-plan.yaml"],
         ))
     return errors
 
@@ -118,7 +146,7 @@ def main():
         print("EngagementOps validation failed:")
         print("\n".join(f"- {error}" for error in errors))
         return 1
-    print("EngagementOps validation passed: 3 schemas, 8 channel profiles, 1 campaign record, 1 asset specification, and semantic cross-references.")
+    print("EngagementOps validation passed: 5 schemas, 8 channel profiles, 12 metrics, 1 campaign, 1 asset specification, 1 measurement plan, and semantic cross-references.")
     return 0
 
 

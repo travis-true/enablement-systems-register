@@ -149,16 +149,21 @@ systems:
     purpose: Govern how enablement work is requested, prioritized, designed, produced, delivered, measured, maintained, and improved.
     audience: Enablement leaders, learning and performance professionals, content and knowledge teams, reviewers, approvers, publishers, analysts, and support partners.
     scope: Needs analysis, intake, prioritization, governance, learning and performance support, content operations, delivery, reinforcement, measurement, lifecycle, accessibility, quality, automation, support, and discoverability.
-    completion_score: 60
+    completion_score: 70
     related_systems: [SYS-001, FW-002, WF-001, WF-002, WF-003]
     artifacts:
       - systems/sys-002-enablementops/README.md
       - systems/sys-002-enablementops/terminology.md
       - systems/sys-002-enablementops/consolidation-decisions.md
+      - systems/sys-002-enablementops/production-standard.md
+      - systems/sys-002-enablementops/template-family-catalog.yaml
+      - systems/sys-002-enablementops/tool-profiles.md
+      - systems/sys-002-enablementops/templates/family-production-specification.md
     evidence:
       - evidence/sys-002-step-1-consolidation.md
-    next_action: Close production standards and template gaps.
-    version: 0.6.0
+      - evidence/sys-002-step-2-production-standards.md
+    next_action: Establish approved golden examples.
+    version: 0.7.0
     last_reviewed: 2026-09-03
     next_review: 2026-10-03
     labels: [enablement-operations, operating-system, governance, capability-model]

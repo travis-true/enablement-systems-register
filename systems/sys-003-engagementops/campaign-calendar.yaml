@@ -1,0 +1,31 @@
+calendar:
+  system: SYS-003
+  version: 1.0.0
+  owner: Travis True
+  status: approved
+  timezone: UTC
+events:
+  - id: EO-CAL-001
+    campaign_id: EO-CMP-001
+    touchpoint_id: EO-TP-001
+    audience_group: Enablement practitioners
+    channel_id: EO-CH-002
+    scheduled_at: 2026-10-01T15:00:00Z
+    status: proposed
+    owner: Travis True
+    dependency: [EO-AST-001 approval, EO-DR-001 release decision]
+    expiration: 2026-10-01
+    collision_status: clear
+    collision_evidence: [Only one demonstration event exists for this audience, channel, and time]
+  - id: EO-CAL-002
+    campaign_id: EO-CMP-001
+    touchpoint_id: EO-TP-002
+    audience_group: Enablement practitioners
+    channel_id: EO-CH-003
+    scheduled_at: 2026-10-15T15:00:00Z
+    status: proposed
+    owner: Travis True
+    dependency: [EO-AST-001 approval, EO-DR-001 release decision]
+    expiration: 2026-10-15
+    collision_status: clear
+    collision_evidence: [No same-audience and same-channel event overlaps this proposed time]

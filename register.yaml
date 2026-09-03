@@ -207,7 +207,7 @@ systems:
     purpose: Govern how defined audiences become aware, participate, respond to calls to action, and remain engaged in support of approved outcomes.
     audience: Enablement leaders, engagement strategists, communications partners, content owners, channel owners, reviewers, approvers, analysts, and support partners.
     scope: Audience segmentation, activation strategy, campaigns, touchpoints, channels, calls to action, participation, feedback, engagement measurement, sustainment, lifecycle, accessibility, privacy, approval, and governance.
-    completion_score: 75
+    completion_score: 85
     related_systems: [SYS-001, SYS-002, WF-002]
     artifacts:
       - systems/sys-003-engagementops/README.md
@@ -233,13 +233,21 @@ systems:
       - systems/sys-003-engagementops/schemas/measurement-plan.schema.json
       - systems/sys-003-engagementops/records/example-measurement-plan.yaml
       - systems/sys-003-engagementops/templates/measurement-plan.md
+      - systems/sys-003-engagementops/localization-standard.md
+      - systems/sys-003-engagementops/delivery-readiness-standard.md
+      - systems/sys-003-engagementops/schemas/localization-profile.schema.json
+      - systems/sys-003-engagementops/schemas/delivery-readiness-record.schema.json
+      - systems/sys-003-engagementops/records/example-localization-profile.yaml
+      - systems/sys-003-engagementops/records/example-delivery-readiness.yaml
+      - systems/sys-003-engagementops/templates/delivery-readiness-record.md
     evidence:
       - evidence/sys-003-step-1-boundary-activation.md
       - evidence/sys-003-step-2-governance-lifecycle.md
       - evidence/sys-003-step-3-campaign-channel-assets.md
       - evidence/sys-003-step-4-measurement-analytics.md
-    next_action: Complete localization and remaining accessibility, privacy, approval, and compliance implementation controls.
-    version: 0.4.0
+      - evidence/sys-003-step-5-delivery-controls.md
+    next_action: Integrate SYS-003 with SYS-002 and implement the central campaign registry, calendar, and cross-system automation.
+    version: 0.5.0
     last_reviewed: 2026-09-03
     next_review: 2026-10-03
     labels: [engagement-operations, operating-system, activation, campaigns, governance]

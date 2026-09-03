@@ -1,0 +1,43 @@
+template_id: LACE-TMP-009
+template_version: 1.0.0
+record_id: LACE-PILOT-001-DEC-001
+system_id: SYS-001
+status: approved
+owner: Travis True
+created_date: "2026-09-03"
+updated_date: "2026-09-03"
+request_id: LACE-PILOT-001
+decision_engine_id: LACE-DE-001
+decision_engine_version: 1.0.0
+decision_status: approved
+route: performance-support
+matched_rules:
+  - RTE-004
+  - AST-008
+primary_asset:
+  family: performance-support-and-documentation
+  asset_type: compact-quick-reference-guide
+  template_id: LACE-TMP-101
+companions:
+  - purpose: deliver
+    family: performance-support-and-documentation
+    asset_type: detailed-procedural-guide
+    template_id: LACE-TMP-102
+  - purpose: reinforce
+    family: video-and-multimedia
+    asset_type: instructional-multimedia-package
+    template_id: LACE-TMP-400
+rationale: The QRG provides the smallest point-of-need reference, while the detailed guide proves durable procedure support and the multimedia asset reinforces the same behavior in a timed visual format required by the controlled pilot.
+rejected_alternatives:
+  - A task-based job aid alone would not exercise all three build kits required by the pilot.
+  - A course or facilitated workshop would exceed the source-supported scope.
+warnings:
+  - Preserve the evidence-only and public-sanitized pilot boundary.
+  - Do not invent an escalation contact absent from the source.
+required_human_reviews:
+  - Source and scope approval by Travis True.
+  - Accessibility, visual, technical, and package QA before pilot closure.
+confidence: high
+decision_owner: Travis True
+decision_date: "2026-09-03"
+override: null

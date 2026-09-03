@@ -1,0 +1,49 @@
+template_id: LACE-TMP-005
+template_version: 1.0.0
+record_id: LACE-PILOT-001-BLD-DPG-001
+system_id: SYS-001
+status: approved
+owner: Travis True
+created_date: "2026-09-03"
+updated_date: "2026-09-03"
+asset_id: LACE-PILOT-001-DPG
+title: Use workplace Copilot safely - Detailed Procedural Guide
+family: performance-support-and-documentation
+asset_type: detailed-procedural-guide
+purpose: Provide durable standalone guidance, examples, checks, and boundaries for safe Copilot use.
+performance_outcome: Users can prepare an approved prompt, apply GCSE, refine output, review it, and respond safely to warnings or uncertainty.
+audience: General workplace Copilot users with mixed experience levels.
+use_context: Standalone public-sanitized pilot reference in editable Word and PDF formats.
+moment_of_need: Before, during, and after workplace Copilot use.
+source_refs: [LACE-PILOT-001-EVI-001]
+in_scope:
+  - Preparation, GCSE prompting, safe-use patterns, refinement, review, warnings, example, and maintenance.
+out_of_scope:
+  - Organization-specific escalation contacts and internal policy instructions.
+  - Platform-specific screen procedures.
+content_requirements:
+  - Preserve all material source assertions without inventing policy.
+  - State the absence of a universal escalation contact.
+accessibility_requirements:
+  - Use real headings and lists with logical order.
+  - Mark table headers semantically and recheck after PDF conversion.
+  - Produce a tagged, searchable PDF.
+technical_requirements:
+  - Editable DOCX and PDF must render completely with no clipped or orphaned content.
+deliverables:
+  - ../copilot-safe-use-detailed-guide.docx
+  - ../copilot-safe-use-detailed-guide.pdf
+acceptance_criteria:
+  - All four pages render cleanly.
+  - Structural accessibility audit reports zero findings after repair.
+  - Source, scope, and public-sanitization checks pass.
+readiness_status: build-ready-with-documented-constraints
+reviewers:
+  - LACE artifact QA process
+approver: Travis True
+maintenance_trigger: Revalidate after a source, policy, accessibility, platform, or template change.
+constraints:
+  - Controlled public-sanitized pilot evidence only.
+assumptions:
+  - The guide supplements governing organizational policy rather than replacing it.
+unresolved_items: []

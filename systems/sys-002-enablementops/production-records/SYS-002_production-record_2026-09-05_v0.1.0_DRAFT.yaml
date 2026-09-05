@@ -1,0 +1,60 @@
+record:
+  id: EO-PR-005
+  system: SYS-002
+  version: 0.1.0
+  status: draft
+  owner: Travis True
+  date: '2026-09-05'
+need:
+  outcome: Shared Microsoft Bookings administrators can independently create, configure, test, publish, and maintain a shared booking page, including services, availability, staff or administrator roles, attendee limits, notifications, and the shareable booking link.
+  audience: Anyone in the organization who administers a shared Microsoft Bookings page.
+  moment_of_need: Self-service use at the point of work.
+  primary_family_id: F06
+  companion_family_ids:
+  - F02
+sources:
+  authoritative:
+  - systems/sys-002-enablementops/production-standard.md
+  - systems/sys-002-enablementops/quality-assurance-standard.md
+  - systems/sys-002-enablementops/template-family-catalog.yaml
+  - systems/sys-002-enablementops/tool-profiles.md
+  - https://learn.microsoft.com/en-us/microsoft-365/bookings/enter-business-information?view=o365-worldwide
+  - https://learn.microsoft.com/en-us/microsoft-365/bookings/share-shared-bookings-page?view=o365-worldwide
+  - https://learn.microsoft.com/en-us/microsoft-365/bookings/customize-booking-page?view=o365-worldwide
+  - https://learn.microsoft.com/en-us/microsoft-365/bookings/bookings-faq?view=o365-worldwide
+  verified_on: '2026-09-05'
+  conflicts: []
+  assumptions:
+  - EO-PR-005 is a candidate ID and requires repository-owner confirmation before merge.
+  - No organization-specific Microsoft Bookings requirements were identified during intake.
+  - A separate F02 companion will be retained only if it reduces maintenance duplication.
+  reuse_decision: adapt
+production:
+  native_format: DOCX
+  distribution_formats:
+  - DOCX
+  - SharePoint page
+  build_authority: SYS-001
+  specification: systems/sys-002-enablementops/templates/family-production-specification.md
+  accessibility_plan: Use semantic headings, accessible tables, meaningful link text, alt text for instructional images, logical reading order, sufficient contrast, keyboard-usable SharePoint content, and independent native and rendered-output checks.
+qa:
+  master_score: 0
+  visual_score: null
+  blockers: 0
+  critical_defects: 0
+  major_defects: 0
+  regression: not-run
+  human_approval: false
+release:
+  decision: blocked
+  approver: Sara Marusenko
+  approved_on: null
+  evidence: []
+lifecycle:
+  next_review: '2027-09-05'
+  replacement_triggers:
+  - material Microsoft Bookings interface change
+  - material Microsoft Bookings feature change
+  - material Microsoft Bookings licensing change
+  - material change to official Microsoft Bookings guidance
+  support_path: 'Technical support: The Service Desk, ServiceDesk@bcbsks.com. Training support: IT Training & Enablement, IT.Training@bcbsks.com.'
